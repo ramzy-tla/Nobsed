@@ -1,5 +1,8 @@
-*.jpg filter=lfs diff=lfs merge=lfs -text
-*.jpeg filter=lfs diff=lfs merge=lfs -text
-*.png filter=lfs diff=lfs merge=lfs -text
-*.webp filter=lfs diff=lfs merge=lfs -text
-*.gif filter=lfs diff=lfs merge=lfs -text
+# Only large portfolio photo folders use LFS
+# All other images (service cards, logos, og-banner) are normal git files
+images/enhanced/*.jpg filter=lfs diff=lfs merge=lfs -text
+images/enhanced/*.jpeg filter=lfs diff=lfs merge=lfs -text
+images/enhanced/*.png filter=lfs diff=lfs merge=lfs -text
+images/nobsed/*.jpg filter=lfs diff=lfs merge=lfs -text
+images/nobsed/*.jpeg filter=lfs diff=lfs merge=lfs -text
+images/nobsed/*.png filter=lfs diff=lfs merge=lfs -text
