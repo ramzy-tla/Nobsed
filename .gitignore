@@ -1,0 +1,14 @@
+# Large image assets (too big for GitHub — host separately or use Netlify drag-drop)
+images/enhanced/
+images/nobsed/
+
+# Design presentation build artifacts
+Design Presentation/
+_design_shots/
+NOBSED_Design_Presentation.pdf
+
+# OS & editor junk
+.DS_Store
+Thumbs.db
+desktop.ini
+*.tmp

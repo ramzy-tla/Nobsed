@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Projects & Portfolio — NOBSED Engineering Limited</title>
+<meta name="description" content="Browse NOBSED Engineering's portfolio of completed residential, commercial and civil engineering projects across Accra, Ghana.">
+<link rel="icon" type="image/png" href="images/enhanced/Logo.png">
+<link rel="stylesheet" href="style.css">
+<style>
+/* ── Filter tabs ── */
+.filters { display:flex; flex-wrap:wrap; gap:.65rem; margin-bottom:2.5rem; }
+.filter-btn { font-family:'Poppins',sans-serif; font-size:.83rem; font-weight:600; padding:.55rem 1.4rem; border-radius:100px; border:2px solid var(--border); color:var(--mid); cursor:pointer; transition:var(--t); background:#fff; }
+.filter-btn.active, .filter-btn:hover { border-color:var(--green); background:var(--green); color:#fff; }
+
+/* ── Masonry-style grid ── */
+.portfolio-masonry { columns:3; column-gap:1.25rem; }
+.pf-item { break-inside:avoid; margin-bottom:1.25rem; border-radius:var(--radius-lg); overflow:hidden; position:relative; cursor:pointer; display:block; }
+.pf-item img { width:100%; height:auto; display:block; transition:transform .5s ease; }
+.pf-item:hover img { transform:scale(1.04); }
+.pf-item-overlay { position:absolute; inset:0; background:linear-gradient(to top,rgba(18,77,52,.92) 0%,rgba(18,77,52,.2) 50%,transparent 100%); opacity:0; transition:var(--t-slow); display:flex; flex-direction:column; justify-content:flex-end; padding:1.5rem; }
+.pf-item:hover .pf-item-overlay { opacity:1; }
+.pf-item-cat { font-family:'Poppins',sans-serif; font-size:.7rem; font-weight:700; color:var(--gold); letter-spacing:.08em; text-transform:uppercase; margin-bottom:.35rem; }
+.pf-item-title { font-family:'Poppins',sans-serif; font-size:.95rem; font-weight:600; color:#fff; line-height:1.3; }
+.pf-item-status { display:inline-flex; align-items:center; gap:.3rem; font-size:.72rem; font-family:'Poppins',sans-serif; font-weight:600; margin-top:.4rem; }
+.done { color:#4ade80; }
+.ongoing { color:var(--gold); }
+.status-dot { width:6px; height:6px; border-radius:50%; background:currentColor; }
+
+.pf-item-label { position:absolute; top:1rem; left:1rem; background:var(--gold); color:#fff; font-family:'Poppins',sans-serif; font-size:.68rem; font-weight:700; letter-spacing:.06em; padding:.3rem .75rem; border-radius:100px; }
+
+/* Hidden items */
+.pf-item.hidden { display:none; }
+
+/* CTA section */
+.pf-cta { background:var(--green-light); border-radius:var(--radius-xl); padding:3rem; text-align:center; margin-top:3rem; }
+.pf-cta h3 { font-size:1.5rem; margin-bottom:.75rem; }
+.pf-cta p { margin:0 auto 1.75rem; max-width:55ch; }
+
+@media(max-width:900px) { .portfolio-masonry { columns:2; } }
+@media(max-width:540px) { .portfolio-masonry { columns:1; } }
+</style>
+</head>
+<body>
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="images/enhanced/Logo.png" alt="NOBSED Engineering Logo" class="nav-logo-img">
+      <div class="nav-logo-text">
+        <span class="nav-logo-name">NOBSED ENGINEERING LTD.</span>
+        <span class="nav-logo-sub">Dealers &amp; Experts in Engineering</span>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="services.html" class="nav-link">Services</a>
+      <a href="portfolio.html" class="nav-link active">Projects</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </div>
+    <a href="contact.html" class="nav-cta">Get a Quote</a>
+    <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+<div class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav-logo"><img src="images/enhanced/Logo.png" alt="NEL Logo"><span>NOBSED Engineering</span></div>
+  <span class="mobile-nav-close" id="mobileClose">&times;</span>
+  <a href="index.html">Home</a><a href="about.html">About Us</a><a href="services.html">Services</a><a href="portfolio.html">Projects</a><a href="contact.html">Contact</a>
+  <a href="contact.html" class="btn btn-gold" style="margin-top:1rem">Get a Free Quote</a>
+</div>
+
+<!-- Page Hero -->
+<div class="page-hero">
+  <div class="page-hero-bg" style="background-image:url('images/enhanced/Picture60.jpg')"></div>
+  <div class="page-hero-overlay"></div>
+  <div class="container page-hero-content">
+    <div class="tag">Our Portfolio</div>
+    <h1>Projects That Define Our Legacy</h1>
+    <p>Over 100 completed projects across residential, commercial, civil and plumbing sectors throughout Accra and Ghana.</p>
+    <div class="breadcrumb"><a href="index.html">Home</a><span class="breadcrumb-sep">›</span><span class="current">Projects</span></div>
+  </div>
+</div>
+
+<!-- Portfolio Grid -->
+<section class="section">
+  <div class="container">
+    <div class="sh reveal">
+      <div class="tag">All Projects</div>
+      <h2>Completed &amp; Ongoing Works</h2>
+      <div class="divider"></div>
+      <p>Filter by category to explore our diverse portfolio of engineering excellence.</p>
+    </div>
+
+    <div class="filters reveal">
+      <button class="filter-btn active" data-filter="all">All Projects</button>
+      <button class="filter-btn" data-filter="residential">Residential</button>
+      <button class="filter-btn" data-filter="commercial">Commercial</button>
+      <button class="filter-btn" data-filter="civil">Civil Works</button>
+      <button class="filter-btn" data-filter="plumbing">Plumbing</button>
+      <button class="filter-btn" data-filter="church">Institutional</button>
+    </div>
+
+    <div class="portfolio-masonry" id="portfolioGrid">
+
+      <!-- Featured: Residential Estate -->
+      <div class="pf-item" data-cat="residential">
+        <div class="pf-item-label">Completed</div>
+        <img src="images/enhanced/Picture10.jpg" alt="Residential Estate — completed row of bungalows" loading="lazy">
+        <div class="pf-item-overlay">
+          <div class="pf-item-cat">Residential</div>
+          <div class="pf-item-title">Bungalow Estate Development</div>
+          <div class="pf-item-status done"><div class="status-dot"></div>Completed · Accra</div>
+        </div>
+      </div>
+
+      <!-- Commercial multi-storey -->
+      <div class="pf-item" data-cat="commercial">
+        <img src="images/enhanced/Picture60.jpg" alt="Multi-storey commercial building" loading="lazy">
+        <div class="pf-item-overlay">
+          <div class="pf-item-cat">Commercial</div>
+          <div class="pf-item-title">Multi-Storey Office &amp; Retail Block</div>
+          <div class="pf-item-status done"><div class="status-dot"></div>Completed · Accra</div>
+        </div>
+      </div>
+
+      <!-- ICGC Temple -->
+      <div class="pf-item" data-cat="church">
+        <div class="pf-item-label">Institutional</div>
+        <img src="images/enhanced/Picture50.png" alt="ICGC Jesus Temple project render" loading="lazy">
+        <div class="pf-item-overlay">
+          <div class="pf-item-cat">Church / Institutional</div>
+          <div class="pf-item-title">ICGC Jesus Temple</div>
+          <div class="pf-item-status done"><div class="status-dot"></div>Completed · Accra</div>
+        </div>
+      </div>
+
+      <!-- Shell / Commercial -->
+      <div class="pf-item" data-cat="commercial">
+        <img src="images/enhanced/Picture55.png" alt="Shell petrol station and commercial building" loading="lazy">
+        <div class="pf-item-overlay">
+          <div class="pf-item-cat">Commercial</div>
+          <div class="pf-item-title">Commercial Service Station &amp; Retail</div>
+          <div class="pf-item-status done"><div class="status-dot"></div>Completed</div>
+        </div>
+      </div>
+
+      <!-- Modern Villas -->
+      <div class="pf-item" data-cat="residential">
+        <img src="images/enhanced/Picture70.jpg" alt="Modern twin-villa residential complex" loading="lazy">
+        <div class="pf-item-overlay">
+          <div class="pf-item-cat">Residential</div>
+          <div class="pf-item-title">Modern Twin-Villa Complex</div>
+          <div class="pf-item-status done"><div class="status-dot"></div>Completed</div>
+        </div>
+      </div>
+
+      <!-- Before/After 3-storey -->
+      <div class="pf-item" data-cat="residential">
+        <img src="images/enhanced/Picture52.png" alt="3-storey residential building before and after" loading="lazy">
+        <div class="pf-item-overlay">
+          <div class="pf-item-cat">Residential</div>
+          <div class="pf-item-title">3-Storey Residential Block — Before &amp; After</div>
+          <div class="pf-item-status done"><div class="status-dot"></div>Completed</div>
+        </div>
+      </div>
+
+      <!-- Multi-storey view 2 -->
+      <div class="pf-item" data-cat="commercial">
+        <img src="images/enhanced/Picture56.jpg" alt="Multi-storey building with glass facade" loading="lazy">
+        <div class="pf-item-overlay">
+          <div class="pf-item-cat">Commercial</div>
+          <div class="pf-item-title">Glass Facade Office Block</div>
+          <div class="pf-item-status done"><div class="status-dot"></div>Completed</div>
+        </div>
+      </div>
+
+      <!-- Bungalow with garage -->
+      <div class="pf-item" data-cat="residential">
+        <img src="images/enhanced/Picture75.jpg" alt="Completed bungalow with garage" loading="lazy">
+        <div class="pf-item-overlay">
+          <div class="pf-item-cat">Residential</div>
+          <div class="pf-item-title">Executive Bungalow with Garage</div>
+          <div class="pf-item-status done"><div class="status-dot"></div>Completed</div>
+        </div>
+      </div>
+
+      <!-- Housing estate yellow -->
+      <div class="pf-item" data-cat="residential">
+        <img src="images/enhanced/Picture12.jpg" alt="Housing estate construction with yellow accents" loading="lazy">
+        <div class="pf-item-overlay">
+          <div class="pf-item-cat">Residential</div>
+          <div class="pf-item-title">Gated Housing Estate Development</div>
+          <div class="pf-item-status ongoing"><div class="status-dot"></div>Ongoing</div>
+        </div>
+      </div>
+
+      <!-- Drainage / Civil works -->
+      <div class="pf-item" data-cat="civil">
+        <img src="images/enhanced/Picture1.jpg" alt="Drainage and civil works" loading="lazy">
+        <div class="pf-item-overlay">
+          <div class="pf-item-cat">Civil Works</div>
+          <div class="pf-item-title">Storm Drainage &amp; Retaining Wall</div>
+          <div class="pf-item-status done"><div class="status-dot"></div>Completed</div>
+        </div>
+      </div>
+
+      <!-- Foundation work -->
+      <div class="pf-item" data-cat="civil">
+        <img src="images/enhanced/Picture25.jpg" alt="Foundation and slab work" loading="lazy">
+        <div class="pf-item-overlay">
+          <div class="pf-item-cat">Civil / Foundation</div>
+          <div class="pf-item-title">Raft Foundation &amp; Slab Work</div>
+          <div class="pf-item-status done"><div class="status-dot"></div>Completed</div>
+        </div>
+      </div>
+
+      <!-- Masonry team -->
+      <div class="pf-item" data-cat="civil">
+        <img src="images/enhanced/Picture45.jpg" alt="Masonry blockwork in progress" loading="lazy">
+        <div class="pf-item-overlay">
+          <div class="pf-item-cat">Construction</div>
+          <div class="pf-item-title">Blockwork &amp; Masonry Works</div>
+          <div class="pf-item-status done"><div class="status-dot"></div>Completed</div>
+        </div>
+      </div>
+
+      <!-- Plumbing works -->
+      <div class="pf-item" data-cat="plumbing">
+        <img src="images/enhanced/Picture5.jpg" alt="Plumbing installation works" loading="lazy">
+        <div class="pf-item-overlay">
+          <div class="pf-item-cat">Plumbing</div>
+          <div class="pf-item-title">Underground Pipe &amp; Junction Works</div>
+          <div class="pf-item-status done"><div class="status-dot"></div>Completed</div>
+        </div>
+      </div>
+
+      <!-- Orange residential villas -->
+      <div class="pf-item" data-cat="residential">
+        <img src="images/enhanced/Picture65.png" alt="Orange residential villas with render" loading="lazy">
+        <div class="pf-item-overlay">
+          <div class="pf-item-cat">Residential</div>
+          <div class="pf-item-title">Themed Villa Development</div>
+          <div class="pf-item-status done"><div class="status-dot"></div>Completed</div>
+        </div>
+      </div>
+
+      <!-- Scaffolding + under-construction -->
+      <div class="pf-item" data-cat="residential">
+        <img src="images/enhanced/Picture20.jpg" alt="Multi-storey building under construction with scaffolding" loading="lazy">
+        <div class="pf-item-overlay">
+          <div class="pf-item-cat">Residential</div>
+          <div class="pf-item-title">3-Storey Duplex — In Progress</div>
+          <div class="pf-item-status ongoing"><div class="status-dot"></div>Ongoing</div>
+        </div>
+      </div>
+
+      <!-- D ROMO exterior render -->
+      <div class="pf-item" data-cat="commercial">
+        <img src="images/enhanced/Picture51.jpg" alt="3-storey institutional building render" loading="lazy">
+        <div class="pf-item-overlay">
+          <div class="pf-item-cat">Institutional</div>
+          <div class="pf-item-title">3-Storey School / Office Block</div>
+          <div class="pf-item-status done"><div class="status-dot"></div>Completed</div>
+        </div>
+      </div>
+
+      <!-- Columns / portico house -->
+      <div class="pf-item" data-cat="residential">
+        <img src="images/enhanced/Picture71.jpg" alt="House with columns and stone cladding" loading="lazy">
+        <div class="pf-item-overlay">
+          <div class="pf-item-cat">Residential</div>
+          <div class="pf-item-title">Executive Residence with Colonnade</div>
+          <div class="pf-item-status done"><div class="status-dot"></div>Completed</div>
+        </div>
+      </div>
+
+      <!-- LED facade detail -->
+      <div class="pf-item" data-cat="commercial">
+        <img src="images/enhanced/Picture80.jpg" alt="Stone cladding and LED architectural lighting" loading="lazy">
+        <div class="pf-item-overlay">
+          <div class="pf-item-cat">Architectural Finishing</div>
+          <div class="pf-item-title">Stone Cladding &amp; LED Feature Lighting</div>
+          <div class="pf-item-status done"><div class="status-dot"></div>Completed</div>
+        </div>
+      </div>
+
+      <!-- Bungalow neat driveway -->
+      <div class="pf-item" data-cat="residential">
+        <img src="images/enhanced/Picture62.jpg" alt="Neat bungalow with paved driveway" loading="lazy">
+        <div class="pf-item-overlay">
+          <div class="pf-item-cat">Residential</div>
+          <div class="pf-item-title">Bungalow with Paved Driveway</div>
+          <div class="pf-item-status done"><div class="status-dot"></div>Completed</div>
+        </div>
+      </div>
+
+      <!-- Multi-storey close view -->
+      <div class="pf-item" data-cat="commercial">
+        <img src="images/enhanced/Picture57.jpg" alt="Large commercial building street view" loading="lazy">
+        <div class="pf-item-overlay">
+          <div class="pf-item-cat">Commercial</div>
+          <div class="pf-item-title">High-Street Commercial Block</div>
+          <div class="pf-item-status done"><div class="status-dot"></div>Completed</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CTA -->
+    <div class="pf-cta reveal">
+      <div class="tag">Start Your Project</div>
+      <h3>Have a Project in Mind?</h3>
+      <p>Let's discuss your requirements and turn your vision into reality. Our team is ready to deliver exceptional results for your next project.</p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+        <a href="contact.html" class="btn btn-primary">Request a Free Quote
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
+        </a>
+        <a href="contact.html" class="btn btn-outline">Call Us Now</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer (shared) -->
+<footer>
+  <div class="container">
+    <div class="footer-accent-bar"></div>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo" style="margin-bottom:1.25rem">
+          <img src="images/enhanced/Logo.png" alt="NEL Logo" class="nav-logo-img">
+          <div class="nav-logo-text"><span class="nav-logo-name">NOBSED ENGINEERING LTD.</span><span class="nav-logo-sub">Dealers &amp; Experts in Engineering</span></div>
+        </a>
+        <p>Ghana's trusted partner in construction, civil engineering, plumbing and mechanical works. Building excellence since 2009.</p>
+        <div class="footer-social">
+          <a href="#" class="social-btn" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+          <a href="#" class="social-btn" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" fill="none" stroke="rgba(255,255,255,.7)" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="rgba(255,255,255,.7)" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1" fill="rgba(255,255,255,.7)"/></svg></a>
+          <a href="https://wa.me/233552106695" class="social-btn" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26C2.156 6.442 6.591 2 12.043 2c2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col"><h5>Quick Links</h5><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="services.html">Our Services</a></li><li><a href="portfolio.html">Projects</a></li><li><a href="contact.html">Contact Us</a></li></ul></div>
+      <div class="footer-col"><h5>Services</h5><ul><li><a href="services.html">Water Supply</a></li><li><a href="services.html">Drainage Systems</a></li><li><a href="services.html">Building Construction</a></li><li><a href="services.html">Civil Engineering</a></li><li><a href="services.html">Tiling &amp; Finishing</a></li><li><a href="services.html">Blocks &amp; Cement</a></li></ul></div>
+      <div class="footer-col">
+        <h5>Contact Us</h5>
+        <div class="footer-contact-item"><svg viewBox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke="#D4A017" stroke-width="2" fill="none"/><circle cx="12" cy="11" r="3" stroke="#D4A017" stroke-width="2" fill="none"/></svg><span>Agbogba Ablorh Agyei, Accra, Ghana</span></div>
+        <div class="footer-contact-item"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.09 9.82 19.79 19.79 0 01.01 1.19 2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14v2.92z" stroke="#D4A017" stroke-width="2" fill="none"/></svg><span><a href="tel:0208827865">0208827865</a> / <a href="tel:0276486515">0276486515</a></span></div>
+        <div class="footer-contact-item"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="#D4A017" stroke-width="2" fill="none"/><path d="M22 6l-10 7L2 6" stroke="#D4A017" stroke-width="2" fill="none"/></svg><a href="mailto:nobsedengineering@gmail.com">nobsedengineering@gmail.com</a></div>
+      </div>
+    </div>
+    <div class="footer-bottom"><p>&copy; 2026 NOBSED Engineering Limited. All rights reserved.</p><div class="footer-bottom-links"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a><a href="contact.html">Get a Quote</a><span style="color:rgba(255,255,255,.2);margin:0 .25rem">|</span><span style="color:rgba(255,255,255,.25);font-size:.72rem">Built by <a href="#" style="color:rgba(255,255,255,.35);text-decoration:underline">Forge Technologies</a></span></div></div>
+  </div>
+</footer>
+<a href="https://wa.me/233552106695" target="_blank" rel="noopener" class="wa-float" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+
+<script>
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', scrollY > 60));
+document.getElementById('hamburger').addEventListener('click', () => document.getElementById('mobileNav').classList.add('open'));
+document.getElementById('mobileClose').addEventListener('click', () => document.getElementById('mobileNav').classList.remove('open'));
+
+// Filter
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const f = btn.dataset.filter;
+    document.querySelectorAll('.pf-item').forEach(item => {
+      if (f === 'all' || item.dataset.cat === f) {
+        item.style.display = '';
+      } else {
+        item.style.display = 'none';
+      }
+    });
+  });
+});
+
+const ro = new IntersectionObserver(e => e.forEach(x => { if(x.isIntersecting){x.target.classList.add('visible');ro.unobserve(x.target);} }), {threshold:.1});
+document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
+</script>
+</body>
+</html>

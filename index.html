@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>NOBSED Engineering Limited — Building Excellence Since 2009</title>
+<meta name="description" content="Ghana's trusted partner in Plumbing, Civil Engineering, Building Construction and Mechanical works. Based in Accra since 2009.">
+<link rel="icon" type="image/png" href="images/enhanced/Logo.png">
+<link rel="stylesheet" href="style.css">
+<style>
+/* ══ HOME-SPECIFIC STYLES ══════════════════════════════ */
+
+/* ── HERO SLIDESHOW ── */
+#hero { position:relative; height:100vh; min-height:600px; overflow:hidden; }
+.slide { position:absolute; inset:0; opacity:0; transition:opacity 1.2s ease; }
+.slide.active { opacity:1; }
+.slide-bg { position:absolute; inset:0; background-size:cover; background-position:center; animation:kenBurns 8s ease-in-out infinite alternate; }
+.slide:nth-child(even) .slide-bg { animation-direction:alternate-reverse; }
+@keyframes kenBurns { from{transform:scale(1)} to{transform:scale(1.06) translate(1%,1%)} }
+.slide-overlay { position:absolute; inset:0; background:linear-gradient(135deg,rgba(0,43,109,.88) 0%,rgba(27,154,206,.42) 48%,rgba(18,77,52,.82) 100%); }
+
+.hero-content { position:relative; z-index:10; height:100%; display:flex; align-items:center; }
+.hero-inner { padding-top:7rem; max-width:750px; }
+
+.hero-eyebrow { display:inline-flex; align-items:center; gap:.6rem; color:rgba(255,255,255,.75); font-family:'Poppins',sans-serif; font-size:.72rem; font-weight:500; letter-spacing:.16em; text-transform:uppercase; margin-bottom:1.25rem; border-left:3px solid var(--gold); padding:.1rem 0 .1rem .75rem; }
+.hero-eyebrow svg { display:none; }
+
+.hero-title { color:#fff; font-size:clamp(2.4rem,6vw,4rem); font-weight:900; line-height:1.1; margin-bottom:1.25rem; text-shadow:0 2px 20px rgba(0,0,0,.3); }
+.hero-title em { color:var(--gold); font-style:normal; }
+.hero-title span { display:block; }
+
+.hero-sub { color:rgba(255,255,255,.82); font-size:1.05rem; line-height:1.8; margin-bottom:2rem; max-width:55ch; }
+
+.hero-btns { display:flex; flex-wrap:wrap; gap:1rem; margin-bottom:3rem; }
+
+.hero-stats { display:flex; flex-wrap:wrap; gap:2.5rem; padding-top:2rem; border-top:1px solid rgba(255,255,255,.15); }
+.hs-num { font-family:'Poppins',sans-serif; font-size:2rem; font-weight:800; color:var(--gold); line-height:1; }
+.hs-label { font-size:.75rem; color:rgba(255,255,255,.65); letter-spacing:.06em; margin-top:.25rem; text-transform:uppercase; }
+
+/* Slide indicators */
+.slide-dots { position:absolute; bottom:2rem; left:50%; transform:translateX(-50%); z-index:10; display:flex; gap:.6rem; }
+.slide-dot { width:8px; height:8px; border-radius:50%; background:rgba(255,255,255,.4); cursor:pointer; transition:var(--t); border:none; }
+.slide-dot.active { background:var(--gold); width:24px; border-radius:4px; }
+
+/* Slide arrows */
+.slide-arrow { position:absolute; top:50%; z-index:10; width:48px; height:48px; border-radius:50%; background:rgba(255,255,255,.15); border:1px solid rgba(255,255,255,.25); display:flex; align-items:center; justify-content:center; cursor:pointer; transition:var(--t); transform:translateY(-50%); }
+.slide-arrow:hover { background:var(--green); border-color:var(--green); }
+.slide-arrow svg { width:20px; height:20px; fill:#fff; }
+.arrow-prev { left:2rem; }
+.arrow-next { right:2rem; }
+
+/* Scroll indicator */
+.hero-scroll { position:absolute; bottom:2.5rem; right:2.5rem; z-index:10; display:flex; flex-direction:column; align-items:center; gap:.5rem; color:rgba(255,255,255,.5); font-family:'Poppins',sans-serif; font-size:.68rem; letter-spacing:.12em; text-transform:uppercase; }
+.hero-scroll-line { width:2px; height:40px; background:linear-gradient(to bottom,rgba(255,255,255,.5),transparent); animation:scrollLine 1.8s ease infinite; }
+@keyframes scrollLine { 0%,100%{opacity:.4;transform:scaleY(.8)} 50%{opacity:1;transform:scaleY(1)} }
+
+/* ── ABOUT STRIP ── */
+.about-strip { display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center; }
+.about-img-wrap { position:relative; }
+.about-img-main { width:100%; height:440px; object-fit:cover; border-radius:var(--radius-xl); }
+.about-badge { position:absolute; bottom:-1.5rem; right:-1.5rem; background:var(--green); color:#fff; border-radius:var(--radius-lg); padding:1.25rem 1.5rem; text-align:center; box-shadow:var(--shadow-xl); }
+.about-badge strong { display:block; font-family:'Poppins',sans-serif; font-size:2.25rem; font-weight:900; color:var(--gold); }
+.about-badge span { font-size:.72rem; opacity:.85; letter-spacing:.06em; }
+.about-team-row { display:flex; align-items:center; gap:1rem; margin-top:2rem; padding:1rem 1.25rem; background:var(--green-light); border-radius:var(--radius); border-left:4px solid var(--green); }
+.about-team-img { width:52px; height:52px; border-radius:50%; object-fit:cover; object-position:top; border:2px solid var(--white); }
+.about-team-text strong { display:block; font-family:'Poppins',sans-serif; font-size:.88rem; font-weight:700; color:var(--charcoal); }
+.about-team-text span { font-size:.78rem; color:var(--muted); }
+
+/* ── PILLARS ── */
+.pillars-row { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin:2rem 0 1.75rem; }
+.pillar-card { background:var(--white); border:1px solid var(--border); border-radius:var(--radius); padding:1.25rem; transition:var(--t); }
+.pillar-card:hover { border-color:var(--green); box-shadow:var(--shadow); }
+.pillar-icon { width:42px; height:42px; background:var(--green); border-radius:var(--radius); display:flex; align-items:center; justify-content:center; margin-bottom:.85rem; }
+.pillar-icon svg { width:22px; height:22px; fill:#fff; }
+.pillar-card h4 { font-size:.92rem; color:var(--green); margin-bottom:.3rem; }
+.pillar-card p { font-size:.8rem; max-width:none; }
+
+/* ── SERVICES OVERVIEW ── */
+.services-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:1.25rem; }
+.svc-card { background:#fff; border:1px solid var(--border); border-left:4px solid var(--green); border-radius:0 var(--radius) var(--radius) 0; padding:1.5rem; transition:var(--t); cursor:pointer; }
+.svc-card:hover { box-shadow:var(--shadow); transform:translateX(4px); border-left-color:var(--gold); }
+.svc-icon { width:46px; height:46px; background:var(--green-light); border-radius:var(--radius); display:flex; align-items:center; justify-content:center; margin-bottom:1rem; }
+.svc-icon svg { width:24px; height:24px; fill:var(--green); }
+.svc-card h3 { font-size:.98rem; margin-bottom:.4rem; }
+.svc-card p { font-size:.82rem; max-width:none; margin-bottom:1rem; }
+.svc-link { display:inline-flex; align-items:center; gap:.3rem; font-family:'Poppins',sans-serif; font-size:.78rem; font-weight:700; color:var(--green); transition:var(--t); }
+.svc-link:hover { gap:.55rem; color:var(--green-dark); }
+.svc-link svg { width:14px; height:14px; fill:var(--green); }
+
+.svc-cat-header { display:flex; align-items:center; gap:1rem; margin-bottom:1.5rem; }
+.svc-cat-header h3 { font-size:1.25rem; color:var(--charcoal); }
+.svc-cat-line { flex:1; height:2px; background:linear-gradient(to right,var(--green),transparent); border-radius:2px; }
+
+/* ── FEATURED PROJECTS ── */
+.projects-grid { display:grid; grid-template-columns:1.5fr 1fr 1fr; gap:1.5rem; }
+.proj-featured { grid-row:1/3; }
+.proj-card { position:relative; border-radius:var(--radius-lg); overflow:hidden; cursor:pointer; }
+.proj-card img { width:100%; height:100%; object-fit:cover; transition:transform .5s ease; }
+.proj-featured img { height:500px; }
+.proj-card:not(.proj-featured) img { height:235px; }
+.proj-card:hover img { transform:scale(1.05); }
+.proj-overlay { position:absolute; inset:0; background:linear-gradient(to top,rgba(18,77,52,.9) 0%,transparent 55%); opacity:0; transition:var(--t-slow); }
+.proj-card:hover .proj-overlay { opacity:1; }
+.proj-info { position:absolute; bottom:0; left:0; right:0; padding:1.5rem; transform:translateY(8px); transition:var(--t-slow); }
+.proj-card:hover .proj-info { transform:none; }
+.proj-cat { font-family:'Poppins',sans-serif; font-size:.7rem; font-weight:700; color:var(--gold); letter-spacing:.08em; text-transform:uppercase; margin-bottom:.35rem; }
+.proj-info h4 { font-size:1rem; color:#fff; font-family:'Poppins',sans-serif; margin-bottom:.35rem; }
+.proj-status { display:inline-flex; align-items:center; gap:.35rem; font-size:.72rem; font-family:'Poppins',sans-serif; font-weight:600; }
+.proj-status.done { color:#4ade80; }
+.proj-status.ongoing { color:var(--gold); }
+.proj-status-dot { width:6px; height:6px; border-radius:50%; background:currentColor; }
+
+.proj-label { position:absolute; top:1rem; left:1rem; background:var(--gold); color:#fff; font-family:'Poppins',sans-serif; font-size:.7rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; padding:.3rem .8rem; border-radius:100px; }
+
+/* ── CLIENTS ── */
+.clients-logos { display:flex; flex-wrap:wrap; gap:1.25rem; justify-content:center; margin-bottom:3.5rem; }
+.client-card { background:#fff; border:1px solid var(--border); border-radius:var(--radius); padding:1rem 1.75rem; display:flex; align-items:center; justify-content:center; min-width:130px; transition:var(--t); }
+.client-card:hover { border-color:var(--green); box-shadow:var(--shadow); transform:translateY(-2px); }
+.client-logo-text { font-family:'Poppins',sans-serif; font-size:.82rem; font-weight:700; color:var(--mid); text-align:center; line-height:1.3; }
+
+/* Testimonials */
+.testimonials-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; }
+.testi-card { background:#fff; border:1px solid var(--border); border-radius:var(--radius-lg); padding:2rem; transition:var(--t-slow); }
+.testi-card:hover { box-shadow:var(--shadow-lg); border-color:var(--green); }
+.testi-img { width:100%; height:180px; object-fit:cover; border-radius:var(--radius); margin-bottom:1.25rem; }
+.testi-stars { display:flex; gap:3px; margin-bottom:.85rem; }
+.testi-stars svg { width:16px; height:16px; fill:var(--gold); }
+.testi-quote { font-size:.9rem; font-style:italic; color:var(--mid); line-height:1.75; margin-bottom:1.5rem; position:relative; padding-left:1.25rem; }
+.testi-quote::before { content:'"'; position:absolute; left:0; top:-.25rem; font-size:2.5rem; font-family:Georgia,serif; color:var(--green); line-height:1; }
+.testi-author { display:flex; align-items:center; gap:.85rem; }
+.testi-avatar { width:44px; height:44px; border-radius:50%; background:var(--green); display:flex; align-items:center; justify-content:center; font-family:'Poppins',sans-serif; font-size:1rem; font-weight:700; color:#fff; flex-shrink:0; }
+.testi-name { font-family:'Poppins',sans-serif; font-size:.9rem; font-weight:600; color:var(--charcoal); }
+.testi-role { font-size:.78rem; color:var(--muted); }
+
+/* ── PROMISE / CTA BAND ── */
+.promise-band { background:linear-gradient(135deg, var(--green-dark) 0%, var(--green) 60%, #1d7d55 100%); padding:5rem 0; }
+.promise-grid { display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center; }
+.promise-text .tag { background:rgba(212,160,23,.18); color:var(--gold); border:1px solid rgba(212,160,23,.3); }
+.promise-text h2 { color:#fff; margin-bottom:1.25rem; }
+.promise-blockquote { font-size:1.1rem; color:rgba(255,255,255,.88); font-style:italic; border-left:3px solid var(--gold); padding-left:1.25rem; line-height:1.8; margin-bottom:2rem; max-width:none; }
+.trust-items { display:flex; flex-direction:column; gap:.85rem; }
+.trust-item { display:flex; align-items:flex-start; gap:.85rem; background:rgba(255,255,255,.08); border-radius:var(--radius); padding:1rem 1.25rem; transition:var(--t); }
+.trust-item:hover { background:rgba(255,255,255,.14); }
+.trust-icon { width:36px; height:36px; background:var(--gold); border-radius:8px; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.trust-icon svg { width:20px; height:20px; fill:#fff; }
+.trust-item h4 { font-size:.9rem; color:#fff; margin-bottom:.15rem; }
+.trust-item p { font-size:.8rem; color:rgba(255,255,255,.62); max-width:none; }
+.promise-metrics { display:grid; grid-template-columns:1fr 1fr; gap:1.25rem; }
+.pm-card { background:rgba(255,255,255,.1); backdrop-filter:blur(8px); border:1px solid rgba(255,255,255,.15); border-radius:var(--radius-lg); padding:1.75rem; text-align:center; transition:var(--t); }
+.pm-card:hover { background:rgba(255,255,255,.18); transform:translateY(-2px); }
+.pm-num { font-family:'Poppins',sans-serif; font-size:2.5rem; font-weight:900; color:var(--gold); line-height:1; }
+.pm-label { font-size:.82rem; color:rgba(255,255,255,.68); margin-top:.4rem; }
+
+/* ── RESPONSIVE ── */
+@media(max-width:1024px) {
+  .about-strip, .promise-grid { grid-template-columns:1fr; gap:2.5rem; }
+  .projects-grid { grid-template-columns:1fr 1fr; }
+  .proj-featured { grid-row:auto; }
+  .proj-featured img { height:280px; }
+  .testimonials-grid { grid-template-columns:1fr; }
+  .about-badge { right:1rem; }
+}
+@media(max-width:768px) {
+  .pillars-row { grid-template-columns:1fr; }
+  .hero-stats { gap:1.5rem; }
+  .hero-btns { flex-direction:column; align-items:flex-start; }
+  .projects-grid { grid-template-columns:1fr; }
+  .promise-metrics { grid-template-columns:1fr 1fr; }
+  .about-img-main { height:300px; }
+  .slide-arrow { display:none; }
+  .hero-scroll { display:none; }
+}
+</style>
+</head>
+<body>
+
+<!-- ════════════ NAVBAR ════════════ -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="images/enhanced/Logo.png" alt="NOBSED Engineering Logo" class="nav-logo-img">
+      <div class="nav-logo-text">
+        <span class="nav-logo-name">NOBSED ENGINEERING LTD.</span>
+        <span class="nav-logo-sub">Dealers &amp; Experts in Engineering</span>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link active">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="services.html" class="nav-link">Services</a>
+      <a href="portfolio.html" class="nav-link">Projects</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </div>
+    <a href="contact.html" class="nav-cta">Get a Quote</a>
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile nav -->
+<div class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav-logo">
+    <img src="images/enhanced/Logo.png" alt="NEL Logo">
+    <span>NOBSED Engineering</span>
+  </div>
+  <span class="mobile-nav-close" id="mobileClose">&times;</span>
+  <a href="index.html">Home</a>
+  <a href="about.html">About Us</a>
+  <a href="services.html">Services</a>
+  <a href="portfolio.html">Projects</a>
+  <a href="contact.html">Contact</a>
+  <a href="contact.html" class="btn btn-gold" style="margin-top:1rem">Get a Free Quote</a>
+</div>
+
+<!-- ════════════ HERO SLIDESHOW ════════════ -->
+<section id="hero">
+  <!-- Slides -->
+  <div class="slide active" data-label="Residential Estate Development" data-cat="Construction">
+    <div class="slide-bg" style="background-image:url('images/enhanced/Picture10.jpg')"></div>
+    <div class="slide-overlay"></div>
+  </div>
+  <div class="slide" data-label="Multi-Storey Commercial Building" data-cat="Civil Engineering">
+    <div class="slide-bg" style="background-image:url('images/enhanced/Picture60.jpg')"></div>
+    <div class="slide-overlay"></div>
+  </div>
+  <div class="slide" data-label="Modern Residential Complex" data-cat="Construction">
+    <div class="slide-bg" style="background-image:url('images/enhanced/Picture70.jpg')"></div>
+    <div class="slide-overlay"></div>
+  </div>
+  <div class="slide" data-label="Commercial &amp; Retail Development" data-cat="Building Construction">
+    <div class="slide-bg" style="background-image:url('images/enhanced/Picture56.jpg')"></div>
+    <div class="slide-overlay"></div>
+  </div>
+  <div class="slide" data-label="High-Rise Office Block" data-cat="Civil Engineering">
+    <div class="slide-bg" style="background-image:url('images/enhanced/Picture57.jpg')"></div>
+    <div class="slide-overlay"></div>
+  </div>
+
+  <!-- Content -->
+  <div class="hero-content container">
+    <div class="hero-inner">
+      <div class="hero-eyebrow">
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+       . 2009
+      </div>
+      <h1 class="hero-title">
+        <span>Building</span>
+        <em id="heroSlideLabel">Residential Excellence</em>
+        <span>Since 2009</span>
+      </h1>
+      <p class="hero-sub">Ghana's most trusted partner in Plumbing, Civil Engineering, Building Construction, Mechanical Engineering, Tiling &amp; Cement Supply — structures built to last generations.</p>
+      <div class="hero-btns">
+        <a href="contact.html" class="btn btn-gold">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M8 12h8M8 8h5M5 3h14a2 2 0 012 2v11a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2z" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
+          Get a Free Consultation
+        </a>
+        <a href="portfolio.html" class="btn btn-white-outline">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h16M4 18h7" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
+          View Completed Projects
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div><div class="hs-num" data-target="16">0</div><div class="hs-label">Years Experience</div></div>
+        <div><div class="hs-num" data-target="100">0</div><div class="hs-label">Projects Delivered</div></div>
+        <div><div class="hs-num" data-target="50">0</div><div class="hs-label">Corporate Clients</div></div>
+        <div><div class="hs-num" data-target="5">0</div><div class="hs-label">Service Divisions</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Arrows -->
+  <button class="slide-arrow arrow-prev" id="prevSlide" aria-label="Previous slide">
+    <svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
+  </button>
+  <button class="slide-arrow arrow-next" id="nextSlide" aria-label="Next slide">
+    <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
+  </button>
+
+  <!-- Dots -->
+  <div class="slide-dots" id="slideDots"></div>
+
+  <!-- Scroll hint -->
+  <div class="hero-scroll">
+    <div class="hero-scroll-line"></div>
+    SCROLL
+  </div>
+</section>
+
+<!-- ════════════ STATS BAR ════════════ -->
+<div style="background:var(--bg); padding:0 1.5rem;">
+  <div style="max-width:1200px;margin:0 auto;transform:translateY(-2rem);">
+    <div class="stats-bar reveal">
+      <div class="stat-item">
+        <div class="stat-num"><span class="counter" data-target="16">0</span><span class="stat-plus">+</span></div>
+        <div class="stat-label">Years of Experience</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num"><span class="counter" data-target="100">0</span><span class="stat-plus">+</span></div>
+        <div class="stat-label">Projects Completed</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num"><span class="counter" data-target="50">0</span><span class="stat-plus">+</span></div>
+        <div class="stat-label">Satisfied Clients</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num"><span class="counter" data-target="5">0</span></div>
+        <div class="stat-label">Service Divisions</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════ ABOUT STRIP ════════════ -->
+<section class="section" style="padding-top:1rem">
+  <div class="container">
+    <div class="about-strip">
+      <div class="about-img-wrap reveal left">
+        <img src="images/enhanced/Picture10.jpg" alt="Completed residential estate by NOBSED Engineering" class="about-img-main" loading="lazy">
+        <div class="about-badge">
+          <strong>2009</strong>
+          <span>Est. in Ghana</span>
+        </div>
+      </div>
+      <div class="reveal right">
+        <div class="tag">Who We Are</div>
+        <h2>Ghana's Trusted Engineering Partner</h2>
+        <div class="divider"></div>
+        <p>NOBSED Engineering Limited is a proudly Ghanaian-owned construction and engineering company with over <strong>16 years</strong> of proven excellence across Accra and Greater Accra.</p>
+        <p style="margin-top:1rem">We are dealers and experts in Plumbing, Civil Engineering, Building Construction, Mechanical Engineering, Tiling, and Sales of Blocks &amp; Cement — delivering comprehensive, end-to-end solutions tailored to every client's unique needs.</p>
+
+        <div class="pillars-row" style="margin-top:1.5rem">
+          <div class="pillar-card">
+            <div class="pillar-icon">
+              <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4M21 12a9 9 0 11-18 0 9 9 0 0118 0z" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
+            <h4>Quality</h4>
+            <p style="font-size:.78rem;max-width:none">Uncompromising standards on every project.</p>
+          </div>
+          <div class="pillar-card">
+            <div class="pillar-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
+            <h4>Safety</h4>
+            <p style="font-size:.78rem;max-width:none">Rigorous protocols protecting all stakeholders.</p>
+          </div>
+          <div class="pillar-card">
+            <div class="pillar-icon">
+              <svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8z" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
+            <h4>Professionalism</h4>
+            <p style="font-size:.78rem;max-width:none">Expert teams, transparent, on-time delivery.</p>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:.5rem">
+          <a href="about.html" class="btn btn-primary">Learn Our Story
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
+          </a>
+          <a href="contact.html" class="btn btn-outline">Start a Project</a>
+        </div>
+
+        <div class="about-team-row">
+          <img src="images/enhanced/Picture11.jpg" alt="NOBSED Engineering team" class="about-team-img">
+          <div class="about-team-text">
+            <strong>Our Skilled Team</strong>
+            <span>Ghanaian engineers &amp; tradespeople — trained, certified, and experienced</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ SERVICES OVERVIEW ════════════ -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="sh center reveal">
+      <div class="tag">What We Do</div>
+      <h2>Our Core Service Offerings</h2>
+      <div class="divider" style="margin:0 auto 1rem"></div>
+      <p>Two specialist divisions covering every construction and engineering need — from water supply systems to full-scale building works.</p>
+    </div>
+
+    <!-- Plumbing -->
+    <div class="svc-cat-header reveal">
+      <h3>Plumbing &amp; Water Systems</h3>
+      <div class="svc-cat-line"></div>
+      <a href="services.html" style="font-family:'Poppins',sans-serif;font-size:.82rem;font-weight:600;color:var(--green);white-space:nowrap">All Services →</a>
+    </div>
+    <div class="services-grid" style="margin-bottom:2.5rem">
+      <div class="svc-card reveal">
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="#1A6B47" stroke-width="2" fill="none"/><path d="M12 8v8M8 12h8" stroke="#1A6B47" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <h3>Water Supply &amp; Distribution</h3>
+        <p>Complete design &amp; installation of water supply networks, tanks and distribution systems.</p>
+        <a href="services.html" class="svc-link">Request Service <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" fill="none" stroke="#1A6B47" stroke-width="2" stroke-linecap="round"/></svg></a>
+      </div>
+      <div class="svc-card reveal d1">
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18" stroke="#1A6B47" stroke-width="2" stroke-linecap="round" fill="none"/></svg></div>
+        <h3>Drainage &amp; Sewage Systems</h3>
+        <p>Professional installation of drainage, sewage and waste-water systems to regulatory standards.</p>
+        <a href="services.html" class="svc-link">Request Service <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" fill="none" stroke="#1A6B47" stroke-width="2" stroke-linecap="round"/></svg></a>
+      </div>
+      <div class="svc-card reveal d2">
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-6a4 4 0 100-8 4 4 0 000 8z" stroke="#1A6B47" stroke-width="2" fill="none"/></svg></div>
+        <h3>Pump &amp; Borehole Systems</h3>
+        <p>Installation and maintenance of submersible pumps, booster pumps and borehole systems.</p>
+        <a href="services.html" class="svc-link">Request Service <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" fill="none" stroke="#1A6B47" stroke-width="2" stroke-linecap="round"/></svg></a>
+      </div>
+      <div class="svc-card reveal d3">
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z" stroke="#1A6B47" stroke-width="2" fill="none" stroke-linecap="round"/></svg></div>
+        <h3>Bathroom &amp; Kitchen Fitting</h3>
+        <p>Full installation of bathrooms, WCs and kitchen sinks with premium sanitary ware and fittings.</p>
+        <a href="services.html" class="svc-link">Request Service <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" fill="none" stroke="#1A6B47" stroke-width="2" stroke-linecap="round"/></svg></a>
+      </div>
+    </div>
+
+    <!-- Construction -->
+    <div class="svc-cat-header reveal">
+      <h3>Construction &amp; Civil Engineering</h3>
+      <div class="svc-cat-line"></div>
+      <a href="services.html" style="font-family:'Poppins',sans-serif;font-size:.82rem;font-weight:600;color:var(--green);white-space:nowrap">All Services →</a>
+    </div>
+    <div class="services-grid">
+      <div class="svc-card reveal">
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M3 21h18M9 8h1m5 0h1M9 12h1m5 0h1M5 21V5a2 2 0 012-2h10a2 2 0 012 2v16" stroke="#1A6B47" stroke-width="2" fill="none" stroke-linecap="round"/></svg></div>
+        <h3>Building Construction</h3>
+        <p>Full-scale residential, commercial and industrial building construction from foundation to roofing.</p>
+        <a href="services.html" class="svc-link">Request Service <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" fill="none" stroke="#1A6B47" stroke-width="2" stroke-linecap="round"/></svg></a>
+      </div>
+      <div class="svc-card reveal d1">
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M2 20h20M4 20V10l8-8 8 8v10M10 20v-5h4v5" stroke="#1A6B47" stroke-width="2" fill="none" stroke-linecap="round"/></svg></div>
+        <h3>Civil Engineering Works</h3>
+        <p>Roads, drains, culverts, retaining walls and earthworks executed to engineering specifications.</p>
+        <a href="services.html" class="svc-link">Request Service <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" fill="none" stroke="#1A6B47" stroke-width="2" stroke-linecap="round"/></svg></a>
+      </div>
+      <div class="svc-card reveal d2">
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1zM4 22v-7" stroke="#1A6B47" stroke-width="2" fill="none" stroke-linecap="round"/></svg></div>
+        <h3>Tiling &amp; Finishing</h3>
+        <p>Professional floor and wall tiling, screeding, plastering and finishing for all property types.</p>
+        <a href="services.html" class="svc-link">Request Service <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" fill="none" stroke="#1A6B47" stroke-width="2" stroke-linecap="round"/></svg></a>
+      </div>
+      <div class="svc-card reveal d3">
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M20 7H4a2 2 0 00-2 2v6a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2z" stroke="#1A6B47" stroke-width="2" fill="none"/></svg></div>
+        <h3>Blocks &amp; Cement Supply</h3>
+        <p>Supply of quality sandcrete blocks and cement for construction projects. Bulk delivery available.</p>
+        <a href="services.html" class="svc-link">Request Service <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" fill="none" stroke="#1A6B47" stroke-width="2" stroke-linecap="round"/></svg></a>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:2.5rem" class="reveal">
+      <a href="services.html" class="btn btn-primary">View All 12 Services
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ FEATURED PROJECTS ════════════ -->
+<section class="section">
+  <div class="container">
+    <div class="sh reveal" style="display:flex;justify-content:space-between;align-items:flex-end">
+      <div>
+        <div class="tag">Our Work</div>
+        <h2>Featured Projects</h2>
+        <div class="divider"></div>
+      </div>
+      <a href="portfolio.html" class="btn btn-outline" style="flex-shrink:0">View All Projects →</a>
+    </div>
+
+    <div class="projects-grid">
+      <div class="proj-card proj-featured reveal">
+        <div class="proj-label">Featured</div>
+        <img src="images/enhanced/Picture52.png" alt="3-storey residential complex before and after" loading="lazy">
+        <div class="proj-overlay"></div>
+        <div class="proj-info">
+          <div class="proj-cat">Residential Construction</div>
+          <h4>3-Storey Residential Complex</h4>
+          <div class="proj-status done"><div class="proj-status-dot"></div>Completed</div>
+        </div>
+      </div>
+      <div class="proj-card reveal d1">
+        <img src="images/enhanced/Picture60.jpg" alt="Multi-storey commercial building" loading="lazy">
+        <div class="proj-overlay"></div>
+        <div class="proj-info">
+          <div class="proj-cat">Commercial Building</div>
+          <h4>Multi-Storey Office &amp; Retail Block</h4>
+          <div class="proj-status done"><div class="proj-status-dot"></div>Completed</div>
+        </div>
+      </div>
+      <div class="proj-card reveal d2">
+        <img src="images/enhanced/Picture70.jpg" alt="Modern residential homes" loading="lazy">
+        <div class="proj-overlay"></div>
+        <div class="proj-info">
+          <div class="proj-cat">Residential Development</div>
+          <h4>Modern Twin-Villa Estate</h4>
+          <div class="proj-status done"><div class="proj-status-dot"></div>Completed</div>
+        </div>
+      </div>
+      <div class="proj-card reveal d1" style="margin-top:0">
+        <img src="images/enhanced/Picture55.png" alt="Shell petrol station and commercial building" loading="lazy">
+        <div class="proj-overlay"></div>
+        <div class="proj-info">
+          <div class="proj-cat">Commercial &amp; Retail</div>
+          <h4>Commercial Service Station</h4>
+          <div class="proj-status done"><div class="proj-status-dot"></div>Completed</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ CLIENTS & TESTIMONIALS ════════════ -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="sh center reveal">
+      <div class="tag">Our Valued Partners &amp; Clients</div>
+      <h2>Trusted by Leading Organisations</h2>
+      <div class="divider" style="margin:0 auto 1rem"></div>
+      <p>With over 16 years of proven excellence, our corporate clientele spans residential developers, institutional bodies, government projects and commercial enterprises across Ghana.</p>
+    </div>
+  </div>
+
+  <!-- Infinite scrolling marquee — full bleed -->
+  <div class="marquee-outer">
+    <div class="marquee-track" id="marqueeTrack">
+
+      <!-- ── SET 1 ── -->
+      <!-- 1. Trasacco + Akaya -->
+      <a href="https://akayabytrasacco.com/" target="_blank" rel="noopener" class="client-logo-card">
+        <img src="images/trasacco-logo.webp" alt="Trasacco Properties" style="width:90px;height:auto;object-fit:contain;margin-bottom:.5rem">
+        <div class="clc-name">TRASACCO<br>PROPERTIES</div>
+        <span class="clc-badge clc-badge-gold">Akaya Project Partner</span>
+      </a>
+
+      <!-- 2. Micheletti -->
+      <a href="https://michelettighana.com/" target="_blank" rel="noopener" class="client-logo-card">
+        <img src="images/cropped-logo.jpg" alt="Micheletti (GH) Ltd" style="width:110px;height:auto;object-fit:contain;margin-bottom:.5rem">
+        <div class="clc-name">MICHELETTI<br>(GH) LTD</div>
+        <div class="clc-sub">Civil Engineering &amp;<br>Building Contractors</div>
+      </a>
+
+      <!-- 3. Ridge View Properties -->
+      <div class="client-logo-card">
+        <div class="clc-icon" style="background:linear-gradient(135deg,#002B6D,#1B9ACE)">
+          <svg width="28" height="28" viewBox="0 0 40 40" fill="none">
+            <path d="M5 35V20L20 8l15 12v15H25V25H15v10H5z" fill="rgba(255,255,255,.9)"/>
+          </svg>
+        </div>
+        <div class="clc-name">RIDGE VIEW<br>PROPERTIES LTD</div>
+        <div class="clc-sub">Building Construction<br>Services</div>
+      </div>
+
+      <!-- 4. Westar Electricals -->
+      <div class="client-logo-card">
+        <img src="images/westar-electricals-co-ltd-2023-06-01-6478c54ad469e-tiny.jpg" alt="Westar Electricals" style="width:90px;height:auto;object-fit:contain;margin-bottom:.5rem">
+        <div class="clc-name">WESTAR<br>ELECTRICALS</div>
+        <span class="clc-badge clc-badge-blue">Agenda 111 · MoH Partner</span>
+      </div>
+
+      <!-- 5. Sand Park Properties -->
+      <div class="client-logo-card">
+        <div class="clc-icon" style="background:linear-gradient(135deg,#c47e1a,#d4a017)">
+          <svg width="28" height="28" viewBox="0 0 40 40" fill="none">
+            <rect x="6" y="22" width="28" height="12" rx="3" fill="rgba(255,255,255,.9)"/>
+            <rect x="12" y="10" width="16" height="14" rx="2" fill="rgba(255,255,255,.75)"/>
+            <rect x="16" y="4" width="8" height="8" rx="1" fill="rgba(255,255,255,.6)"/>
+          </svg>
+        </div>
+        <div class="clc-name">SAND PARK<br>PROPERTIES</div>
+        <div class="clc-sub">Construction &amp;<br>Tiling Works</div>
+      </div>
+
+      <!-- 6. Rosa Estate -->
+      <div class="client-logo-card">
+        <div class="clc-icon" style="background:linear-gradient(135deg,#7b1fa2,#ab47bc)">
+          <svg width="28" height="28" viewBox="0 0 40 40" fill="none">
+            <circle cx="20" cy="14" r="8" fill="rgba(255,255,255,.9)"/>
+            <path d="M8 34c0-6.627 5.373-12 12-12s12 5.373 12 12" stroke="rgba(255,255,255,.9)" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="clc-name">ROSA ESTATE<br>LIMITED</div>
+        <div class="clc-sub">Residential<br>Development</div>
+      </div>
+
+      <!-- 7. Ridge View Gardens -->
+      <div class="client-logo-card">
+        <div class="clc-icon" style="background:linear-gradient(135deg,#1A6B47,#2a9d63)">
+          <svg width="28" height="28" viewBox="0 0 40 40" fill="none">
+            <path d="M20 4 C10 14 4 20 4 28 C4 34 11 38 20 38 C29 38 36 34 36 28 C36 20 30 14 20 4z" fill="rgba(255,255,255,.9)"/>
+          </svg>
+        </div>
+        <div class="clc-name">RIDGE VIEW<br>GARDENS LTD</div>
+        <div class="clc-sub">Estate Development</div>
+      </div>
+
+      <!-- 8. Orinoco River Estate -->
+      <div class="client-logo-card">
+        <div class="clc-icon" style="background:linear-gradient(135deg,#0077B6,#00B4D8)">
+          <svg width="28" height="28" viewBox="0 0 40 40" fill="none">
+            <path d="M4 26 Q10 18 20 22 Q30 26 36 18" stroke="rgba(255,255,255,.9)" stroke-width="3" stroke-linecap="round" fill="none"/>
+            <path d="M4 32 Q10 24 20 28 Q30 32 36 24" stroke="rgba(255,255,255,.6)" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+            <circle cx="20" cy="14" r="6" fill="rgba(255,255,255,.85)"/>
+          </svg>
+        </div>
+        <div class="clc-name">ORINOCO RIVER<br>ESTATE</div>
+        <div class="clc-sub">Civil &amp; Plumbing<br>Works</div>
+      </div>
+
+      <!-- ── SET 2 (duplicate for seamless loop) ── -->
+      <a href="https://akayabytrasacco.com/" target="_blank" rel="noopener" class="client-logo-card">
+        <img src="images/trasacco-logo.webp" alt="Trasacco Properties" style="width:90px;height:auto;object-fit:contain;margin-bottom:.5rem">
+        <div class="clc-name">TRASACCO<br>PROPERTIES</div>
+        <span class="clc-badge clc-badge-gold">Akaya Project Partner</span>
+      </a>
+      <a href="https://michelettighana.com/" target="_blank" rel="noopener" class="client-logo-card">
+        <img src="images/cropped-logo.jpg" alt="Micheletti (GH) Ltd" style="width:110px;height:auto;object-fit:contain;margin-bottom:.5rem">
+        <div class="clc-name">MICHELETTI<br>(GH) LTD</div>
+        <div class="clc-sub">Civil Engineering &amp;<br>Building Contractors</div>
+      </a>
+      <div class="client-logo-card">
+        <div class="clc-icon" style="background:linear-gradient(135deg,#002B6D,#1B9ACE)">
+          <svg width="28" height="28" viewBox="0 0 40 40" fill="none"><path d="M5 35V20L20 8l15 12v15H25V25H15v10H5z" fill="rgba(255,255,255,.9)"/></svg>
+        </div>
+        <div class="clc-name">RIDGE VIEW<br>PROPERTIES LTD</div>
+        <div class="clc-sub">Building Construction<br>Services</div>
+      </div>
+      <div class="client-logo-card">
+        <img src="images/westar-electricals-co-ltd-2023-06-01-6478c54ad469e-tiny.jpg" alt="Westar Electricals" style="width:90px;height:auto;object-fit:contain;margin-bottom:.5rem">
+        <div class="clc-name">WESTAR<br>ELECTRICALS</div>
+        <span class="clc-badge clc-badge-blue">Agenda 111 · MoH Partner</span>
+      </div>
+      <div class="client-logo-card">
+        <div class="clc-icon" style="background:linear-gradient(135deg,#c47e1a,#d4a017)">
+          <svg width="28" height="28" viewBox="0 0 40 40" fill="none"><rect x="6" y="22" width="28" height="12" rx="3" fill="rgba(255,255,255,.9)"/><rect x="12" y="10" width="16" height="14" rx="2" fill="rgba(255,255,255,.75)"/><rect x="16" y="4" width="8" height="8" rx="1" fill="rgba(255,255,255,.6)"/></svg>
+        </div>
+        <div class="clc-name">SAND PARK<br>PROPERTIES</div>
+        <div class="clc-sub">Construction &amp;<br>Tiling Works</div>
+      </div>
+      <div class="client-logo-card">
+        <div class="clc-icon" style="background:linear-gradient(135deg,#7b1fa2,#ab47bc)">
+          <svg width="28" height="28" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="14" r="8" fill="rgba(255,255,255,.9)"/><path d="M8 34c0-6.627 5.373-12 12-12s12 5.373 12 12" stroke="rgba(255,255,255,.9)" stroke-width="3" stroke-linecap="round"/></svg>
+        </div>
+        <div class="clc-name">ROSA ESTATE<br>LIMITED</div>
+        <div class="clc-sub">Residential<br>Development</div>
+      </div>
+      <div class="client-logo-card">
+        <div class="clc-icon" style="background:linear-gradient(135deg,#1A6B47,#2a9d63)">
+          <svg width="28" height="28" viewBox="0 0 40 40" fill="none"><path d="M20 4 C10 14 4 20 4 28 C4 34 11 38 20 38 C29 38 36 34 36 28 C36 20 30 14 20 4z" fill="rgba(255,255,255,.9)"/></svg>
+        </div>
+        <div class="clc-name">RIDGE VIEW<br>GARDENS LTD</div>
+        <div class="clc-sub">Estate Development</div>
+      </div>
+      <div class="client-logo-card">
+        <div class="clc-icon" style="background:linear-gradient(135deg,#0077B6,#00B4D8)">
+          <svg width="28" height="28" viewBox="0 0 40 40" fill="none"><path d="M4 26 Q10 18 20 22 Q30 26 36 18" stroke="rgba(255,255,255,.9)" stroke-width="3" stroke-linecap="round" fill="none"/><path d="M4 32 Q10 24 20 28 Q30 32 36 24" stroke="rgba(255,255,255,.6)" stroke-width="2.5" stroke-linecap="round" fill="none"/><circle cx="20" cy="14" r="6" fill="rgba(255,255,255,.85)"/></svg>
+        </div>
+        <div class="clc-name">ORINOCO RIVER<br>ESTATE</div>
+        <div class="clc-sub">Civil &amp; Plumbing<br>Works</div>
+      </div>
+
+    </div><!-- /marquee-track -->
+  </div><!-- /marquee-outer -->
+
+    <div class="testimonials-grid">
+      <!-- ICGC testimonial -->
+      <div class="testi-card reveal">
+        <img src="images/enhanced/Picture50.png" alt="ICGC Jesus Temple project" class="testi-img" loading="lazy">
+        <div class="testi-stars">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="testi-quote">NOBSED Engineering handled the full construction and plumbing works for our Jesus Temple project. Their team was professional, detail-oriented and delivered on time. We are very pleased with the quality of work and will continue to engage them.</p>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:#cc0000">IC</div>
+          <div>
+            <div class="testi-name">Facilities Director</div>
+            <div class="testi-role">ICGC Jesus Temple, Accra</div>
+          </div>
+        </div>
+      </div>
+      <!-- Trasacco testimonial -->
+      <div class="testi-card reveal d1">
+        <img src="images/enhanced/Picture56.jpg" alt="Commercial building project completed by NOBSED" class="testi-img" loading="lazy">
+        <div class="testi-stars">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="testi-quote">We engaged NOBSED Engineering for the Akaya Residential Development plumbing and structural works. Their team delivered exceptional quality, keeping to the project schedule and budget. A reliable Ghanaian engineering company we are proud to partner with.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">TA</div>
+          <div>
+            <div class="testi-name">Project Director</div>
+            <div class="testi-role">Trasacco Properties, Accra</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ PROMISE / CTA BAND ════════════ -->
+<section class="promise-band">
+  <div class="container">
+    <div class="promise-grid">
+      <div class="promise-text reveal left">
+        <div class="tag">Our Promise</div>
+        <h2>Your Vision Is Our Blueprint</h2>
+        <blockquote class="promise-blockquote">"We transform ideas into structures that are safe, functional and built to last — on time, within budget, every time."</blockquote>
+        <div class="trust-items">
+          <div class="trust-item">
+            <div class="trust-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="#fff" stroke-width="2" fill="none"/><path d="M12 6v6l4 2" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></div>
+            <div><h4>On-Time Delivery</h4><p>We set realistic schedules and honour them — with milestone updates throughout.</p></div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="#fff" stroke-width="2" fill="none"/></svg></div>
+            <div><h4>Budget Compliance</h4><p>Transparent pricing with zero hidden costs. Our quote is our commitment.</p></div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-icon"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round"/></svg></div>
+            <div><h4>Quality Guaranteed</h4><p>Every project backed by our QA process and post-handover support.</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal right">
+        <div class="promise-metrics">
+          <div class="pm-card"><div class="pm-num">16<span style="color:#fff;font-size:1.4rem">+</span></div><div class="pm-label">Years of Expertise</div></div>
+          <div class="pm-card"><div class="pm-num">100<span style="color:#fff;font-size:1.4rem">+</span></div><div class="pm-label">Projects Delivered</div></div>
+          <div class="pm-card"><div class="pm-num">50<span style="color:#fff;font-size:1.4rem">+</span></div><div class="pm-label">Happy Clients</div></div>
+          <div class="pm-card"><div class="pm-num">2009</div><div class="pm-label">Est. in Ghana</div></div>
+        </div>
+        <a href="contact.html" class="btn btn-gold" style="width:100%;justify-content:center;margin-top:1.5rem;font-size:1rem;padding:1.1rem 2rem">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M8 12h8M8 8h5M5 3h14a2 2 0 012 2v11a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2z" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
+          Start Your Project Today
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ FOOTER ════════════ -->
+<footer>
+  <div class="container">
+    <div class="footer-accent-bar"></div>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo" style="margin-bottom:1.25rem">
+          <img src="images/enhanced/Logo.png" alt="NEL Logo" class="nav-logo-img">
+          <div class="nav-logo-text">
+            <span class="nav-logo-name">NOBSED ENGINEERING LTD.</span>
+            <span class="nav-logo-sub">Dealers &amp; Experts in Engineering</span>
+          </div>
+        </a>
+        <p>Ghana's trusted partner in construction, civil engineering, plumbing and mechanical works. Building excellence since 2009.</p>
+        <div class="footer-social">
+          <a href="#" class="social-btn" aria-label="Facebook">
+            <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          </a>
+          <a href="#" class="social-btn" aria-label="Instagram">
+            <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="rgba(255,255,255,.7)" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="rgba(255,255,255,.7)" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1" fill="rgba(255,255,255,.7)"/></svg>
+          </a>
+          <a href="https://wa.me/233552106695" class="social-btn" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </a>
+          <a href="tel:0208827865" class="social-btn" aria-label="Phone">
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.09 9.82 19.79 19.79 0 01.01 1.19 2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14v2.92z" fill="none" stroke="rgba(255,255,255,.7)" stroke-width="2"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Quick Links</h5>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Our Services</a></li>
+          <li><a href="portfolio.html">Projects</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="services.html">Water Supply</a></li>
+          <li><a href="services.html">Drainage Systems</a></li>
+          <li><a href="services.html">Building Construction</a></li>
+          <li><a href="services.html">Civil Engineering</a></li>
+          <li><a href="services.html">Tiling &amp; Finishing</a></li>
+          <li><a href="services.html">Blocks &amp; Cement</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contact Us</h5>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke="#D4A017" stroke-width="2" fill="none"/><circle cx="12" cy="11" r="3" stroke="#D4A017" stroke-width="2" fill="none"/></svg>
+          <span>Agbogba Ablorh Agyei,<br>Accra, Ghana</span>
+        </div>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.09 9.82 19.79 19.79 0 01.01 1.19 2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14v2.92z" stroke="#D4A017" stroke-width="2" fill="none"/></svg>
+          <span><a href="tel:0208827865">0208827865</a> / <a href="tel:0276486515">0276486515</a></span>
+        </div>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="#D4A017" stroke-width="2" fill="none"/><path d="M22 6l-10 7L2 6" stroke="#D4A017" stroke-width="2" fill="none"/></svg>
+          <a href="mailto:nobsedengineering@gmail.com">nobsedengineering@gmail.com</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 NOBSED Engineering Limited. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a><a href="contact.html">Get a Quote</a><span style="color:rgba(255,255,255,.2);margin:0 .25rem">|</span><span style="color:rgba(255,255,255,.25);font-size:.72rem">Built by <a href="#" style="color:rgba(255,255,255,.35);text-decoration:underline">Forge Technologies</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- WhatsApp Float -->
+<a href="https://wa.me/233552106695" target="_blank" rel="noopener" class="wa-float" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+/* ── Navbar ── */
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', scrollY > 60));
+
+/* ── Mobile nav ── */
+document.getElementById('hamburger').addEventListener('click', () => document.getElementById('mobileNav').classList.add('open'));
+document.getElementById('mobileClose').addEventListener('click', () => document.getElementById('mobileNav').classList.remove('open'));
+
+/* ── Hero Slideshow ── */
+const slides = document.querySelectorAll('.slide');
+const dotsContainer = document.getElementById('slideDots');
+const heroLabel = document.getElementById('heroSlideLabel');
+let currentSlide = 0, slideInterval;
+
+const labels = Array.from(slides).map(s => s.dataset.label || '');
+
+// Create dots
+slides.forEach((_, i) => {
+  const dot = document.createElement('button');
+  dot.className = 'slide-dot' + (i === 0 ? ' active' : '');
+  dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
+  dot.addEventListener('click', () => goToSlide(i));
+  dotsContainer.appendChild(dot);
+});
+
+function goToSlide(n) {
+  slides[currentSlide].classList.remove('active');
+  dotsContainer.children[currentSlide].classList.remove('active');
+  currentSlide = (n + slides.length) % slides.length;
+  slides[currentSlide].classList.add('active');
+  dotsContainer.children[currentSlide].classList.add('active');
+  heroLabel.style.opacity = '0';
+  heroLabel.style.transform = 'translateY(10px)';
+  setTimeout(() => {
+    heroLabel.textContent = labels[currentSlide];
+    heroLabel.style.opacity = '1';
+    heroLabel.style.transform = 'none';
+  }, 200);
+}
+
+function startSlideshow() {
+  slideInterval = setInterval(() => goToSlide(currentSlide + 1), 5500);
+}
+
+document.getElementById('nextSlide').addEventListener('click', () => { clearInterval(slideInterval); goToSlide(currentSlide + 1); startSlideshow(); });
+document.getElementById('prevSlide').addEventListener('click', () => { clearInterval(slideInterval); goToSlide(currentSlide - 1); startSlideshow(); });
+
+// Hero label transition
+heroLabel.style.transition = 'opacity .3s ease, transform .3s ease';
+
+startSlideshow();
+
+/* ── Hero counters ── */
+function animateCounter(el) {
+  const target = +el.dataset.target;
+  const dur = 2000, step = target / dur * 16;
+  let cur = 0;
+  const t = setInterval(() => {
+    cur = Math.min(cur + step, target);
+    el.textContent = Math.floor(cur);
+    if (cur >= target) { el.textContent = target; clearInterval(t); }
+  }, 16);
+}
+setTimeout(() => document.querySelectorAll('.hs-num[data-target]').forEach(animateCounter), 800);
+
+/* ── Scroll reveal ── */
+const ro = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); ro.unobserve(e.target); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
+
+/* ── Section counters ── */
+const co = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.querySelectorAll('.counter[data-target]').forEach(animateCounter); co.unobserve(e.target); } });
+}, { threshold: 0.3 });
+document.querySelectorAll('.stats-bar').forEach(el => co.observe(el));
+</script>
+
+<!-- ══ THEME SWITCHER (client preview only — remove before launch) ══ -->
+<div id="themeSwitcher" style="position:fixed;bottom:24px;left:24px;z-index:9999;font-family:'Poppins',sans-serif;font-size:12px;">
+  <div id="themePanel" style="display:none;background:#0f172a;border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:16px 18px;box-shadow:0 8px 40px rgba(0,0,0,.6);margin-bottom:10px;width:230px;">
+    <div style="color:rgba(255,255,255,.5);font-size:10px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px;">Colour Scheme Preview</div>
+    <div id="themeList" style="display:flex;flex-direction:column;gap:8px;"></div>
+    <div style="margin-top:14px;padding-top:12px;border-top:1px solid rgba(255,255,255,.08);color:rgba(255,255,255,.3);font-size:9.5px;line-height:1.5;">Preview only · scroll all sections<br>to see the full effect</div>
+  </div>
+  <button id="themeToggle" onclick="document.getElementById('themePanel').style.display=document.getElementById('themePanel').style.display==='none'?'block':'none'" style="background:#0f172a;color:#fff;border:1px solid rgba(255,255,255,.15);border-radius:100px;padding:9px 16px;cursor:pointer;font-family:'Poppins',sans-serif;font-size:11px;font-weight:600;letter-spacing:.04em;display:flex;align-items:center;gap:7px;box-shadow:0 4px 20px rgba(0,0,0,.5);">
+    <span style="width:10px;height:10px;border-radius:50%;background:conic-gradient(#002B6D 25%,#1B9ACE 25% 50%,#1A6B47 50% 75%,#D4A017 75%);display:inline-block"></span>
+    Themes
+  </button>
+</div>
+
+<script>
+(function(){
+  const THEMES = [
+    {
+      name:'Current',
+      swatch:['#002B6D','#1B9ACE','#1A6B47','#D4A017'],
+      vars:null  // no override — use defaults
+    },
+    {
+      name:'Midnight Steel',
+      swatch:['#0F172A','#0EA5E9','#059669','#F59E0B'],
+      vars:{
+        '--navy':'#0F172A','--navy-dark':'#060B14','--navy-mid':'#1E3A5F','--navy-light':'#e0f0ff','--navy-pale':'#f0f7ff',
+        '--blue':'#0EA5E9','--blue-dark':'#0284C7','--blue-mid':'#38BDF8','--blue-light':'#e0f4ff',
+        '--green':'#059669','--green-dark':'#047857','--green-light':'#d1fae5','--green-pale':'#f0fdf4',
+        '--gold':'#F59E0B','--gold-light':'#FCD34D'
+      }
+    },
+    {
+      name:'Charcoal & Amber',
+      swatch:['#1C1917','#D97706','#15803D','#0EA5E9'],
+      vars:{
+        '--navy':'#1C1917','--navy-dark':'#0C0A09','--navy-mid':'#292524','--navy-light':'#fef3c7','--navy-pale':'#fffbeb',
+        '--blue':'#0EA5E9','--blue-dark':'#0284C7','--blue-mid':'#38BDF8','--blue-light':'#e0f4ff',
+        '--green':'#15803D','--green-dark':'#166534','--green-light':'#dcfce7','--green-pale':'#f0fdf4',
+        '--gold':'#D97706','--gold-light':'#F59E0B'
+      }
+    },
+    {
+      name:'Deep Teal',
+      swatch:['#0F3460','#16213E','#0F9D9D','#E8B84B'],
+      vars:{
+        '--navy':'#0F3460','--navy-dark':'#0A2444','--navy-mid':'#16305A','--navy-light':'#e0f0f8','--navy-pale':'#f0f8fb',
+        '--blue':'#0F9D9D','--blue-dark':'#0C7C7C','--blue-mid':'#14B8B8','--blue-light':'#ccfafa',
+        '--green':'#0C5E5E','--green-dark':'#094848','--green-light':'#b3eded','--green-pale':'#e6fafa',
+        '--gold':'#E8B84B','--gold-light':'#F5D080'
+      }
+    },
+    {
+      name:'Royal & Copper',
+      swatch:['#1A0A3B','#6C3BE8','#C47C2B','#E8B84B'],
+      vars:{
+        '--navy':'#1A0A3B','--navy-dark':'#0D052A','--navy-mid':'#2D1470','--navy-light':'#ede9fe','--navy-pale':'#f5f3ff',
+        '--blue':'#6C3BE8','--blue-dark':'#5B2FCC','--blue-mid':'#7C52EC','--blue-light':'#ede9fe',
+        '--green':'#C47C2B','--green-dark':'#A36022','--green-light':'#fef3c7','--green-pale':'#fffbeb',
+        '--gold':'#E8B84B','--gold-light':'#F5D080'
+      }
+    },
+    {
+      name:'Slate & Emerald',
+      swatch:['#1E293B','#475569','#10B981','#FBBF24'],
+      vars:{
+        '--navy':'#1E293B','--navy-dark':'#0F172A','--navy-mid':'#334155','--navy-light':'#e2e8f0','--navy-pale':'#f8fafc',
+        '--blue':'#475569','--blue-dark':'#334155','--blue-mid':'#64748B','--blue-light':'#e2e8f0',
+        '--green':'#10B981','--green-dark':'#059669','--green-light':'#d1fae5','--green-pale':'#ecfdf5',
+        '--gold':'#FBBF24','--gold-light':'#FDE68A'
+      }
+    }
+  ];
+
+  const list = document.getElementById('themeList');
+  let activeStyle = null;
+  let activeBtn   = null;
+
+  THEMES.forEach((t,i)=>{
+    const row = document.createElement('button');
+    row.style.cssText='display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.05);border:1.5px solid rgba(255,255,255,.1);border-radius:8px;padding:8px 10px;cursor:pointer;width:100%;text-align:left;transition:all .2s';
+    row.onmouseenter=()=>{ if(row!==activeBtn) row.style.background='rgba(255,255,255,.1)'; };
+    row.onmouseleave=()=>{ if(row!==activeBtn) row.style.background='rgba(255,255,255,.05)'; };
+
+    // Swatch dots
+    const dots = document.createElement('div');
+    dots.style.cssText='display:flex;gap:3px;flex-shrink:0';
+    t.swatch.forEach(c=>{
+      const d=document.createElement('span');
+      d.style.cssText=`width:12px;height:12px;border-radius:50%;background:${c};display:inline-block;`;
+      dots.appendChild(d);
+    });
+
+    const label = document.createElement('span');
+    label.style.cssText='color:#fff;font-size:11px;font-weight:600;flex:1';
+    label.textContent = t.name;
+
+    const tick = document.createElement('span');
+    tick.textContent = i===0 ? '✓' : '';
+    tick.style.cssText='color:#4ade80;font-size:11px;';
+
+    row.appendChild(dots); row.appendChild(label); row.appendChild(tick);
+
+    row.onclick=()=>{
+      // Remove previous override
+      if(activeStyle){ activeStyle.remove(); activeStyle=null; }
+      if(activeBtn){ activeBtn.style.background='rgba(255,255,255,.05)'; activeBtn.style.borderColor='rgba(255,255,255,.1)'; activeBtn.querySelector('span:last-child').textContent=''; }
+
+      // Apply new theme
+      if(t.vars){
+        activeStyle=document.createElement('style');
+        activeStyle.textContent=':root{'+Object.entries(t.vars).map(([k,v])=>`${k}:${v}`).join(';')+'}';
+        document.head.appendChild(activeStyle);
+      }
+
+      // Mark active
+      row.style.background='rgba(255,255,255,.14)';
+      row.style.borderColor='rgba(255,255,255,.35)';
+      tick.textContent='✓';
+      activeBtn=row;
+
+      // Update toggle conic swatch
+      document.querySelector('#themeToggle span').style.background=`conic-gradient(${t.swatch[0]} 25%,${t.swatch[1]} 25% 50%,${t.swatch[2]} 50% 75%,${t.swatch[3]} 75%)`;
+    };
+
+    if(i===0){ activeBtn=row; row.style.background='rgba(255,255,255,.14)'; row.style.borderColor='rgba(255,255,255,.35)'; tick.textContent='✓'; }
+    list.appendChild(row);
+  });
+})();
+</script>
+<!-- ══ END THEME SWITCHER ══ -->
+</body>
+</html>

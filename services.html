@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Our Services — NOBSED Engineering Limited | Plumbing, Construction & Civil Works</title>
+<meta name="description" content="Explore NOBSED Engineering's full range of services: plumbing, water supply, drainage, building construction, civil engineering, tiling and blocks & cement supply.">
+<link rel="icon" type="image/png" href="images/enhanced/Logo.png">
+<link rel="stylesheet" href="style.css">
+<style>
+/* ── SERVICES PAGE ── */
+.svc-section-header { display:grid; grid-template-columns:auto 1fr; gap:1.5rem; align-items:center; margin-bottom:2rem; padding:1.5rem 2rem; border-radius:var(--radius-lg); }
+.svc-section-header.plumbing { background:linear-gradient(135deg,var(--navy) 0%,var(--blue) 100%); }
+.svc-section-header.construction { background:linear-gradient(135deg,var(--charcoal) 0%,var(--green) 100%); }
+.svc-section-icon { width:56px; height:56px; background:rgba(255,255,255,.15); border-radius:var(--radius); display:flex; align-items:center; justify-content:center; }
+.svc-section-icon svg { width:30px; height:30px; fill:#fff; }
+.svc-section-title { color:#fff; font-size:1.5rem; margin-bottom:.2rem; }
+.svc-section-count { color:rgba(255,255,255,.7); font-size:.84rem; }
+
+.svc-big-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(290px,1fr)); gap:1.5rem; margin-bottom:4rem; }
+.svc-big-card { background:#fff; border:1px solid var(--border); border-radius:var(--radius-lg); overflow:hidden; transition:var(--t-slow); cursor:default; }
+.svc-big-card:hover { box-shadow:var(--shadow-lg); transform:translateY(-5px); border-color:var(--green); }
+.svc-big-card-img { height:180px; overflow:hidden; position:relative; }
+.svc-big-card-img img { width:100%; height:100%; object-fit:cover; transition:transform .5s ease; }
+.svc-big-card:hover .svc-big-card-img img { transform:scale(1.06); }
+.svc-big-card-img-placeholder { width:100%; height:100%; display:flex; align-items:center; justify-content:center; }
+.svc-big-card-body { padding:1.5rem; }
+.svc-big-card-icon { width:44px; height:44px; background:var(--green-light); border-radius:var(--radius); display:flex; align-items:center; justify-content:center; margin-bottom:1rem; }
+.svc-big-card-icon svg { width:24px; height:24px; fill:var(--green); }
+.svc-big-card h3 { font-size:1rem; margin-bottom:.4rem; }
+.svc-big-card p { font-size:.83rem; max-width:none; margin-bottom:1.1rem; }
+.svc-big-card .svc-request { display:inline-flex; align-items:center; gap:.4rem; background:var(--green); color:#fff; font-family:'Poppins',sans-serif; font-size:.78rem; font-weight:700; padding:.5rem 1.1rem; border-radius:100px; transition:var(--t); }
+.svc-big-card .svc-request:hover { background:var(--green-dark); gap:.6rem; }
+.svc-big-card .svc-request svg { width:14px; height:14px; fill:#fff; }
+
+/* Process strip */
+.process-strip { background:var(--green); border-radius:var(--radius-xl); padding:3.5rem; margin-bottom:4rem; }
+.process-strip h2 { color:#fff; margin-bottom:.6rem; }
+.process-strip > p { color:rgba(255,255,255,.75); margin-bottom:2.5rem; }
+.process-steps { display:grid; grid-template-columns:repeat(5,1fr); gap:0; position:relative; }
+.process-steps::before { content:''; position:absolute; top:1.5rem; left:10%; right:10%; height:2px; background:rgba(255,255,255,.2); z-index:0; }
+.process-step { text-align:center; position:relative; z-index:1; }
+.step-circle { width:3rem; height:3rem; border-radius:50%; background:var(--gold); color:#fff; font-family:'Poppins',sans-serif; font-size:1.1rem; font-weight:800; display:flex; align-items:center; justify-content:center; margin:0 auto 1rem; box-shadow:0 4px 12px rgba(0,0,0,.2); }
+.process-step h4 { color:#fff; font-size:.88rem; margin-bottom:.3rem; }
+.process-step p { color:rgba(255,255,255,.65); font-size:.75rem; max-width:none; line-height:1.5; }
+
+@media(max-width:900px){ .process-steps{grid-template-columns:repeat(3,1fr);row-gap:2rem} .process-steps::before{display:none} }
+@media(max-width:600px){ .process-steps{grid-template-columns:1fr 1fr} .svc-big-card-img{height:140px} }
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="images/enhanced/Logo.png" alt="NOBSED Engineering Logo" class="nav-logo-img">
+      <div class="nav-logo-text">
+        <span class="nav-logo-name">NOBSED ENGINEERING LTD.</span>
+        <span class="nav-logo-sub">Dealers &amp; Experts in Engineering</span>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="services.html" class="nav-link active">Services</a>
+      <a href="portfolio.html" class="nav-link">Projects</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </div>
+    <a href="contact.html" class="nav-cta">Get a Quote</a>
+    <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+<div class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav-logo"><img src="images/enhanced/Logo.png" alt="NEL Logo"><span>NOBSED Engineering</span></div>
+  <span class="mobile-nav-close" id="mobileClose">&times;</span>
+  <a href="index.html">Home</a><a href="about.html">About Us</a><a href="services.html">Services</a><a href="portfolio.html">Projects</a><a href="contact.html">Contact</a>
+  <a href="contact.html" class="btn btn-gold" style="margin-top:1rem">Get a Free Quote</a>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-bg" style="background-image:url('images/enhanced/Picture25.jpg')"></div>
+  <div class="page-hero-overlay"></div>
+  <div class="container page-hero-content">
+    <div class="tag">What We Offer</div>
+    <h1>Comprehensive Engineering Services</h1>
+    <p>Two specialist divisions — 12 distinct services — delivering high-quality, customised solutions tailored to the specific needs of every client.</p>
+    <div class="breadcrumb"><a href="index.html">Home</a><span class="breadcrumb-sep">›</span><span class="current">Services</span></div>
+  </div>
+</div>
+
+<!-- SERVICES INTRO -->
+<section style="background:var(--navy-pale);padding:3.5rem 0 0">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1.1fr 1fr;gap:3.5rem;align-items:center;padding-bottom:3.5rem" class="reveal">
+      <div>
+        <div class="tag">Our Commitment</div>
+        <h2 style="margin:.5rem 0 .75rem">Customised Solutions. Uncompromising Quality.</h2>
+        <div class="divider"></div>
+        <p style="margin-bottom:1rem">We ensure that we provide a customised array of high-quality services tailored to the specific needs of our clients. Our success in attaining these goals, along with our well-regarded reputation, has enabled us to create and maintain relationships and partnerships with clients across Ghana.</p>
+        <p>Our ability to develop and execute customised strategic solutions in support of our clients' unique goals and assets further exemplifies our commitment to achieving the desired results — every project, every time.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+        <div style="background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.5rem;text-align:center">
+          <div style="font-family:'Poppins',sans-serif;font-size:2rem;font-weight:800;color:var(--navy);line-height:1">16<span style="color:var(--gold)">+</span></div>
+          <div style="font-size:.78rem;color:var(--muted);margin-top:.3rem">Years Experience</div>
+        </div>
+        <div style="background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.5rem;text-align:center">
+          <div style="font-family:'Poppins',sans-serif;font-size:2rem;font-weight:800;color:var(--navy);line-height:1">100<span style="color:var(--gold)">+</span></div>
+          <div style="font-size:.78rem;color:var(--muted);margin-top:.3rem">Projects Completed</div>
+        </div>
+        <div style="background:var(--navy);border-radius:var(--radius-lg);padding:1.5rem;text-align:center">
+          <div style="font-family:'Poppins',sans-serif;font-size:2rem;font-weight:800;color:var(--gold);line-height:1">7</div>
+          <div style="font-size:.78rem;color:rgba(255,255,255,.7);margin-top:.3rem">Plumbing Services</div>
+        </div>
+        <div style="background:var(--green);border-radius:var(--radius-lg);padding:1.5rem;text-align:center">
+          <div style="font-family:'Poppins',sans-serif;font-size:2rem;font-weight:800;color:var(--gold);line-height:1">5</div>
+          <div style="font-size:.78rem;color:rgba(255,255,255,.7);margin-top:.3rem">Construction Services</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section">
+  <div class="container">
+
+    <!-- PLUMBING -->
+    <div class="svc-section-header plumbing reveal">
+      <div class="svc-section-icon"><svg viewBox="0 0 24 24"><path d="M5 3v4M3 5h4M6 17v4M4 19h4M13 3l4 4-7 7-4-4 7-7zM14 14l3 3-2.5 2.5a2.12 2.12 0 01-3-3L14 14z" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round"/></svg></div>
+      <div>
+        <div class="svc-section-title">Plumbing &amp; Water Systems Division</div>
+        <div class="svc-section-count">7 specialist services · Residential, Commercial &amp; Industrial</div>
+      </div>
+    </div>
+
+    <div class="svc-big-grid">
+      <!-- 1 Residential Plumbing -->
+      <div class="svc-big-card reveal">
+        <div class="svc-big-card-img">
+          <img src="images/svc-residential-plumbing.jpg" alt="Residential plumbing installation" loading="lazy">
+        </div>
+        <div class="svc-big-card-body">
+          <div class="svc-big-card-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="#1A6B47" stroke-width="2" fill="none"/><path d="M12 8v8M8 12h8" stroke="#1A6B47" stroke-width="2" stroke-linecap="round"/></svg></div>
+          <h3>Residential Plumbing</h3>
+          <p>Full-service residential plumbing including installation of new appliances, new plumbing works, fixture repair and replacement — for homes, apartments and housing estates.</p>
+          <a href="contact.html?service=residential-plumbing" class="svc-request">Request Service <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></a>
+        </div>
+      </div>
+      <!-- 2 Drainage & Sewage -->
+      <div class="svc-big-card reveal d1">
+        <div class="svc-big-card-img">
+          <img src="images/svc-drainage-sewage.jpg" alt="Drainage and sewage works" loading="lazy">
+        </div>
+        <div class="svc-big-card-body">
+          <div class="svc-big-card-icon"><svg viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18" stroke="#1A6B47" stroke-width="2" stroke-linecap="round" fill="none"/></svg></div>
+          <h3>Drainage &amp; Sewage Systems</h3>
+          <p>Professional installation of drainage, sewage and waste-water systems meeting all Ghana regulatory standards for residential estates and commercial complexes.</p>
+          <a href="contact.html?service=drainage-sewage" class="svc-request">Request Service <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></a>
+        </div>
+      </div>
+      <!-- 3 Pipe Installation -->
+      <div class="svc-big-card reveal d2">
+        <div class="svc-big-card-img">
+          <img src="images/svc-pipe-installation.jpg" alt="Pipe installation works" loading="lazy">
+        </div>
+        <div class="svc-big-card-body">
+          <div class="svc-big-card-icon"><svg viewBox="0 0 24 24"><path d="M5 3v4M3 5h4M6 17v4M4 19h4M13 3l4 4-7 7-4-4 7-7z" stroke="#1A6B47" stroke-width="2" fill="none" stroke-linecap="round"/></svg></div>
+          <h3>Pipe Installation &amp; Repair</h3>
+          <p>Supply, installation and repair of all pipe types — HDPE, uPVC, galvanised iron — for water, gas and drainage applications at any project scale.</p>
+          <a href="contact.html?service=pipe-installation" class="svc-request">Request Service <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></a>
+        </div>
+      </div>
+      <!-- 4 Re-piping & Drain Cleaning -->
+      <div class="svc-big-card reveal">
+        <div class="svc-big-card-img">
+          <img src="images/svc-repiping-drain.jpg" alt="Re-piping and drain cleaning" loading="lazy">
+        </div>
+        <div class="svc-big-card-body">
+          <div class="svc-big-card-icon"><svg viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z" stroke="#1A6B47" stroke-width="2" fill="none" stroke-linecap="round"/></svg></div>
+          <h3>Re-piping &amp; Drain Cleaning</h3>
+          <p>Complete re-piping services for aging systems, alongside professional drain cleaning and pump services. We clear blockages, replace corroded pipes and restore full flow performance.</p>
+          <a href="contact.html?service=repiping-drain" class="svc-request">Request Service <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></a>
+        </div>
+      </div>
+      <!-- 5 Fixture Repair -->
+      <div class="svc-big-card reveal d1">
+        <div class="svc-big-card-img">
+          <img src="images/svc-fixture-repair.jpg" alt="Fixture repair and replacement" loading="lazy">
+        </div>
+        <div class="svc-big-card-body">
+          <div class="svc-big-card-icon"><svg viewBox="0 0 24 24"><path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-6a4 4 0 100-8 4 4 0 000 8z" stroke="#1A6B47" stroke-width="2" fill="none"/></svg></div>
+          <h3>Fixture Repair &amp; Replacement</h3>
+          <p>Expert repair and replacement of all sanitary fixtures — taps, showers, WCs, sinks and bathroom fittings. We restore full functionality with quality parts and lasting workmanship.</p>
+          <a href="contact.html?service=fixture-repair" class="svc-request">Request Service <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></a>
+        </div>
+      </div>
+      <!-- 6 Sewer Repair -->
+      <div class="svc-big-card reveal d2">
+        <div class="svc-big-card-img">
+          <img src="images/svc-sewer-repair.jpg" alt="Sewer repair and replacement" loading="lazy">
+        </div>
+        <div class="svc-big-card-body">
+          <div class="svc-big-card-icon"><svg viewBox="0 0 24 24"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18" stroke="#1A6B47" stroke-width="2" fill="none" stroke-linecap="round"/></svg></div>
+          <h3>Sewer Repair &amp; Replacement</h3>
+          <p>Full sewer line repair and replacement — from minor blockage clearing to complete sewer rehabilitation. We use proven methods to restore sewer integrity for residential and commercial properties.</p>
+          <a href="contact.html?service=sewer-repair" class="svc-request">Request Service <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></a>
+        </div>
+      </div>
+      <div class="svc-big-card reveal">
+        <div class="svc-big-card-img">
+          <img src="images/svc-water-heater.jpg" alt="Water heater repair and replacement" loading="lazy">
+        </div>
+        <div class="svc-big-card-body">
+          <div class="svc-big-card-icon"><svg viewBox="0 0 24 24"><path d="M12 3v1m0 16v1M4.22 4.22l.7.7m14.14 14.14.7.7M1 12h1m20 0h1M4.22 19.78l.7-.7M18.36 5.64l.7-.7" stroke="#1A6B47" stroke-width="2" stroke-linecap="round" fill="none"/><circle cx="12" cy="12" r="4" stroke="#1A6B47" stroke-width="2" fill="none"/></svg></div>
+          <h3>Water Heater Repair &amp; Replacement</h3>
+          <p>Installation, repair and replacement of electric geysers, gas water heaters and solar water heating systems. Energy-efficient solutions for homes, hotels and commercial buildings.</p>
+          <a href="contact.html?service=water-heater" class="svc-request">Request Service <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONSTRUCTION -->
+    <div class="svc-section-header construction reveal">
+      <div class="svc-section-icon"><svg viewBox="0 0 24 24"><path d="M3 21h18M9 8h1m5 0h1M9 12h1m5 0h1M5 21V5a2 2 0 012-2h10a2 2 0 012 2v16" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round"/></svg></div>
+      <div>
+        <div class="svc-section-title">Construction &amp; Civil Engineering Division</div>
+        <div class="svc-section-count">5 specialist services · Residential, Commercial &amp; Civil Infrastructure</div>
+      </div>
+    </div>
+
+    <div class="svc-big-grid">
+      <div class="svc-big-card reveal">
+        <div class="svc-big-card-img">
+          <img src="images/enhanced/Picture40.jpg" alt="Building construction works" loading="lazy">
+        </div>
+        <div class="svc-big-card-body">
+          <div class="svc-big-card-icon"><svg viewBox="0 0 24 24"><path d="M3 21h18M9 8h1m5 0h1M9 12h1m5 0h1M5 21V5a2 2 0 012-2h10a2 2 0 012 2v16" stroke="#1A6B47" stroke-width="2" fill="none" stroke-linecap="round"/></svg></div>
+          <h3>Building Construction</h3>
+          <p>Full-scale residential, commercial and institutional building construction — from foundation excavation through to complete structural and finishing works. We handle single homes, housing estates, offices and churches.</p>
+          <a href="contact.html?service=building-construction" class="svc-request">Request Service <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></a>
+        </div>
+      </div>
+      <div class="svc-big-card reveal d1">
+        <div class="svc-big-card-img">
+          <img src="images/svc-civil-engineering.jpg" alt="Civil engineering works" loading="lazy">
+        </div>
+        <div class="svc-big-card-body">
+          <div class="svc-big-card-icon"><svg viewBox="0 0 24 24"><path d="M2 20h20M4 20V10l8-8 8 8v10M10 20v-5h4v5" stroke="#1A6B47" stroke-width="2" fill="none" stroke-linecap="round"/></svg></div>
+          <h3>Civil Engineering Works</h3>
+          <p>Roads, storm drains, culverts, retaining walls, earthworks and site formation. We execute civil works for residential estates, commercial developments and institutional campuses across Greater Accra.</p>
+          <a href="contact.html?service=civil-engineering" class="svc-request">Request Service <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></a>
+        </div>
+      </div>
+      <div class="svc-big-card reveal d2">
+        <div class="svc-big-card-img">
+          <img src="images/svc-tiling-finishing.jpg" alt="Tiling and finishing works" loading="lazy">
+        </div>
+        <div class="svc-big-card-body">
+          <div class="svc-big-card-icon"><svg viewBox="0 0 24 24"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1zM4 22v-7" stroke="#1A6B47" stroke-width="2" fill="none" stroke-linecap="round"/></svg></div>
+          <h3>Tiling &amp; Finishing Works</h3>
+          <p>Professional floor and wall tiling, screeding, plastering, stone cladding and architectural finishing for residential interiors and commercial exteriors. Large-scale estate tiling is our speciality.</p>
+          <a href="contact.html?service=tiling-finishing" class="svc-request">Request Service <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></a>
+        </div>
+      </div>
+      <div class="svc-big-card reveal d3">
+        <div class="svc-big-card-img">
+          <img src="images/svc-blocks-cement.jpg" alt="Blocks and cement supply" loading="lazy">
+        </div>
+        <div class="svc-big-card-body">
+          <div class="svc-big-card-icon"><svg viewBox="0 0 24 24"><path d="M20 7H4a2 2 0 00-2 2v6a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2z" stroke="#1A6B47" stroke-width="2" fill="none"/></svg></div>
+          <h3>Blocks &amp; Cement Supply</h3>
+          <p>Supply of quality sandcrete blocks and cement directly to your construction site. Bulk orders with delivery across Accra and Greater Accra — competitive rates for contractors and developers.</p>
+          <a href="contact.html?service=blocks-cement" class="svc-request">Request Service <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></a>
+        </div>
+      </div>
+      <div class="svc-big-card reveal d4">
+        <div class="svc-big-card-img">
+          <img src="images/svc-bridges-roads.jpg" alt="Bridges, drains and roads construction" loading="lazy">
+        </div>
+        <div class="svc-big-card-body">
+          <div class="svc-big-card-icon"><svg viewBox="0 0 24 24"><path d="M3 17h18M3 17V9h4v8M17 17V9h4v8M10 17V7h4v10" stroke="#1A6B47" stroke-width="2" fill="none" stroke-linecap="round"/></svg></div>
+          <h3>Bridges, Drains &amp; Roads</h3>
+          <p>Construction and renovation of bridges, storm drains and road infrastructure. We undertake new civil projects and rehabilitate existing structures to current engineering standards across Ghana.</p>
+          <a href="contact.html?service=bridges-roads" class="svc-request">Request Service <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- OUR PROCESS -->
+    <div class="process-strip reveal">
+      <h2>How We Work</h2>
+      <p style="color:rgba(255,255,255,.75);max-width:60ch">From first contact to final handover — our structured process ensures every project is delivered to spec, on time and within budget.</p>
+      <div class="process-steps">
+        <div class="process-step"><div class="step-circle">1</div><h4>Consultation</h4><p>We listen to your requirements, assess your site and understand your budget.</p></div>
+        <div class="process-step"><div class="step-circle">2</div><h4>Proposal</h4><p>We submit a detailed, itemised quote with a realistic project timeline.</p></div>
+        <div class="process-step"><div class="step-circle">3</div><h4>Mobilisation</h4><p>We procure materials, assign our best team and prepare the site.</p></div>
+        <div class="process-step"><div class="step-circle">4</div><h4>Execution</h4><p>We build with precision, conducting quality checks at every stage.</p></div>
+        <div class="process-step"><div class="step-circle">5</div><h4>Handover</h4><p>We complete snagging, final inspections and hand over to your satisfaction.</p></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="background:var(--green-pale);padding:4rem 0">
+  <div class="container" style="text-align:center">
+    <div class="reveal">
+      <div class="tag">Get Started</div>
+      <h2 style="margin:.75rem 0">Ready to Request a Service?</h2>
+      <p style="margin:0 auto 2rem;max-width:52ch">Tell us about your project and we'll get back to you within 24 hours with a tailored proposal.</p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+        <a href="contact.html" class="btn btn-primary">Request a Free Quote <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></a>
+        <a href="tel:0208827865" class="btn btn-outline">Call 0208 827 865</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-accent-bar"></div>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo" style="margin-bottom:1.25rem"><img src="images/enhanced/Logo.png" alt="NEL Logo" class="nav-logo-img"><div class="nav-logo-text"><span class="nav-logo-name">NOBSED ENGINEERING LTD.</span><span class="nav-logo-sub">Dealers &amp; Experts in Engineering</span></div></a>
+        <p>Ghana's trusted partner in construction, civil engineering, plumbing and mechanical works. Building excellence since 2009.</p>
+        <div class="footer-social">
+          <a href="#" class="social-btn" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+          <a href="#" class="social-btn" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" fill="none" stroke="rgba(255,255,255,.7)" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="rgba(255,255,255,.7)" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1" fill="rgba(255,255,255,.7)"/></svg></a>
+          <a href="https://wa.me/233552106695" class="social-btn" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347M12 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654A11.882 11.882 0 0012.05 24h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.468 3.48 11.815 11.815 0 0012.05 0"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col"><h5>Quick Links</h5><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="services.html">Our Services</a></li><li><a href="portfolio.html">Projects</a></li><li><a href="contact.html">Contact Us</a></li></ul></div>
+      <div class="footer-col"><h5>Services</h5><ul><li><a href="services.html">Water Supply</a></li><li><a href="services.html">Drainage Systems</a></li><li><a href="services.html">Building Construction</a></li><li><a href="services.html">Civil Engineering</a></li><li><a href="services.html">Tiling &amp; Finishing</a></li><li><a href="services.html">Blocks &amp; Cement</a></li></ul></div>
+      <div class="footer-col">
+        <h5>Contact Us</h5>
+        <div class="footer-contact-item"><svg viewBox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke="#D4A017" stroke-width="2" fill="none"/><circle cx="12" cy="11" r="3" stroke="#D4A017" stroke-width="2" fill="none"/></svg><span>Agbogba Ablorh Agyei, Accra, Ghana</span></div>
+        <div class="footer-contact-item"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.09 9.82 19.79 19.79 0 01.01 1.19 2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14v2.92z" stroke="#D4A017" stroke-width="2" fill="none"/></svg><span><a href="tel:0208827865">0208827865</a> / <a href="tel:0276486515">0276486515</a></span></div>
+        <div class="footer-contact-item"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="#D4A017" stroke-width="2" fill="none"/><path d="M22 6l-10 7L2 6" stroke="#D4A017" stroke-width="2" fill="none"/></svg><a href="mailto:nobsedengineering@gmail.com">nobsedengineering@gmail.com</a></div>
+      </div>
+    </div>
+    <div class="footer-bottom"><p>&copy; 2026 NOBSED Engineering Limited. All rights reserved.</p><div class="footer-bottom-links"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a><a href="contact.html">Get a Quote</a><span style="color:rgba(255,255,255,.2);margin:0 .25rem">|</span><span style="color:rgba(255,255,255,.25);font-size:.72rem">Built by <a href="#" style="color:rgba(255,255,255,.35);text-decoration:underline">Forge Technologies</a></span></div></div>
+  </div>
+</footer>
+<a href="https://wa.me/233552106695" target="_blank" rel="noopener" class="wa-float" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347M12 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654A11.882 11.882 0 0012.05 24h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.468 3.48 11.815 11.815 0 0012.05 0"/></svg></a>
+
+<script>
+const nb=document.getElementById('navbar'); window.addEventListener('scroll',()=>nb.classList.toggle('scrolled',scrollY>60));
+document.getElementById('hamburger').addEventListener('click',()=>document.getElementById('mobileNav').classList.add('open'));
+document.getElementById('mobileClose').addEventListener('click',()=>document.getElementById('mobileNav').classList.remove('open'));
+const ro=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('visible');ro.unobserve(x.target);}}),{threshold:.08});
+document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
+</script>
+</body>
+</html>

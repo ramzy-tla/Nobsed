@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Contact Us — NOBSED Engineering Limited | Get a Free Quote in Accra</title>
+<meta name="description" content="Contact NOBSED Engineering Limited in Agbogba, Accra. Call, WhatsApp or fill our form to get a free quote for your plumbing, construction or civil engineering project.">
+<link rel="icon" type="image/png" href="images/enhanced/Logo.png">
+<link rel="stylesheet" href="style.css">
+<style>
+/* ── CONTACT PAGE ── */
+.contact-layout { display:grid; grid-template-columns:1fr 1.5fr; gap:3.5rem; }
+
+/* Info side */
+.contact-info-card { background:var(--green); border-radius:var(--radius-xl); padding:2.5rem; color:#fff; }
+.contact-info-card h3 { color:#fff; font-size:1.35rem; margin-bottom:.5rem; }
+.contact-info-card > p { color:rgba(255,255,255,.75); font-size:.9rem; margin-bottom:2rem; max-width:none; }
+
+.ci-item { display:flex; align-items:flex-start; gap:1rem; padding:1.1rem; background:rgba(255,255,255,.08); border-radius:var(--radius); margin-bottom:.85rem; transition:var(--t); }
+.ci-item:hover { background:rgba(255,255,255,.15); }
+.ci-icon { width:42px; height:42px; background:var(--gold); border-radius:var(--radius); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.ci-icon svg { width:20px; height:20px; fill:#fff; }
+.ci-label { font-family:'Poppins',sans-serif; font-size:.72rem; font-weight:700; color:rgba(255,255,255,.6); letter-spacing:.06em; text-transform:uppercase; margin-bottom:.2rem; }
+.ci-value { font-size:.9rem; font-weight:500; color:#fff; }
+.ci-value a { color:#fff; transition:var(--t); }
+.ci-value a:hover { color:var(--gold); }
+
+.quick-btns { display:flex; flex-direction:column; gap:.75rem; margin-top:1.75rem; }
+.qb { display:flex; align-items:center; gap:.85rem; padding:1rem 1.25rem; border-radius:var(--radius); font-family:'Poppins',sans-serif; font-size:.9rem; font-weight:700; transition:var(--t); cursor:pointer; text-decoration:none; }
+.qb svg { width:22px; height:22px; flex-shrink:0; }
+.qb.call { background:#fff; color:var(--green); }
+.qb.call:hover { background:var(--green-light); transform:translateX(4px); }
+.qb.whatsapp { background:#25d366; color:#fff; }
+.qb.whatsapp:hover { background:#1da851; transform:translateX(4px); }
+.qb.email { background:rgba(255,255,255,.12); color:#fff; border:1px solid rgba(255,255,255,.2); }
+.qb.email:hover { background:rgba(255,255,255,.2); transform:translateX(4px); }
+.qb.call svg { fill:var(--green); }
+.qb.whatsapp svg, .qb.email svg { fill:#fff; }
+
+.contact-hours { margin-top:1.75rem; padding:1.25rem; background:rgba(255,255,255,.07); border-radius:var(--radius); border-left:3px solid var(--gold); }
+.contact-hours h5 { font-family:'Poppins',sans-serif; font-size:.82rem; font-weight:700; color:var(--gold); margin-bottom:.75rem; letter-spacing:.04em; }
+.hours-row { display:flex; justify-content:space-between; font-size:.82rem; color:rgba(255,255,255,.7); padding:.3rem 0; border-bottom:1px solid rgba(255,255,255,.07); }
+.hours-row:last-child { border-bottom:none; }
+.hours-row strong { color:rgba(255,255,255,.9); }
+
+/* Map placeholder */
+.map-box { width:100%; height:200px; background:linear-gradient(135deg,var(--green-light),#b8dfc8); border-radius:var(--radius-lg); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:.65rem; margin-top:1.75rem; cursor:pointer; transition:var(--t); border:1px solid rgba(26,107,71,.15); text-decoration:none; }
+.map-box:hover { box-shadow:var(--shadow); transform:translateY(-2px); }
+.map-box svg { width:32px; height:32px; fill:var(--green); }
+.map-box span { font-family:'Poppins',sans-serif; font-size:.88rem; font-weight:700; color:var(--green); }
+.map-box small { font-size:.75rem; color:var(--muted); }
+
+/* Form side */
+.contact-form-wrap { background:#fff; border:1px solid var(--border); border-radius:var(--radius-xl); padding:2.5rem; box-shadow:var(--shadow-lg); }
+.contact-form-wrap h3 { font-size:1.35rem; margin-bottom:.4rem; }
+.contact-form-wrap > p { font-size:.88rem; color:var(--muted); margin-bottom:2rem; max-width:none; }
+.form-row-2 { display:grid; grid-template-columns:1fr 1fr; gap:1.25rem; }
+.form-submit-btn { width:100%; padding:1.1rem; background:var(--green); color:#fff; border:none; border-radius:var(--radius); font-family:'Poppins',sans-serif; font-size:1rem; font-weight:700; cursor:pointer; transition:var(--t); display:flex; align-items:center; justify-content:center; gap:.65rem; margin-top:.25rem; }
+.form-submit-btn:hover { background:var(--green-dark); transform:translateY(-2px); box-shadow:0 8px 24px rgba(26,107,71,.35); }
+.form-submit-btn svg { width:20px; height:20px; fill:#fff; }
+.form-success-msg { display:none; background:var(--green-light); border:1.5px solid var(--green); border-radius:var(--radius); padding:1.25rem; text-align:center; font-family:'Poppins',sans-serif; font-weight:600; color:var(--green); margin-top:1rem; font-size:.9rem; }
+.form-note { font-size:.78rem; color:var(--muted); text-align:center; margin-top:.85rem; }
+
+/* FAQ */
+.faq-list { display:flex; flex-direction:column; gap:.75rem; }
+.faq-item { background:#fff; border:1px solid var(--border); border-radius:var(--radius); overflow:hidden; }
+.faq-q { display:flex; align-items:center; justify-content:space-between; padding:1.15rem 1.5rem; cursor:pointer; font-family:'Poppins',sans-serif; font-size:.92rem; font-weight:600; transition:var(--t); }
+.faq-q:hover { color:var(--green); }
+.faq-q svg { width:18px; height:18px; fill:var(--muted); transition:transform .3s ease; flex-shrink:0; }
+.faq-item.open .faq-q svg { transform:rotate(180deg); fill:var(--green); }
+.faq-item.open .faq-q { color:var(--green); }
+.faq-a { max-height:0; overflow:hidden; transition:max-height .35s ease; }
+.faq-a p { padding:0 1.5rem 1.25rem; font-size:.86rem; max-width:none; }
+
+@media(max-width:900px){ .contact-layout{ grid-template-columns:1fr; } .form-row-2{ grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="images/enhanced/Logo.png" alt="NOBSED Engineering Logo" class="nav-logo-img">
+      <div class="nav-logo-text">
+        <span class="nav-logo-name">NOBSED ENGINEERING LTD.</span>
+        <span class="nav-logo-sub">Dealers &amp; Experts in Engineering</span>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="services.html" class="nav-link">Services</a>
+      <a href="portfolio.html" class="nav-link">Projects</a>
+      <a href="contact.html" class="nav-link active">Contact</a>
+    </div>
+    <a href="contact.html" class="nav-cta">Get a Quote</a>
+    <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+<div class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav-logo"><img src="images/enhanced/Logo.png" alt="NEL Logo"><span>NOBSED Engineering</span></div>
+  <span class="mobile-nav-close" id="mobileClose">&times;</span>
+  <a href="index.html">Home</a><a href="about.html">About Us</a><a href="services.html">Services</a><a href="portfolio.html">Projects</a><a href="contact.html">Contact</a>
+  <a href="contact.html" class="btn btn-gold" style="margin-top:1rem">Get a Free Quote</a>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-bg" style="background-image:url('images/enhanced/Picture20.jpg')"></div>
+  <div class="page-hero-overlay"></div>
+  <div class="container page-hero-content">
+    <div class="tag">Get In Touch</div>
+    <h1>Let's Build Something Great Together</h1>
+    <p>Ready to start your project? We respond to all enquiries within 24 hours — call, WhatsApp or send us a message below.</p>
+    <div class="breadcrumb"><a href="index.html">Home</a><span class="breadcrumb-sep">›</span><span class="current">Contact Us</span></div>
+  </div>
+</div>
+
+<!-- MAIN CONTACT -->
+<section class="section">
+  <div class="container">
+    <div class="contact-layout">
+
+      <!-- LEFT: Info -->
+      <div class="reveal left">
+        <div class="contact-info-card">
+          <h3>Contact Information</h3>
+          <p>Reach us through any of the channels below. Our team is available Monday–Saturday, 7am–6pm.</p>
+
+          <div class="ci-item">
+            <div class="ci-icon"><svg viewBox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke="#fff" stroke-width="2" fill="none"/><circle cx="12" cy="11" r="3" stroke="#fff" stroke-width="2" fill="none"/></svg></div>
+            <div>
+              <div class="ci-label">Office Address</div>
+              <div class="ci-value">Agbogba Ablorh Agyei, Accra, Ghana</div>
+            </div>
+          </div>
+          <div class="ci-item">
+            <div class="ci-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.09 9.82 19.79 19.79 0 01.01 1.19 2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14v2.92z" stroke="#fff" stroke-width="2" fill="none"/></svg></div>
+            <div>
+              <div class="ci-label">Phone Numbers</div>
+              <div class="ci-value"><a href="tel:0208827865">0208 827 865</a> / <a href="tel:0276486515">0276 486 515</a></div>
+            </div>
+          </div>
+          <div class="ci-item">
+            <div class="ci-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="#fff" stroke-width="2" fill="none"/><path d="M22 6l-10 7L2 6" stroke="#fff" stroke-width="2" fill="none"/></svg></div>
+            <div>
+              <div class="ci-label">Email</div>
+              <div class="ci-value"><a href="mailto:nobsedengineering@gmail.com">nobsedengineering@gmail.com</a></div>
+            </div>
+          </div>
+          <div class="ci-item">
+            <div class="ci-icon"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347M12 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654A11.882 11.882 0 0012.05 24h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.468 3.48 11.815 11.815 0 0012.05 0" fill="#fff"/></svg></div>
+            <div>
+              <div class="ci-label">WhatsApp</div>
+              <div class="ci-value"><a href="https://wa.me/233552106695">0552 106 695</a></div>
+            </div>
+          </div>
+
+          <div class="quick-btns">
+            <a href="tel:0208827865" class="qb call">
+              <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.09 9.82 19.79 19.79 0 01.01 1.19 2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14v2.92z" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+              Call Now — 0208 827 865
+            </a>
+            <a href="https://wa.me/233552106695" target="_blank" rel="noopener" class="qb whatsapp">
+              <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347M12 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654A11.882 11.882 0 0012.05 24h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.468 3.48 11.815 11.815 0 0012.05 0"/></svg>
+              WhatsApp — 0552 106 695
+            </a>
+            <a href="mailto:nobsedengineering@gmail.com" class="qb email">
+              <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="#fff" stroke-width="2" fill="none"/><path d="M22 6l-10 7L2 6" stroke="#fff" stroke-width="2" fill="none"/></svg>
+              Send an Email
+            </a>
+          </div>
+
+          <div class="contact-hours">
+            <h5>Working Hours</h5>
+            <div class="hours-row"><strong>Monday – Friday</strong><span>7:00 AM – 6:00 PM</span></div>
+            <div class="hours-row"><strong>Saturday</strong><span>8:00 AM – 4:00 PM</span></div>
+            <div class="hours-row"><strong>Sunday</strong><span>Emergency calls only</span></div>
+          </div>
+
+          <a href="https://maps.google.com/?q=Agbogba+Accra+Ghana" target="_blank" rel="noopener" class="map-box">
+            <svg viewBox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke="#1A6B47" stroke-width="2" fill="none"/><circle cx="12" cy="11" r="3" stroke="#1A6B47" stroke-width="2" fill="none"/></svg>
+            <span>View on Google Maps</span>
+            <small>Agbogba Ablorh Agyei, Accra</small>
+          </a>
+        </div>
+      </div>
+
+      <!-- RIGHT: Form -->
+      <div class="contact-form-wrap reveal right">
+        <h3 id="formHeading">Send Us a Message</h3>
+        <p id="formSubtitle">Fill in the form below and we'll prepare a tailored quote or get back to you with expert advice within 24 hours.</p>
+
+        <!-- Service context banner — shown when arriving from a service card -->
+        <div id="serviceBanner" style="display:none;background:var(--navy-pale);border-left:4px solid var(--gold);border-radius:var(--radius);padding:.9rem 1.1rem;margin-bottom:1.5rem;font-size:.85rem;color:var(--navy);">
+          <strong id="serviceBannerName"></strong> — we've pre-filled a message template for you. Edit it to match your specific situation before sending.
+        </div>
+
+        <form id="contactForm" action="https://api.web3forms.com/submit" method="POST" novalidate>
+          <!-- Web3Forms access key — replace with your key from web3forms.com -->
+          <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY">
+          <input type="hidden" name="subject" id="emailSubject" value="New Enquiry — NOBSED Engineering Ltd">
+          <input type="hidden" name="from_name" value="NOBSED Engineering Website">
+          <input type="hidden" name="redirect" value="false">
+          <input type="checkbox" name="botcheck" style="display:none">
+
+          <div class="form-row-2">
+            <div class="form-group"><label for="fname">First Name *</label><input type="text" id="fname" name="First Name" placeholder="e.g. Kwame" required></div>
+            <div class="form-group"><label for="lname">Last Name *</label><input type="text" id="lname" name="Last Name" placeholder="e.g. Mensah" required></div>
+          </div>
+          <div class="form-row-2">
+            <div class="form-group"><label for="email">Email Address *</label><input type="email" id="email" name="Email" placeholder="you@example.com" required></div>
+            <div class="form-group"><label for="phone">Phone Number *</label><input type="tel" id="phone" name="Phone" placeholder="0XX XXX XXXX" required></div>
+          </div>
+          <div class="form-row-2">
+            <div class="form-group">
+              <label for="service">Service Required *</label>
+              <select id="service" name="Service" required>
+                <option value="" disabled selected>Select a service…</option>
+                <optgroup label="— Plumbing Services —">
+                  <option value="Residential Plumbing">Residential Plumbing</option>
+                  <option value="Drainage &amp; Sewage Systems">Drainage &amp; Sewage Systems</option>
+                  <option value="Pipe Installation &amp; Repair">Pipe Installation &amp; Repair</option>
+                  <option value="Re-piping &amp; Drain Cleaning">Re-piping &amp; Drain Cleaning</option>
+                  <option value="Fixture Repair &amp; Replacement">Fixture Repair &amp; Replacement</option>
+                  <option value="Sewer Repair &amp; Replacement">Sewer Repair &amp; Replacement</option>
+                  <option value="Water Heater Repair &amp; Replacement">Water Heater Repair &amp; Replacement</option>
+                </optgroup>
+                <optgroup label="— Construction &amp; Civil —">
+                  <option value="Building Construction">Building Construction</option>
+                  <option value="Civil Engineering Works">Civil Engineering Works</option>
+                  <option value="Tiling &amp; Finishing Works">Tiling &amp; Finishing Works</option>
+                  <option value="Blocks &amp; Cement Supply">Blocks &amp; Cement Supply</option>
+                  <option value="Bridges, Drains &amp; Roads">Bridges, Drains &amp; Roads</option>
+                </optgroup>
+                <option value="General Enquiry">General Enquiry</option>
+                <option value="Request a Site Visit">Request a Site Visit</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="budget">Approximate Budget</label>
+              <select id="budget" name="Budget">
+                <option value="" disabled selected>Select range…</option>
+                <option>Below GH₵ 10,000</option>
+                <option>GH₵ 10,000 – 50,000</option>
+                <option>GH₵ 50,000 – 150,000</option>
+                <option>GH₵ 150,000 – 500,000</option>
+                <option>Above GH₵ 500,000</option>
+                <option>Prefer not to say</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="location">Project Location</label>
+            <input type="text" id="location" name="Location" placeholder="e.g. East Legon, Accra">
+          </div>
+          <div class="form-group">
+            <label for="message">Project Details *</label>
+            <textarea id="message" name="Message" placeholder="Describe your project — what you need, the scale, any specific requirements, your preferred start date…" required></textarea>
+          </div>
+          <button type="submit" class="form-submit-btn" id="submitBtn">
+            <svg viewBox="0 0 24 24"><path d="M22 2L11 13M22 2L15 22l-4-9-9-4 20-7z" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Send Message — We'll Reply Within 24hrs
+          </button>
+          <div class="form-success-msg" id="formSuccess">
+            ✓ Thank you! Your message has been received. Expect a reply from our team within 24 hours.
+          </div>
+          <p class="form-note">Your information is confidential and will never be shared with third parties.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="sh center reveal" style="margin-bottom:2.5rem">
+      <div class="tag">FAQs</div>
+      <h2>Frequently Asked Questions</h2>
+      <div class="divider" style="margin:0 auto 1rem"></div>
+      <p>Answers to the questions we get asked most often. Still unsure? Call or WhatsApp us directly.</p>
+    </div>
+    <div style="max-width:760px;margin:0 auto">
+      <div class="faq-list reveal">
+        <div class="faq-item">
+          <div class="faq-q">How quickly can NOBSED Engineering start my project? <svg viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+          <div class="faq-a"><p>For most projects we can mobilise within 1–2 weeks of signing a contract and receiving a deposit. Emergency plumbing works can often be attended to within 24–48 hours depending on our current schedule. Contact us today to check availability.</p></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Do you provide a written quotation before starting? <svg viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+          <div class="faq-a"><p>Absolutely. Every project begins with a free site assessment and a detailed, itemised written quotation. No work begins without your written approval of the quote. There are no hidden costs — what we quote is what you pay.</p></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">What areas do you serve in Ghana? <svg viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+          <div class="faq-a"><p>We are based in Agbogba, Accra and primarily serve Greater Accra including East Legon, Tema, Kasoa, Adenta, Madina, Spintex, Airport Hills and surrounding areas. For large-scale projects we can mobilise nationwide. Contact us to discuss your specific location.</p></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Do you handle both residential and commercial projects? <svg viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+          <div class="faq-a"><p>Yes. We work across all project types — from individual home plumbing repairs to multi-storey commercial buildings, housing estates, institutional facilities (churches, schools, hospitals) and government infrastructure. Our portfolio spans all scales.</p></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">What payment terms do you offer? <svg viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+          <div class="faq-a"><p>Payment is structured in agreed milestone instalments — typically an initial deposit, a mid-project payment, and a final balance on satisfactory completion. We accept mobile money (MTN, Vodafone Cash, AirtelTigo Money) and bank transfers. Full payment terms are set out clearly in our contract.</p></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Is NOBSED Engineering registered and certified? <svg viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+          <div class="faq-a"><p>Yes. NOBSED Engineering Limited is a duly registered Ghanaian company. Our engineers hold professional licences and our operations comply with all applicable Ghana Standards Authority and construction industry regulations. We carry site insurance on all projects.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-accent-bar"></div>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo" style="margin-bottom:1.25rem"><img src="images/enhanced/Logo.png" alt="NEL Logo" class="nav-logo-img"><div class="nav-logo-text"><span class="nav-logo-name">NOBSED ENGINEERING LTD.</span><span class="nav-logo-sub">Dealers &amp; Experts in Engineering</span></div></a>
+        <p>Ghana's trusted partner in construction, civil engineering, plumbing and mechanical works. Building excellence since 2009.</p>
+        <div class="footer-social">
+          <a href="#" class="social-btn" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+          <a href="#" class="social-btn" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" fill="none" stroke="rgba(255,255,255,.7)" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="rgba(255,255,255,.7)" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1" fill="rgba(255,255,255,.7)"/></svg></a>
+          <a href="https://wa.me/233552106695" class="social-btn" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347M12 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654A11.882 11.882 0 0012.05 24h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.468 3.48 11.815 11.815 0 0012.05 0"/></svg></a>
+          <a href="tel:0208827865" class="social-btn" aria-label="Phone"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.09 9.82 19.79 19.79 0 01.01 1.19 2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14v2.92z" fill="none" stroke="rgba(255,255,255,.7)" stroke-width="2"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col"><h5>Quick Links</h5><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="services.html">Our Services</a></li><li><a href="portfolio.html">Projects</a></li><li><a href="contact.html">Contact Us</a></li></ul></div>
+      <div class="footer-col"><h5>Services</h5><ul><li><a href="services.html">Water Supply</a></li><li><a href="services.html">Drainage Systems</a></li><li><a href="services.html">Building Construction</a></li><li><a href="services.html">Civil Engineering</a></li><li><a href="services.html">Tiling &amp; Finishing</a></li><li><a href="services.html">Blocks &amp; Cement</a></li></ul></div>
+      <div class="footer-col">
+        <h5>Contact Us</h5>
+        <div class="footer-contact-item"><svg viewBox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke="#D4A017" stroke-width="2" fill="none"/><circle cx="12" cy="11" r="3" stroke="#D4A017" stroke-width="2" fill="none"/></svg><span>Agbogba Ablorh Agyei, Accra, Ghana</span></div>
+        <div class="footer-contact-item"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.09 9.82 19.79 19.79 0 01.01 1.19 2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14v2.92z" stroke="#D4A017" stroke-width="2" fill="none"/></svg><span><a href="tel:0208827865">0208827865</a> / <a href="tel:0276486515">0276486515</a></span></div>
+        <div class="footer-contact-item"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="#D4A017" stroke-width="2" fill="none"/><path d="M22 6l-10 7L2 6" stroke="#D4A017" stroke-width="2" fill="none"/></svg><a href="mailto:nobsedengineering@gmail.com">nobsedengineering@gmail.com</a></div>
+      </div>
+    </div>
+    <div class="footer-bottom"><p>&copy; 2026 NOBSED Engineering Limited. All rights reserved.</p><div class="footer-bottom-links"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a><a href="contact.html">Get a Quote</a><span style="color:rgba(255,255,255,.2);margin:0 .25rem">|</span><span style="color:rgba(255,255,255,.25);font-size:.72rem">Built by <a href="#" style="color:rgba(255,255,255,.35);text-decoration:underline">Forge Technologies</a></span></div></div>
+  </div>
+</footer>
+<a href="https://wa.me/233552106695" target="_blank" rel="noopener" class="wa-float" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347M12 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654A11.882 11.882 0 0012.05 24h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.468 3.48 11.815 11.815 0 0012.05 0"/></svg></a>
+
+<script>
+const nb=document.getElementById('navbar'); window.addEventListener('scroll',()=>nb.classList.toggle('scrolled',scrollY>60));
+document.getElementById('hamburger').addEventListener('click',()=>document.getElementById('mobileNav').classList.add('open'));
+document.getElementById('mobileClose').addEventListener('click',()=>document.getElementById('mobileNav').classList.remove('open'));
+
+// FAQ accordion
+document.querySelectorAll('.faq-q').forEach(q=>{
+  q.addEventListener('click',()=>{
+    const item=q.closest('.faq-item');
+    const isOpen=item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i=>{i.classList.remove('open');i.querySelector('.faq-a').style.maxHeight='0';});
+    if(!isOpen){item.classList.add('open');item.querySelector('.faq-a').style.maxHeight=item.querySelector('.faq-a').scrollHeight+'px';}
+  });
+});
+
+// ── Smart service pre-fill ────────────────────────────────────────────────
+const SERVICE_TEMPLATES = {
+  'residential-plumbing': {
+    label: 'Residential Plumbing',
+    value: 'Residential Plumbing',
+    msg: `Hello NOBSED Engineering,
+
+I am interested in your Residential Plumbing service.
+
+Project type: [new installation / repair / replacement]
+Property: [house / apartment / estate]
+Location: [your area, e.g. East Legon, Accra]
+Number of bathrooms / scope: [describe]
+Preferred start date: [when]
+
+Please arrange a site assessment and provide a quotation at your convenience.
+
+Thank you.`
+  },
+  'drainage-sewage': {
+    label: 'Drainage & Sewage Systems',
+    value: 'Drainage & Sewage Systems',
+    msg: `Hello NOBSED Engineering,
+
+I require drainage and sewage system services for my project.
+
+Project type: [new installation / repair / upgrade]
+Property type: [residential / commercial estate]
+Location: [your area]
+Scope: [describe — e.g. full estate drainage, single property, existing problem]
+Preferred start date: [when]
+
+Please arrange a site visit and provide a detailed quotation.
+
+Thank you.`
+  },
+  'pipe-installation': {
+    label: 'Pipe Installation & Repair',
+    value: 'Pipe Installation & Repair',
+    msg: `Hello NOBSED Engineering,
+
+I need pipe installation or repair services.
+
+Work required: [new installation / repair / replacement]
+Pipe type: [HDPE / uPVC / galvanised iron]
+Purpose: [water supply / drainage / gas]
+Location: [your area]
+Scale: [describe size — e.g. single floor, whole building]
+
+Please contact me to discuss and provide a quote.
+
+Thank you.`
+  },
+  'repiping-drain': {
+    label: 'Re-piping & Drain Cleaning',
+    value: 'Re-piping & Drain Cleaning',
+    msg: `Hello NOBSED Engineering,
+
+I need re-piping and/or drain cleaning services.
+
+Issue: [blocked drains / low pressure / corroded/leaking pipes / complete re-pipe]
+Property: [house / apartment / commercial]
+Location: [your area]
+Urgency: [routine / urgent]
+Property age/size: [describe]
+
+Please arrange an inspection at your earliest convenience.
+
+Thank you.`
+  },
+  'fixture-repair': {
+    label: 'Fixture Repair & Replacement',
+    value: 'Fixture Repair & Replacement',
+    msg: `Hello NOBSED Engineering,
+
+I need fixture repair or replacement services.
+
+Fixtures affected: [taps / shower / WC / sink / bathroom fittings / other]
+Work needed: [repair / replace]
+Number of fixtures: [how many]
+Property: [home / office / commercial]
+Location: [your area]
+
+Please advise on availability and pricing.
+
+Thank you.`
+  },
+  'sewer-repair': {
+    label: 'Sewer Repair & Replacement',
+    value: 'Sewer Repair & Replacement',
+    msg: `Hello NOBSED Engineering,
+
+I have a sewer issue that requires urgent attention.
+
+Problem: [blockage / damaged line / collapse / bad odour / overflow]
+Property type: [residential / commercial]
+Location: [your area]
+Work scope: [repair / partial replacement / full sewer rehab]
+
+Please arrange an inspection as soon as possible.
+
+Thank you.`
+  },
+  'water-heater': {
+    label: 'Water Heater Repair & Replacement',
+    value: 'Water Heater Repair & Replacement',
+    msg: `Hello NOBSED Engineering,
+
+I need water heater services.
+
+Work required: [new installation / repair / replacement]
+Heater type: [electric geyser / gas / solar]
+Capacity: [litres, if known]
+Property: [home / hotel / commercial building]
+Location: [your area]
+
+Please contact me with options and pricing.
+
+Thank you.`
+  },
+  'building-construction': {
+    label: 'Building Construction',
+    value: 'Building Construction',
+    msg: `Hello NOBSED Engineering,
+
+I am interested in your Building Construction service.
+
+Project type: [new residential home / extension / commercial building / estate]
+Location: [your area]
+Approximate size: [sqm or number of floors / rooms]
+Stage: [new build / renovation / shell & core / full build]
+Timeline: [preferred start / completion date]
+Land status: [owned / in process]
+
+I would like an initial consultation and preliminary cost estimate.
+
+Thank you.`
+  },
+  'civil-engineering': {
+    label: 'Civil Engineering Works',
+    value: 'Civil Engineering Works',
+    msg: `Hello NOBSED Engineering,
+
+I need civil engineering works for my project.
+
+Works required: [roads / storm drains / culverts / retaining walls / earthworks / site formation]
+Location: [your area]
+Scale: [describe — length, area or brief scope]
+Client type: [private developer / government / community / institution]
+Timeline: [when works are needed]
+
+Please contact me to discuss requirements and provide a proposal.
+
+Thank you.`
+  },
+  'tiling-finishing': {
+    label: 'Tiling & Finishing Works',
+    value: 'Tiling & Finishing Works',
+    msg: `Hello NOBSED Engineering,
+
+I require tiling and finishing works.
+
+Scope: [floor tiling / wall tiling / plastering / screeding / stone cladding / full finishing]
+Area size: approximately [sqm]
+Property: [residential / commercial]
+Location: [your area]
+Timeline: [when works need to start]
+
+Please provide a quotation based on the above.
+
+Thank you.`
+  },
+  'blocks-cement': {
+    label: 'Blocks & Cement Supply',
+    value: 'Blocks & Cement Supply',
+    msg: `Hello NOBSED Engineering,
+
+I need blocks and/or cement supply for my construction project.
+
+Items needed: [sandcrete blocks / cement bags / both]
+Estimated quantity: [number of blocks / bags]
+Block size: [6-inch / 9-inch / other]
+Delivery location: [your area]
+Delivery timeline: [when needed]
+
+Please share your pricing and availability.
+
+Thank you.`
+  },
+  'bridges-roads': {
+    label: 'Bridges, Drains & Roads',
+    value: 'Bridges, Drains & Roads',
+    msg: `Hello NOBSED Engineering,
+
+I need civil infrastructure works.
+
+Project type: [bridge / storm drain / road construction / rehabilitation]
+Location: [your area]
+Client: [private / government / community / institution]
+Scope: [describe briefly — length, spans, scale]
+Timeline: [expected start / completion]
+
+Please contact me to discuss requirements and arrange an initial assessment.
+
+Thank you.`
+  }
+};
+
+(function initForm(){
+  const params = new URLSearchParams(window.location.search);
+  const slug   = params.get('service');
+  if(!slug || !SERVICE_TEMPLATES[slug]) return;
+
+  const tpl = SERVICE_TEMPLATES[slug];
+
+  // Pre-select service dropdown
+  const sel = document.getElementById('service');
+  for(let i=0; i<sel.options.length; i++){
+    if(sel.options[i].value === tpl.value){ sel.selectedIndex = i; break; }
+  }
+
+  // Inject message template
+  document.getElementById('message').value = tpl.msg;
+
+  // Update email subject hidden field
+  document.getElementById('emailSubject').value = 'Enquiry: ' + tpl.label + ' — NOBSED Engineering Ltd';
+
+  // Show banner
+  const banner = document.getElementById('serviceBanner');
+  document.getElementById('serviceBannerName').textContent = tpl.label;
+  banner.style.display = 'block';
+
+  // Scroll form into view
+  setTimeout(()=>document.getElementById('contactForm').scrollIntoView({behavior:'smooth',block:'start'}), 400);
+})();
+
+// ── Web3Forms submission ──────────────────────────────────────────────────
+document.getElementById('contactForm').addEventListener('submit', async function(e){
+  e.preventDefault();
+  const req = this.querySelectorAll('[required]'); let ok = true;
+  req.forEach(i=>{ if(!i.value.trim()){i.style.borderColor='#e53e3e';ok=false;}else{i.style.borderColor='';} });
+  if(!ok){ req[0].scrollIntoView({behavior:'smooth',block:'center'}); return; }
+
+  const btn = document.getElementById('submitBtn');
+  btn.innerHTML = '<svg viewBox="0 0 24 24" width="20" height="20" fill="none"><circle cx="12" cy="12" r="10" stroke="#fff" stroke-width="2" stroke-dasharray="31.4" stroke-dashoffset="10"><animateTransform attributeName="transform" type="rotate" from="0 12 12" to="360 12 12" dur="0.8s" repeatCount="indefinite"/></circle></svg> Sending…';
+  btn.disabled = true;
+
+  try {
+    const data = new FormData(this);
+    const res  = await fetch('https://api.web3forms.com/submit', { method:'POST', body:data });
+    const json = await res.json();
+
+    if(json.success){
+      this.reset();
+      document.getElementById('serviceBanner').style.display = 'none';
+      btn.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Message Sent!';
+      document.getElementById('formSuccess').style.display = 'block';
+      setTimeout(()=>{
+        btn.innerHTML = '<svg viewBox="0 0 24 24" width="20" height="20"><path d="M22 2L11 13M22 2L15 22l-4-9-9-4 20-7z" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg> Send Message — We\'ll Reply Within 24hrs';
+        btn.disabled = false;
+        document.getElementById('formSuccess').style.display = 'none';
+      }, 6000);
+    } else {
+      throw new Error(json.message || 'Submission failed');
+    }
+  } catch(err){
+    btn.innerHTML = 'Failed — Please Try Again';
+    btn.disabled = false;
+    btn.style.background = '#c53030';
+    setTimeout(()=>{ btn.style.background=''; btn.innerHTML='<svg viewBox="0 0 24 24" width="20" height="20"><path d="M22 2L11 13M22 2L15 22l-4-9-9-4 20-7z" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg> Send Message — We\'ll Reply Within 24hrs'; }, 4000);
+  }
+});
+
+const ro=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('visible');ro.unobserve(x.target);}}),{threshold:.08});
+document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
+</script>
+</body>
+</html>
