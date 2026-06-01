@@ -365,11 +365,41 @@ footer { background:var(--charcoal); color:rgba(255,255,255,.7); padding:4rem 0 
   .footer-top { grid-template-columns:1fr; gap:2rem; }
   .footer-bottom { flex-direction:column; text-align:center; }
   .stats-bar { grid-template-columns:1fr 1fr; }
+
+  /* Hide the in-hero stats on mobile — stats bar below handles it */
+  .hero-stats { display:none; }
+
+  /* Remove negative translateY that pulls stats bar into hero on mobile */
+  .stats-bar-wrap { transform:none !important; padding-top:1.5rem !important; }
+
+  /* Make sure grids stack properly instead of clipping */
+  .form-row-2,
+  .about-strip,
+  .contact-layout,
+  .pillars-row,
+  .projects-grid { grid-template-columns:1fr !important; }
+
+  /* Services section headers */
+  .svc-section-header { flex-direction:column; align-items:flex-start; gap:.75rem; }
+
+  /* Process steps scroll horizontally with visible scroll indicator instead of clipping */
+  .process-steps { overflow-x:auto; padding-bottom:1rem; scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch; }
+  .process-step  { scroll-snap-align:start; min-width:200px; }
 }
 @media(max-width:480px) {
   .stats-bar { grid-template-columns:1fr 1fr; }
   .stat-item { padding:1.25rem 1rem; }
   .stat-num { font-size:1.75rem; }
+
+  /* Service big grid and intro: single column */
+  .svc-big-grid { grid-template-columns:1fr !important; }
+  .svc-intro-grid { grid-template-columns:1fr !important; }
+
+  /* Client marquee cards narrower on small screens */
+  .client-logo-card { min-width:140px; padding:.75rem 1rem; }
+
+  /* Footer columns stack */
+  .footer-col h5 { margin-top:1.25rem; }
 }
 @media(prefers-reduced-motion:reduce) {
   .reveal, .wa-float { animation:none; transition:none; }
