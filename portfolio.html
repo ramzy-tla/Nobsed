@@ -26,7 +26,6 @@
 .done { color:#4ade80; }
 .ongoing { color:var(--gold); }
 .status-dot { width:6px; height:6px; border-radius:50%; background:currentColor; }
-
 .pf-item-label { position:absolute; top:1rem; left:1rem; background:var(--gold); color:#fff; font-family:'Poppins',sans-serif; font-size:.68rem; font-weight:700; letter-spacing:.06em; padding:.3rem .75rem; border-radius:100px; }
 
 /* Hidden items */
@@ -39,6 +38,23 @@
 
 @media(max-width:900px) { .portfolio-masonry { columns:2; } }
 @media(max-width:540px) { .portfolio-masonry { columns:1; } }
+
+/* ── Mobile: always show info strip at bottom, tap to expand full overlay ── */
+@media(hover:none) {
+  /* Persistent bottom strip — always visible */
+  .pf-item-overlay {
+    opacity:1;
+    background:linear-gradient(to top, rgba(10,40,25,.95) 0%, rgba(10,40,25,.6) 45%, transparent 100%);
+    /* Collapse to bottom strip by default */
+    padding-top:60%;
+  }
+  /* On tap (.tapped class added by JS) show full overlay */
+  .pf-item.tapped .pf-item-overlay {
+    background:linear-gradient(to top, rgba(10,40,25,.97) 0%, rgba(10,40,25,.75) 60%, rgba(10,40,25,.3) 100%);
+    padding-top:0;
+  }
+  .pf-item.tapped img { transform:scale(1.04); }
+}
 </style>
   <!-- Open Graph / Social Share -->
   <meta property="og:type" content="website">
@@ -391,6 +407,18 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
 
 const ro = new IntersectionObserver(e => e.forEach(x => { if(x.isIntersecting){x.target.classList.add('visible');ro.unobserve(x.target);} }), {threshold:.1});
 document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
+
+// Mobile tap-to-expand overlay (touch devices only)
+if (window.matchMedia('(hover: none)').matches) {
+  document.querySelectorAll('.pf-item').forEach(item => {
+    item.addEventListener('click', e => {
+      const already = item.classList.contains('tapped');
+      // Collapse all others
+      document.querySelectorAll('.pf-item.tapped').forEach(i => i.classList.remove('tapped'));
+      if (!already) item.classList.add('tapped');
+    });
+  });
+}
 </script>
 </body>
 </html>
