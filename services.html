@@ -9,9 +9,9 @@
 <link rel="stylesheet" href="style.css">
 <style>
 /* ── SERVICES PAGE ── */
-.svc-section-header { display:grid; grid-template-columns:auto 1fr; gap:1.5rem; align-items:center; margin-bottom:2rem; padding:1.5rem 2rem; border-radius:var(--radius-lg); }
-.svc-section-header.plumbing { background:linear-gradient(135deg,var(--navy) 0%,var(--blue) 100%); }
-.svc-section-header.construction { background:linear-gradient(135deg,var(--charcoal) 0%,var(--green) 100%); }
+.svc-section-header { display:grid; grid-template-columns:auto 1fr; gap:1.5rem; align-items:center; margin-bottom:2rem; padding:1.5rem 2rem; border-radius:var(--radius-lg); border-left:5px solid var(--gold); }
+.svc-section-header.plumbing { background:var(--navy); }
+.svc-section-header.construction { background:#1a1f2e; }
 .svc-section-icon { width:56px; height:56px; background:rgba(255,255,255,.15); border-radius:var(--radius); display:flex; align-items:center; justify-content:center; }
 .svc-section-icon svg { width:30px; height:30px; fill:#fff; }
 .svc-section-title { color:#fff; font-size:1.5rem; margin-bottom:.2rem; }
@@ -20,7 +20,7 @@
 .svc-big-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(290px,1fr)); gap:1.5rem; margin-bottom:4rem; }
 .svc-big-card { background:#fff; border:1px solid var(--border); border-radius:var(--radius-lg); overflow:hidden; transition:var(--t-slow); cursor:default; }
 .svc-big-card:hover { box-shadow:var(--shadow-lg); transform:translateY(-5px); border-color:var(--green); }
-.svc-big-card-img { height:180px; overflow:hidden; position:relative; }
+.svc-big-card-img { height:220px; overflow:hidden; position:relative; }
 .svc-big-card-img img { width:100%; height:100%; object-fit:cover; transition:transform .5s ease; }
 .svc-big-card:hover .svc-big-card-img img { transform:scale(1.06); }
 .svc-big-card-img-placeholder { width:100%; height:100%; display:flex; align-items:center; justify-content:center; }
@@ -95,7 +95,7 @@
 
 <!-- PAGE HERO -->
 <div class="page-hero">
-  <div class="page-hero-bg" style="background-image:url('images/enhanced/Picture25.jpg')"></div>
+  <div class="page-hero-bg" style="background-image:url('images/page-hero-services.jpg')"></div>
   <div class="page-hero-overlay"></div>
   <div class="container page-hero-content">
     <div class="tag">What We Offer</div>
@@ -249,7 +249,7 @@
     <div class="svc-big-grid">
       <div class="svc-big-card reveal">
         <div class="svc-big-card-img">
-          <img src="images/enhanced/Picture40.jpg" alt="Building construction works" loading="lazy">
+          <img src="images/svc-building-construction.jpg" alt="Building construction works" loading="lazy">
         </div>
         <div class="svc-big-card-body">
           <div class="svc-big-card-icon"><svg viewBox="0 0 24 24"><path d="M3 21h18M9 8h1m5 0h1M9 12h1m5 0h1M5 21V5a2 2 0 012-2h10a2 2 0 012 2v16" stroke="#1A6B47" stroke-width="2" fill="none" stroke-linecap="round"/></svg></div>
