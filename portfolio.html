@@ -39,18 +39,16 @@
 @media(max-width:900px) { .portfolio-masonry { columns:2; } }
 @media(max-width:540px) { .portfolio-masonry { columns:1; } }
 
-/* ── Mobile: always-visible dark strip at bottom, tap to expand ── */
-@media(hover:none) {
+/* Mobile & Tablet: overlay always visible (width <= 1024px has no hover) */
+@media(max-width:1024px) {
   .pf-item-overlay {
-    opacity:1;
-    background:linear-gradient(to top, rgba(0,0,0,.92) 0%, rgba(0,0,0,.5) 45%, transparent 100%);
-    padding-top:60%;
+    opacity:1 !important;
+    background:linear-gradient(to top, rgba(0,0,0,.88) 0%, rgba(0,0,0,.52) 42%, transparent 100%);
   }
   .pf-item.tapped .pf-item-overlay {
-    background:linear-gradient(to top, rgba(0,0,0,.95) 0%, rgba(0,0,0,.75) 55%, rgba(0,0,0,.2) 100%);
-    padding-top:0;
+    background:linear-gradient(to top, rgba(0,0,0,.95) 0%, rgba(0,0,0,.78) 60%, rgba(0,0,0,.15) 100%);
   }
-  .pf-item.tapped img { transform:scale(1.04); }
+  .pf-item.tapped img { transform:scale(1.03); }
 }
 </style>
   <!-- Open Graph / Social Share -->
@@ -334,6 +332,415 @@
 
     </div>
 
+
+      <div class="pf-item" data-cat="construction">
+        <img src="images/projects/n01.jpg" alt="Block Wall Construction Works" loading="lazy">
+        <div class="pf-item-overlay">
+          <div class="pf-item-cat">Construction</div>
+          <div class="pf-item-title">Block Wall Construction Works</div>
+          <div class="pf-item-status ongoing"><div class="status-dot"></div>Ongoing</div>
+        </div>
+      </div>
+      <div class="pf-item" data-cat="construction">
+        <img src="images/projects/n02.jpg" alt="Foundation Excavation & Setting Out" loading="lazy">
+        <div class="pf-item-overlay">
+          <div class="pf-item-cat">Construction</div>
+          <div class="pf-item-title">Foundation Excavation & Setting Out</div>
+          <div class="pf-item-status ongoing"><div class="status-dot"></div>Ongoing</div>
+        </div>
+      </div>
+      <div class="pf-item" data-cat="civil">
+        <img src="images/projects/n03.jpg" alt="Site Preparation — Civil Works" loading="lazy">
+        <div class="pf-item-overlay">
+          <div class="pf-item-cat">Civil Works</div>
+          <div class="pf-item-title">Site Preparation — Civil Works</div>
+          <div class="pf-item-status ongoing"><div class="status-dot"></div>Ongoing</div>
+        </div>
+      </div>
+      <div class="pf-item" data-cat="construction">
+        <img src="images/projects/n04.jpg" alt="Residential Building in Progress" loading="lazy">
+        <div class="pf-item-overlay">
+          <div class="pf-item-cat">Construction</div>
+          <div class="pf-item-title">Residential Building in Progress</div>
+          <div class="pf-item-status ongoing"><div class="status-dot"></div>Ongoing</div>
+        </div>
+      </div>
+      <div class="pf-item" data-cat="civil">
+        <img src="images/projects/n05.jpg" alt="Infrastructure Foundation Works" loading="lazy">
+        <div class="pf-item-overlay">
+          <div class="pf-item-cat">Civil Works</div>
+          <div class="pf-item-title">Infrastructure Foundation Works</div>
+          <div class="pf-item-status ongoing"><div class="status-dot"></div>Ongoing</div>
+        </div>
+      </div>
+      <div class="pf-item" data-cat="construction">
+        <img src="images/projects/n06.jpg" alt="Block Laying — Residential" loading="lazy">
+        <div class="pf-item-overlay">
+          <div class="pf-item-cat">Construction</div>
+          <div class="pf-item-title">Block Laying — Residential</div>
+          <div class="pf-item-status ongoing"><div class="status-dot"></div>Ongoing</div>
+        </div>
+      </div>
+      <div class="pf-item" data-cat="civil">
+        <img src="images/projects/n07.jpg" alt="Reinforced Concrete Column Works" loading="lazy">
+        <div class="pf-item-overlay">
+          <div class="pf-item-cat">Civil Works</div>
+          <div class="pf-item-title">Reinforced Concrete Column Works</div>
+          <div class="pf-item-status ongoing"><div class="status-dot"></div>Ongoing</div>
+        </div>
+      </div>
+      <div class="pf-item" data-cat="construction">
+        <img src="images/projects/n08.jpg" alt="Building Construction — Masonry Stage" loading="lazy">
+        <div class="pf-item-overlay">
+          <div class="pf-item-cat">Construction</div>
+          <div class="pf-item-title">Building Construction — Masonry Stage</div>
+          <div class="pf-item-status ongoing"><div class="status-dot"></div>Ongoing</div>
+        </div>
+      </div>
+      <div class="pf-item" data-cat="construction">
+        <img src="images/projects/n09.jpg" alt="Drainage Channel Construction" loading="lazy">
+        <div class="pf-item-overlay">
+          <div class="pf-item-cat">Construction</div>
+          <div class="pf-item-title">Drainage Channel Construction</div>
+          <div class="pf-item-status ongoing"><div class="status-dot"></div>Ongoing</div>
+        </div>
+      </div>
+      <div class="pf-item" data-cat="civil">
+        <img src="images/projects/n10.jpg" alt="Structural Frame in Progress" loading="lazy">
+        <div class="pf-item-overlay">
+          <div class="pf-item-cat">Civil Works</div>
+          <div class="pf-item-title">Structural Frame in Progress</div>
+          <div class="pf-item-status ongoing"><div class="status-dot"></div>Ongoing</div>
+        </div>
+      </div>
+      <div class="pf-item" data-cat="construction">
+        <img src="images/projects/n11.jpg" alt="Wall Construction — Block & Mortar" loading="lazy">
+        <div class="pf-item-overlay">
+          <div class="pf-item-cat">Construction</div>
+          <div class="pf-item-title">Wall Construction — Block & Mortar</div>
+          <div class="pf-item-status done"><div class="status-dot"></div>Completed</div>
+        </div>
+      </div>
+      <div class="pf-item" data-cat="construction">
+        <img src="images/projects/n12.jpg" alt="Foundation Slab Preparation" loading="lazy">
+        <div class="pf-item-overlay">
+          <div class="pf-item-cat">Construction</div>
+          <div class="pf-item-title">Foundation Slab Preparation</div>
+          <div class="pf-item-status ongoing"><div class="status-dot"></div>Ongoing</div>
+        </div>
+      </div>
+      <div class="pf-item" data-cat="civil">
+        <img src="images/projects/n13.jpg" alt="Civil Works — Steel Reinforcement" loading="lazy">
+        <div class="pf-item-overlay">
+          <div class="pf-item-cat">Civil Works</div>
+          <div class="pf-item-title">Civil Works — Steel Reinforcement</div>
+          <div class="pf-item-status ongoing"><div class="status-dot"></div>Ongoing</div>
+        </div>
+      </div>
+      <div class="pf-item" data-cat="construction">
+        <img src="images/projects/n14.jpg" alt="Housing Unit Block Works" loading="lazy">
+        <div class="pf-item-overlay">
+          <div class="pf-item-cat">Construction</div>
+          <div class="pf-item-title">Housing Unit Block Works</div>
+          <div class="pf-item-status done"><div class="status-dot"></div>Completed</div>
+        </div>
+      </div>
+      <div class="pf-item" data-cat="construction">
+        <img src="images/projects/n15.jpg" alt="Ground Floor Slab Casting" loading="lazy">
+        <div class="pf-item-overlay">
+          <div class="pf-item-cat">Construction</div>
+          <div class="pf-item-title">Ground Floor Slab Casting</div>
+          <div class="pf-item-status ongoing"><div class="status-dot"></div>Ongoing</div>
+        </div>
+      </div>
+      <div class="pf-item" data-cat="construction">
+        <img src="images/projects/n16.jpg" alt="Residential Construction — Early Stage" loading="lazy">
+        <div class="pf-item-overlay">
+          <div class="pf-item-cat">Construction</div>
+          <div class="pf-item-title">Residential Construction — Early Stage</div>
+          <div class="pf-item-status ongoing"><div class="status-dot"></div>Ongoing</div>
+        </div>
+      </div>
+      <div class="pf-item" data-cat="civil">
+        <img src="images/projects/n17.jpg" alt="Site Formation & Earthworks" loading="lazy">
+        <div class="pf-item-overlay">
+          <div class="pf-item-cat">Civil Works</div>
+          <div class="pf-item-title">Site Formation & Earthworks</div>
+          <div class="pf-item-status ongoing"><div class="status-dot"></div>Ongoing</div>
+        </div>
+      </div>
+      <div class="pf-item" data-cat="construction">
+        <img src="images/projects/n18.jpg" alt="Column & Beam Works" loading="lazy">
+        <div class="pf-item-overlay">
+          <div class="pf-item-cat">Construction</div>
+          <div class="pf-item-title">Column & Beam Works</div>
+          <div class="pf-item-status ongoing"><div class="status-dot"></div>Ongoing</div>
+        </div>
+      </div>
+      <div class="pf-item" data-cat="construction">
+        <img src="images/projects/n19.jpg" alt="Foundation Raft Construction" loading="lazy">
+        <div class="pf-item-overlay">
+          <div class="pf-item-cat">Construction</div>
+          <div class="pf-item-title">Foundation Raft Construction</div>
+          <div class="pf-item-status ongoing"><div class="status-dot"></div>Ongoing</div>
+        </div>
+      </div>
+      <div class="pf-item" data-cat="construction">
+        <img src="images/projects/n20.jpg" alt="Block Work — Residential Estate" loading="lazy">
+        <div class="pf-item-overlay">
+          <div class="pf-item-cat">Construction</div>
+          <div class="pf-item-title">Block Work — Residential Estate</div>
+          <div class="pf-item-status ongoing"><div class="status-dot"></div>Ongoing</div>
+        </div>
+      </div>
+      <div class="pf-item" data-cat="civil">
+        <img src="images/projects/n21.jpg" alt="Civil Engineering — Foundation" loading="lazy">
+        <div class="pf-item-overlay">
+          <div class="pf-item-cat">Civil Works</div>
+          <div class="pf-item-title">Civil Engineering — Foundation</div>
+          <div class="pf-item-status ongoing"><div class="status-dot"></div>Ongoing</div>
+        </div>
+      </div>
+      <div class="pf-item" data-cat="construction">
+        <img src="images/projects/n22.jpg" alt="Multi-Unit Construction Site" loading="lazy">
+        <div class="pf-item-overlay">
+          <div class="pf-item-cat">Construction</div>
+          <div class="pf-item-title">Multi-Unit Construction Site</div>
+          <div class="pf-item-status ongoing"><div class="status-dot"></div>Ongoing</div>
+        </div>
+      </div>
+      <div class="pf-item" data-cat="construction">
+        <img src="images/projects/n23.jpg" alt="Masonry & Block Works" loading="lazy">
+        <div class="pf-item-overlay">
+          <div class="pf-item-cat">Construction</div>
+          <div class="pf-item-title">Masonry & Block Works</div>
+          <div class="pf-item-status ongoing"><div class="status-dot"></div>Ongoing</div>
+        </div>
+      </div>
+      <div class="pf-item" data-cat="civil">
+        <img src="images/projects/n24.jpg" alt="Culvert & Drain Works" loading="lazy">
+        <div class="pf-item-overlay">
+          <div class="pf-item-cat">Civil Works</div>
+          <div class="pf-item-title">Culvert & Drain Works</div>
+          <div class="pf-item-status done"><div class="status-dot"></div>Completed</div>
+        </div>
+      </div>
+      <div class="pf-item" data-cat="construction">
+        <img src="images/projects/n25.jpg" alt="Residential Building Frame" loading="lazy">
+        <div class="pf-item-overlay">
+          <div class="pf-item-cat">Construction</div>
+          <div class="pf-item-title">Residential Building Frame</div>
+          <div class="pf-item-status ongoing"><div class="status-dot"></div>Ongoing</div>
+        </div>
+      </div>
+      <div class="pf-item" data-cat="construction">
+        <img src="images/projects/n26.jpg" alt="Reinforced Foundation Works" loading="lazy">
+        <div class="pf-item-overlay">
+          <div class="pf-item-cat">Construction</div>
+          <div class="pf-item-title">Reinforced Foundation Works</div>
+          <div class="pf-item-status ongoing"><div class="status-dot"></div>Ongoing</div>
+        </div>
+      </div>
+      <div class="pf-item" data-cat="construction">
+        <img src="images/projects/n27.jpg" alt="Block Setting & Mortar" loading="lazy">
+        <div class="pf-item-overlay">
+          <div class="pf-item-cat">Construction</div>
+          <div class="pf-item-title">Block Setting & Mortar</div>
+          <div class="pf-item-status ongoing"><div class="status-dot"></div>Ongoing</div>
+        </div>
+      </div>
+      <div class="pf-item" data-cat="construction">
+        <img src="images/projects/n28.jpg" alt="Construction Site — Active Works" loading="lazy">
+        <div class="pf-item-overlay">
+          <div class="pf-item-cat">Construction</div>
+          <div class="pf-item-title">Construction Site — Active Works</div>
+          <div class="pf-item-status ongoing"><div class="status-dot"></div>Ongoing</div>
+        </div>
+      </div>
+      <div class="pf-item" data-cat="civil">
+        <img src="images/projects/n29.jpg" alt="Slab Casting in Progress" loading="lazy">
+        <div class="pf-item-overlay">
+          <div class="pf-item-cat">Civil Works</div>
+          <div class="pf-item-title">Slab Casting in Progress</div>
+          <div class="pf-item-status ongoing"><div class="status-dot"></div>Ongoing</div>
+        </div>
+      </div>
+      <div class="pf-item" data-cat="construction">
+        <img src="images/projects/n30.jpg" alt="Foundation Columns Set" loading="lazy">
+        <div class="pf-item-overlay">
+          <div class="pf-item-cat">Construction</div>
+          <div class="pf-item-title">Foundation Columns Set</div>
+          <div class="pf-item-status done"><div class="status-dot"></div>Completed</div>
+        </div>
+      </div>
+      <div class="pf-item" data-cat="construction">
+        <img src="images/projects/n31.jpg" alt="Residential Estate Block Works" loading="lazy">
+        <div class="pf-item-overlay">
+          <div class="pf-item-cat">Construction</div>
+          <div class="pf-item-title">Residential Estate Block Works</div>
+          <div class="pf-item-status ongoing"><div class="status-dot"></div>Ongoing</div>
+        </div>
+      </div>
+      <div class="pf-item" data-cat="construction">
+        <img src="images/projects/n32.jpg" alt="Concrete Pour — Ground Slab" loading="lazy">
+        <div class="pf-item-overlay">
+          <div class="pf-item-cat">Construction</div>
+          <div class="pf-item-title">Concrete Pour — Ground Slab</div>
+          <div class="pf-item-status ongoing"><div class="status-dot"></div>Ongoing</div>
+        </div>
+      </div>
+      <div class="pf-item" data-cat="construction">
+        <img src="images/projects/n33.jpg" alt="Civil Site Preparation" loading="lazy">
+        <div class="pf-item-overlay">
+          <div class="pf-item-cat">Construction</div>
+          <div class="pf-item-title">Civil Site Preparation</div>
+          <div class="pf-item-status ongoing"><div class="status-dot"></div>Ongoing</div>
+        </div>
+      </div>
+      <div class="pf-item" data-cat="construction">
+        <img src="images/projects/n34.jpg" alt="Multi-Room Building Under Construction" loading="lazy">
+        <div class="pf-item-overlay">
+          <div class="pf-item-cat">Construction</div>
+          <div class="pf-item-title">Multi-Room Building Under Construction</div>
+          <div class="pf-item-status ongoing"><div class="status-dot"></div>Ongoing</div>
+        </div>
+      </div>
+      <div class="pf-item" data-cat="civil">
+        <img src="images/projects/n35.jpg" alt="Steel & Concrete Civil Works" loading="lazy">
+        <div class="pf-item-overlay">
+          <div class="pf-item-cat">Civil Works</div>
+          <div class="pf-item-title">Steel & Concrete Civil Works</div>
+          <div class="pf-item-status ongoing"><div class="status-dot"></div>Ongoing</div>
+        </div>
+      </div>
+      <div class="pf-item" data-cat="construction">
+        <img src="images/projects/n36.jpg" alt="Building Works in Progress" loading="lazy">
+        <div class="pf-item-overlay">
+          <div class="pf-item-cat">Construction</div>
+          <div class="pf-item-title">Building Works in Progress</div>
+          <div class="pf-item-status ongoing"><div class="status-dot"></div>Ongoing</div>
+        </div>
+      </div>
+      <div class="pf-item" data-cat="construction">
+        <img src="images/projects/n37.jpg" alt="Block Laying — Commercial Project" loading="lazy">
+        <div class="pf-item-overlay">
+          <div class="pf-item-cat">Construction</div>
+          <div class="pf-item-title">Block Laying — Commercial Project</div>
+          <div class="pf-item-status ongoing"><div class="status-dot"></div>Ongoing</div>
+        </div>
+      </div>
+      <div class="pf-item" data-cat="construction">
+        <img src="images/projects/n38.jpg" alt="Workers on Active Construction Site" loading="lazy">
+        <div class="pf-item-overlay">
+          <div class="pf-item-cat">Construction</div>
+          <div class="pf-item-title">Workers on Active Construction Site</div>
+          <div class="pf-item-status ongoing"><div class="status-dot"></div>Ongoing</div>
+        </div>
+      </div>
+      <div class="pf-item" data-cat="civil">
+        <img src="images/projects/n39.jpg" alt="Drainage & Foundation Works" loading="lazy">
+        <div class="pf-item-overlay">
+          <div class="pf-item-cat">Civil Works</div>
+          <div class="pf-item-title">Drainage & Foundation Works</div>
+          <div class="pf-item-status ongoing"><div class="status-dot"></div>Ongoing</div>
+        </div>
+      </div>
+      <div class="pf-item" data-cat="construction">
+        <img src="images/projects/n40.jpg" alt="Completed Slab — First Floor" loading="lazy">
+        <div class="pf-item-overlay">
+          <div class="pf-item-cat">Construction</div>
+          <div class="pf-item-title">Completed Slab — First Floor</div>
+          <div class="pf-item-status done"><div class="status-dot"></div>Completed</div>
+        </div>
+      </div>
+      <div class="pf-item" data-cat="construction">
+        <img src="images/projects/n41.jpg" alt="Construction Team on Site" loading="lazy">
+        <div class="pf-item-overlay">
+          <div class="pf-item-cat">Construction</div>
+          <div class="pf-item-title">Construction Team on Site</div>
+          <div class="pf-item-status ongoing"><div class="status-dot"></div>Ongoing</div>
+        </div>
+      </div>
+      <div class="pf-item" data-cat="construction">
+        <img src="images/projects/n42.jpg" alt="Foundation Reinforcement Works" loading="lazy">
+        <div class="pf-item-overlay">
+          <div class="pf-item-cat">Construction</div>
+          <div class="pf-item-title">Foundation Reinforcement Works</div>
+          <div class="pf-item-status ongoing"><div class="status-dot"></div>Ongoing</div>
+        </div>
+      </div>
+      <div class="pf-item" data-cat="civil">
+        <img src="images/projects/n43.jpg" alt="Residential Unit Frame — Block Stage" loading="lazy">
+        <div class="pf-item-overlay">
+          <div class="pf-item-cat">Civil Works</div>
+          <div class="pf-item-title">Residential Unit Frame — Block Stage</div>
+          <div class="pf-item-status ongoing"><div class="status-dot"></div>Ongoing</div>
+        </div>
+      </div>
+      <div class="pf-item" data-cat="construction">
+        <img src="images/projects/n44.jpg" alt="Civil Engineering Site Works" loading="lazy">
+        <div class="pf-item-overlay">
+          <div class="pf-item-cat">Construction</div>
+          <div class="pf-item-title">Civil Engineering Site Works</div>
+          <div class="pf-item-status ongoing"><div class="status-dot"></div>Ongoing</div>
+        </div>
+      </div>
+      <div class="pf-item" data-cat="construction">
+        <img src="images/projects/n45.jpg" alt="Active Building Construction" loading="lazy">
+        <div class="pf-item-overlay">
+          <div class="pf-item-cat">Construction</div>
+          <div class="pf-item-title">Active Building Construction</div>
+          <div class="pf-item-status ongoing"><div class="status-dot"></div>Ongoing</div>
+        </div>
+      </div>
+      <div class="pf-item" data-cat="construction">
+        <img src="images/projects/n46.jpg" alt="Concrete Casting Works" loading="lazy">
+        <div class="pf-item-overlay">
+          <div class="pf-item-cat">Construction</div>
+          <div class="pf-item-title">Concrete Casting Works</div>
+          <div class="pf-item-status ongoing"><div class="status-dot"></div>Ongoing</div>
+        </div>
+      </div>
+      <div class="pf-item" data-cat="construction">
+        <img src="images/projects/n47.jpg" alt="Structural Foundation — Commercial" loading="lazy">
+        <div class="pf-item-overlay">
+          <div class="pf-item-cat">Construction</div>
+          <div class="pf-item-title">Structural Foundation — Commercial</div>
+          <div class="pf-item-status ongoing"><div class="status-dot"></div>Ongoing</div>
+        </div>
+      </div>
+      <div class="pf-item" data-cat="construction">
+        <img src="images/projects/n48.jpg" alt="Block Masonry Works" loading="lazy">
+        <div class="pf-item-overlay">
+          <div class="pf-item-cat">Construction</div>
+          <div class="pf-item-title">Block Masonry Works</div>
+          <div class="pf-item-status ongoing"><div class="status-dot"></div>Ongoing</div>
+        </div>
+      </div>
+      <div class="pf-item" data-cat="civil">
+        <img src="images/projects/n49.jpg" alt="Civil & Structural Works" loading="lazy">
+        <div class="pf-item-overlay">
+          <div class="pf-item-cat">Civil Works</div>
+          <div class="pf-item-title">Civil & Structural Works</div>
+          <div class="pf-item-status ongoing"><div class="status-dot"></div>Ongoing</div>
+        </div>
+      </div>
+      <div class="pf-item" data-cat="construction">
+        <img src="images/projects/n50.jpg" alt="Foundation & Ground Works" loading="lazy">
+        <div class="pf-item-overlay">
+          <div class="pf-item-cat">Construction</div>
+          <div class="pf-item-title">Foundation & Ground Works</div>
+          <div class="pf-item-status ongoing"><div class="status-dot"></div>Ongoing</div>
+        </div>
+      </div>
+      <div class="pf-item" data-cat="construction">
+        <img src="images/projects/n51.jpg" alt="Site Construction — Ongoing" loading="lazy">
+        <div class="pf-item-overlay">
+          <div class="pf-item-cat">Construction</div>
+          <div class="pf-item-title">Site Construction — Ongoing</div>
+          <div class="pf-item-status ongoing"><div class="status-dot"></div>Ongoing</div>
+        </div>
+      </div>
     <!-- CTA -->
     <div class="pf-cta reveal">
       <div class="tag">Start Your Project</div>
@@ -405,12 +812,11 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
 const ro = new IntersectionObserver(e => e.forEach(x => { if(x.isIntersecting){x.target.classList.add('visible');ro.unobserve(x.target);} }), {threshold:.1});
 document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
 
-// Mobile tap-to-expand overlay (touch devices only)
-if (window.matchMedia('(hover: none)').matches) {
+// Tap-to-expand full overlay on mobile/tablet (screen <= 1024px)
+if (window.innerWidth <= 1024) {
   document.querySelectorAll('.pf-item').forEach(item => {
-    item.addEventListener('click', e => {
+    item.addEventListener('click', () => {
       const already = item.classList.contains('tapped');
-      // Collapse all others
       document.querySelectorAll('.pf-item.tapped').forEach(i => i.classList.remove('tapped'));
       if (!already) item.classList.add('tapped');
     });
