@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Projects & Portfolio — NOBSED Engineering Limited</title>
 <meta name="description" content="Browse NOBSED Engineering's portfolio of completed residential, commercial and civil engineering projects across Accra, Ghana.">
-<link rel="icon" type="image/png" href="images/enhanced/Logo.png">
+<link rel="icon" type="image/png" href="images/Logo.png">
 <link rel="stylesheet" href="style.css">
 <style>
 /* ── Filter tabs ── */
@@ -18,7 +18,7 @@
 .pf-item { break-inside:avoid; margin-bottom:1.25rem; border-radius:var(--radius-lg); overflow:hidden; position:relative; cursor:pointer; display:block; }
 .pf-item img { width:100%; height:auto; display:block; transition:transform .5s ease; }
 .pf-item:hover img { transform:scale(1.04); }
-.pf-item-overlay { position:absolute; inset:0; background:linear-gradient(to top,rgba(18,77,52,.92) 0%,rgba(18,77,52,.2) 50%,transparent 100%); opacity:0; transition:var(--t-slow); display:flex; flex-direction:column; justify-content:flex-end; padding:1.5rem; }
+.pf-item-overlay { position:absolute; inset:0; background:linear-gradient(to top,rgba(0,0,0,.88) 0%,rgba(0,0,0,.35) 55%,transparent 100%); opacity:0; transition:var(--t-slow); display:flex; flex-direction:column; justify-content:flex-end; padding:1.5rem; }
 .pf-item:hover .pf-item-overlay { opacity:1; }
 .pf-item-cat { font-family:'Poppins',sans-serif; font-size:.7rem; font-weight:700; color:var(--gold); letter-spacing:.08em; text-transform:uppercase; margin-bottom:.35rem; }
 .pf-item-title { font-family:'Poppins',sans-serif; font-size:.95rem; font-weight:600; color:#fff; line-height:1.3; }
@@ -39,18 +39,15 @@
 @media(max-width:900px) { .portfolio-masonry { columns:2; } }
 @media(max-width:540px) { .portfolio-masonry { columns:1; } }
 
-/* ── Mobile: always show info strip at bottom, tap to expand full overlay ── */
+/* ── Mobile: always-visible dark strip at bottom, tap to expand ── */
 @media(hover:none) {
-  /* Persistent bottom strip — always visible */
   .pf-item-overlay {
     opacity:1;
-    background:linear-gradient(to top, rgba(10,40,25,.95) 0%, rgba(10,40,25,.6) 45%, transparent 100%);
-    /* Collapse to bottom strip by default */
+    background:linear-gradient(to top, rgba(0,0,0,.92) 0%, rgba(0,0,0,.5) 45%, transparent 100%);
     padding-top:60%;
   }
-  /* On tap (.tapped class added by JS) show full overlay */
   .pf-item.tapped .pf-item-overlay {
-    background:linear-gradient(to top, rgba(10,40,25,.97) 0%, rgba(10,40,25,.75) 60%, rgba(10,40,25,.3) 100%);
+    background:linear-gradient(to top, rgba(0,0,0,.95) 0%, rgba(0,0,0,.75) 55%, rgba(0,0,0,.2) 100%);
     padding-top:0;
   }
   .pf-item.tapped img { transform:scale(1.04); }
@@ -76,7 +73,7 @@
 <nav id="navbar">
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">
-      <img src="images/enhanced/Logo.png" alt="NOBSED Engineering Logo" class="nav-logo-img">
+      <img src="images/Logo.png" alt="NOBSED Engineering Logo" class="nav-logo-img">
       <div class="nav-logo-text">
         <span class="nav-logo-name">NOBSED ENGINEERING LTD.</span>
         <span class="nav-logo-sub">Dealers &amp; Experts in Engineering</span>
@@ -94,7 +91,7 @@
   </div>
 </nav>
 <div class="mobile-nav" id="mobileNav">
-  <div class="mobile-nav-logo"><img src="images/enhanced/Logo.png" alt="NEL Logo"><span>NOBSED Engineering</span></div>
+  <div class="mobile-nav-logo"><img src="images/Logo.png" alt="NEL Logo"><span>NOBSED Engineering</span></div>
   <span class="mobile-nav-close" id="mobileClose">&times;</span>
   <a href="index.html">Home</a><a href="about.html">About Us</a><a href="services.html">Services</a><a href="portfolio.html">Projects</a><a href="contact.html">Contact</a>
   <a href="contact.html" class="btn btn-gold" style="margin-top:1rem">Get a Free Quote</a>
@@ -136,7 +133,7 @@
       <!-- Featured: Residential Estate -->
       <div class="pf-item" data-cat="residential">
         <div class="pf-item-label">Completed</div>
-        <img src="images/enhanced/Picture10.jpg" alt="Residential Estate — completed row of bungalows" loading="lazy">
+        <img src="images/nobsed/Picture10.jpg" alt="Residential Estate — completed row of bungalows" loading="lazy">
         <div class="pf-item-overlay">
           <div class="pf-item-cat">Residential</div>
           <div class="pf-item-title">Bungalow Estate Development</div>
@@ -146,7 +143,7 @@
 
       <!-- Commercial multi-storey -->
       <div class="pf-item" data-cat="commercial">
-        <img src="images/enhanced/Picture60.jpg" alt="Multi-storey commercial building" loading="lazy">
+        <img src="images/nobsed/Picture60.jpg" alt="Multi-storey commercial building" loading="lazy">
         <div class="pf-item-overlay">
           <div class="pf-item-cat">Commercial</div>
           <div class="pf-item-title">Multi-Storey Office &amp; Retail Block</div>
@@ -157,7 +154,7 @@
       <!-- ICGC Temple -->
       <div class="pf-item" data-cat="church">
         <div class="pf-item-label">Institutional</div>
-        <img src="images/enhanced/Picture50.png" alt="ICGC Jesus Temple project render" loading="lazy">
+        <img src="images/nobsed/Picture50.png" alt="ICGC Jesus Temple project render" loading="lazy">
         <div class="pf-item-overlay">
           <div class="pf-item-cat">Church / Institutional</div>
           <div class="pf-item-title">ICGC Jesus Temple</div>
@@ -167,7 +164,7 @@
 
       <!-- Shell / Commercial -->
       <div class="pf-item" data-cat="commercial">
-        <img src="images/enhanced/Picture55.png" alt="Shell petrol station and commercial building" loading="lazy">
+        <img src="images/nobsed/Picture55.png" alt="Shell petrol station and commercial building" loading="lazy">
         <div class="pf-item-overlay">
           <div class="pf-item-cat">Commercial</div>
           <div class="pf-item-title">Commercial Service Station &amp; Retail</div>
@@ -177,7 +174,7 @@
 
       <!-- Modern Villas -->
       <div class="pf-item" data-cat="residential">
-        <img src="images/enhanced/Picture70.jpg" alt="Modern twin-villa residential complex" loading="lazy">
+        <img src="images/nobsed/Picture70.jpg" alt="Modern twin-villa residential complex" loading="lazy">
         <div class="pf-item-overlay">
           <div class="pf-item-cat">Residential</div>
           <div class="pf-item-title">Modern Twin-Villa Complex</div>
@@ -187,7 +184,7 @@
 
       <!-- Before/After 3-storey -->
       <div class="pf-item" data-cat="residential">
-        <img src="images/enhanced/Picture52.png" alt="3-storey residential building before and after" loading="lazy">
+        <img src="images/nobsed/Picture52.png" alt="3-storey residential building before and after" loading="lazy">
         <div class="pf-item-overlay">
           <div class="pf-item-cat">Residential</div>
           <div class="pf-item-title">3-Storey Residential Block — Before &amp; After</div>
@@ -197,7 +194,7 @@
 
       <!-- Multi-storey view 2 -->
       <div class="pf-item" data-cat="commercial">
-        <img src="images/enhanced/Picture56.jpg" alt="Multi-storey building with glass facade" loading="lazy">
+        <img src="images/nobsed/Picture56.jpg" alt="Multi-storey building with glass facade" loading="lazy">
         <div class="pf-item-overlay">
           <div class="pf-item-cat">Commercial</div>
           <div class="pf-item-title">Glass Facade Office Block</div>
@@ -207,7 +204,7 @@
 
       <!-- Bungalow with garage -->
       <div class="pf-item" data-cat="residential">
-        <img src="images/enhanced/Picture75.jpg" alt="Completed bungalow with garage" loading="lazy">
+        <img src="images/nobsed/Picture75.jpg" alt="Completed bungalow with garage" loading="lazy">
         <div class="pf-item-overlay">
           <div class="pf-item-cat">Residential</div>
           <div class="pf-item-title">Executive Bungalow with Garage</div>
@@ -217,7 +214,7 @@
 
       <!-- Housing estate yellow -->
       <div class="pf-item" data-cat="residential">
-        <img src="images/enhanced/Picture12.jpg" alt="Housing estate construction with yellow accents" loading="lazy">
+        <img src="images/nobsed/Picture12.jpg" alt="Housing estate construction with yellow accents" loading="lazy">
         <div class="pf-item-overlay">
           <div class="pf-item-cat">Residential</div>
           <div class="pf-item-title">Gated Housing Estate Development</div>
@@ -227,7 +224,7 @@
 
       <!-- Drainage / Civil works -->
       <div class="pf-item" data-cat="civil">
-        <img src="images/enhanced/Picture1.jpg" alt="Drainage and civil works" loading="lazy">
+        <img src="images/nobsed/Picture1.jpg" alt="Drainage and civil works" loading="lazy">
         <div class="pf-item-overlay">
           <div class="pf-item-cat">Civil Works</div>
           <div class="pf-item-title">Storm Drainage &amp; Retaining Wall</div>
@@ -237,7 +234,7 @@
 
       <!-- Foundation work -->
       <div class="pf-item" data-cat="civil">
-        <img src="images/enhanced/Picture25.jpg" alt="Foundation and slab work" loading="lazy">
+        <img src="images/nobsed/Picture25.jpg" alt="Foundation and slab work" loading="lazy">
         <div class="pf-item-overlay">
           <div class="pf-item-cat">Civil / Foundation</div>
           <div class="pf-item-title">Raft Foundation &amp; Slab Work</div>
@@ -247,7 +244,7 @@
 
       <!-- Masonry team -->
       <div class="pf-item" data-cat="civil">
-        <img src="images/enhanced/Picture45.jpg" alt="Masonry blockwork in progress" loading="lazy">
+        <img src="images/nobsed/Picture45.jpg" alt="Masonry blockwork in progress" loading="lazy">
         <div class="pf-item-overlay">
           <div class="pf-item-cat">Construction</div>
           <div class="pf-item-title">Blockwork &amp; Masonry Works</div>
@@ -257,7 +254,7 @@
 
       <!-- Plumbing works -->
       <div class="pf-item" data-cat="plumbing">
-        <img src="images/enhanced/Picture5.jpg" alt="Plumbing installation works" loading="lazy">
+        <img src="images/nobsed/Picture5.jpg" alt="Plumbing installation works" loading="lazy">
         <div class="pf-item-overlay">
           <div class="pf-item-cat">Plumbing</div>
           <div class="pf-item-title">Underground Pipe &amp; Junction Works</div>
@@ -267,7 +264,7 @@
 
       <!-- Orange residential villas -->
       <div class="pf-item" data-cat="residential">
-        <img src="images/enhanced/Picture65.png" alt="Orange residential villas with render" loading="lazy">
+        <img src="images/nobsed/Picture65.png" alt="Orange residential villas with render" loading="lazy">
         <div class="pf-item-overlay">
           <div class="pf-item-cat">Residential</div>
           <div class="pf-item-title">Themed Villa Development</div>
@@ -277,7 +274,7 @@
 
       <!-- Scaffolding + under-construction -->
       <div class="pf-item" data-cat="residential">
-        <img src="images/enhanced/Picture20.jpg" alt="Multi-storey building under construction with scaffolding" loading="lazy">
+        <img src="images/nobsed/Picture20.jpg" alt="Multi-storey building under construction with scaffolding" loading="lazy">
         <div class="pf-item-overlay">
           <div class="pf-item-cat">Residential</div>
           <div class="pf-item-title">3-Storey Duplex — In Progress</div>
@@ -287,7 +284,7 @@
 
       <!-- D ROMO exterior render -->
       <div class="pf-item" data-cat="commercial">
-        <img src="images/enhanced/Picture51.jpg" alt="3-storey institutional building render" loading="lazy">
+        <img src="images/nobsed/Picture51.jpg" alt="3-storey institutional building render" loading="lazy">
         <div class="pf-item-overlay">
           <div class="pf-item-cat">Institutional</div>
           <div class="pf-item-title">3-Storey School / Office Block</div>
@@ -297,7 +294,7 @@
 
       <!-- Columns / portico house -->
       <div class="pf-item" data-cat="residential">
-        <img src="images/enhanced/Picture71.jpg" alt="House with columns and stone cladding" loading="lazy">
+        <img src="images/nobsed/Picture71.jpg" alt="House with columns and stone cladding" loading="lazy">
         <div class="pf-item-overlay">
           <div class="pf-item-cat">Residential</div>
           <div class="pf-item-title">Executive Residence with Colonnade</div>
@@ -307,7 +304,7 @@
 
       <!-- LED facade detail -->
       <div class="pf-item" data-cat="commercial">
-        <img src="images/enhanced/Picture80.jpg" alt="Stone cladding and LED architectural lighting" loading="lazy">
+        <img src="images/nobsed/Picture80.jpg" alt="Stone cladding and LED architectural lighting" loading="lazy">
         <div class="pf-item-overlay">
           <div class="pf-item-cat">Architectural Finishing</div>
           <div class="pf-item-title">Stone Cladding &amp; LED Feature Lighting</div>
@@ -317,7 +314,7 @@
 
       <!-- Bungalow neat driveway -->
       <div class="pf-item" data-cat="residential">
-        <img src="images/enhanced/Picture62.jpg" alt="Neat bungalow with paved driveway" loading="lazy">
+        <img src="images/nobsed/Picture62.jpg" alt="Neat bungalow with paved driveway" loading="lazy">
         <div class="pf-item-overlay">
           <div class="pf-item-cat">Residential</div>
           <div class="pf-item-title">Bungalow with Paved Driveway</div>
@@ -327,7 +324,7 @@
 
       <!-- Multi-storey close view -->
       <div class="pf-item" data-cat="commercial">
-        <img src="images/enhanced/Picture57.jpg" alt="Large commercial building street view" loading="lazy">
+        <img src="images/nobsed/Picture57.jpg" alt="Large commercial building street view" loading="lazy">
         <div class="pf-item-overlay">
           <div class="pf-item-cat">Commercial</div>
           <div class="pf-item-title">High-Street Commercial Block</div>
@@ -359,7 +356,7 @@
     <div class="footer-top">
       <div class="footer-brand">
         <a href="index.html" class="nav-logo" style="margin-bottom:1.25rem">
-          <img src="images/enhanced/Logo.png" alt="NEL Logo" class="nav-logo-img">
+          <img src="images/Logo.png" alt="NEL Logo" class="nav-logo-img">
           <div class="nav-logo-text"><span class="nav-logo-name">NOBSED ENGINEERING LTD.</span><span class="nav-logo-sub">Dealers &amp; Experts in Engineering</span></div>
         </a>
         <p>Ghana's trusted partner in construction, civil engineering, plumbing and mechanical works. Building excellence since 2009.</p>
