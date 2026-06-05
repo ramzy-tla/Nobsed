@@ -1,5 +1,5 @@
-# Only large portfolio photo folders use LFS
-# All other images (service cards, logos, og-banner) are normal git files
+# images/projects/ is a regular git folder — Netlify compatible, no LFS
+# images/enhanced/ and images/nobsed/ kept in LFS (not used on live site)
 images/enhanced/*.jpg filter=lfs diff=lfs merge=lfs -text
 images/enhanced/*.jpeg filter=lfs diff=lfs merge=lfs -text
 images/enhanced/*.png filter=lfs diff=lfs merge=lfs -text
