@@ -1,5 +1,6 @@
-# Design presentation build artifacts only
-# (images now tracked via Git LFS)
+# Enhanced/processed images — not used, originals in images/projects/
+images/enhanced/
+images/nobsed/
 
 # Design presentation build artifacts
 Design Presentation/
