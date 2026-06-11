@@ -35,6 +35,9 @@
 .pf-cta { background:var(--green-light); border-radius:var(--radius-xl); padding:3rem; text-align:center; margin-top:3rem; }
 .pf-cta h3 { font-size:1.5rem; margin-bottom:.75rem; }
 .pf-cta p { margin:0 auto 1.75rem; max-width:55ch; }
+.pf-cta-btns { display:flex; gap:1rem; justify-content:center; align-items:center; flex-wrap:nowrap; }
+.pf-cta-btns .btn { padding:.85rem 1.5rem; white-space:nowrap; }
+@media(max-width:520px){ .pf-cta-btns { flex-direction:column; } .pf-cta-btns .btn { width:100%; max-width:320px; } }
 
 @media(max-width:900px) { .portfolio-masonry { columns:2; } }
 @media(max-width:540px) { .portfolio-masonry { columns:1; } }
@@ -673,7 +676,7 @@
       <div class="tag">Start Your Project</div>
       <h3>Have a Project in Mind?</h3>
       <p>Let's discuss your requirements and turn your vision into reality. Our team is ready to deliver exceptional results for your next project.</p>
-      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+      <div class="pf-cta-btns">
         <a href="contact.html" class="btn btn-primary">Request a Free Quote
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
         </a>
