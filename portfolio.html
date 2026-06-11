@@ -32,12 +32,14 @@
 .pf-item.hidden { display:none; }
 
 /* CTA section */
-.pf-cta { background:var(--green-light); border-radius:var(--radius-xl); padding:3rem; text-align:center; margin-top:3rem; }
+.pf-cta { background:var(--green-light); border-radius:var(--radius-xl); padding:3rem 1.5rem; text-align:center; margin-top:3rem; }
 .pf-cta h3 { font-size:1.5rem; margin-bottom:.75rem; }
 .pf-cta p { margin:0 auto 1.75rem; max-width:55ch; }
-.pf-cta-btns { display:flex; gap:1rem; justify-content:center; align-items:center; flex-wrap:nowrap; }
-.pf-cta-btns .btn { padding:.85rem 1.5rem; white-space:nowrap; }
-@media(max-width:520px){ .pf-cta-btns { flex-direction:column; } .pf-cta-btns .btn { width:100%; max-width:320px; } }
+/* Always horizontal, sized to fit any screen width */
+.pf-cta-btns { display:flex; gap:.75rem; justify-content:center; align-items:center; flex-wrap:nowrap; max-width:100%; }
+.pf-cta-btns .btn { padding:.8rem 1.1rem; font-size:.72rem; letter-spacing:.03em; white-space:nowrap; flex:0 1 auto; min-width:0; }
+.pf-cta-btns .btn svg { flex-shrink:0; }
+@media(max-width:380px){ .pf-cta-btns .btn { padding:.7rem .8rem; font-size:.66rem; } }
 
 @media(max-width:900px) { .portfolio-masonry { columns:2; } }
 @media(max-width:540px) { .portfolio-masonry { columns:1; } }
