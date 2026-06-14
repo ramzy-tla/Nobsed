@@ -31,15 +31,16 @@
 /* Hidden items */
 .pf-item.hidden { display:none; }
 
-/* CTA section */
-.pf-cta { background:var(--green-light); border-radius:var(--radius-xl); padding:3rem 1.5rem; text-align:center; margin-top:3rem; }
-.pf-cta h3 { font-size:1.5rem; margin-bottom:.75rem; }
+/* Full-width CTA band (between projects grid and footer) */
+.pf-cta-band { background:var(--green-light); padding:4.5rem 1.5rem; width:100%; }
+.pf-cta { max-width:780px; margin:0 auto; text-align:center; }
+.pf-cta h3 { font-size:1.7rem; margin-bottom:.75rem; }
 .pf-cta p { margin:0 auto 1.75rem; max-width:55ch; }
 /* Always horizontal, sized to fit any screen width */
-.pf-cta-btns { display:flex; gap:.75rem; justify-content:center; align-items:center; flex-wrap:nowrap; max-width:100%; }
-.pf-cta-btns .btn { padding:.8rem 1.1rem; font-size:.72rem; letter-spacing:.03em; white-space:nowrap; flex:0 1 auto; min-width:0; }
+.pf-cta-btns { display:flex; gap:.85rem; justify-content:center; align-items:center; flex-wrap:nowrap; max-width:100%; }
+.pf-cta-btns .btn { padding:.85rem 1.4rem; font-size:.75rem; letter-spacing:.04em; white-space:nowrap; flex:0 1 auto; min-width:0; }
 .pf-cta-btns .btn svg { flex-shrink:0; }
-@media(max-width:380px){ .pf-cta-btns .btn { padding:.7rem .8rem; font-size:.66rem; } }
+@media(max-width:400px){ .pf-cta-btns .btn { padding:.72rem .9rem; font-size:.68rem; } }
 
 @media(max-width:900px) { .portfolio-masonry { columns:2; } }
 @media(max-width:540px) { .portfolio-masonry { columns:1; } }
@@ -666,17 +667,21 @@
     
     
     
-          <!-- CTA -->
-    <div class="pf-cta reveal">
-      <div class="tag">Start Your Project</div>
-      <h3>Have a Project in Mind?</h3>
-      <p>Let's discuss your requirements and turn your vision into reality. Our team is ready to deliver exceptional results for your next project.</p>
-      <div class="pf-cta-btns">
-        <a href="contact.html" class="btn btn-primary">Request a Free Quote
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
-        </a>
-        <a href="contact.html" class="btn btn-outline">Call Us Now</a>
-      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Full-width CTA band between projects and footer -->
+<section class="pf-cta-band">
+  <div class="pf-cta reveal">
+    <div class="tag">Start Your Project</div>
+    <h3>Have a Project in Mind?</h3>
+    <p>Let's discuss your requirements and turn your vision into reality. Our team is ready to deliver exceptional results for your next project.</p>
+    <div class="pf-cta-btns">
+      <a href="contact.html" class="btn btn-primary">Request a Free Quote
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
+      </a>
+      <a href="contact.html" class="btn btn-outline">Call Us Now</a>
     </div>
   </div>
 </section>
