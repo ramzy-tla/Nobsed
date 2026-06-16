@@ -257,11 +257,27 @@ footer { background:var(--charcoal); color:rgba(255,255,255,.7); padding:4rem 0 
 .form-group textarea { resize:vertical; min-height:130px; }
 .form-group select { appearance:none; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%234a5568' d='M6 8L1 3h10z'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 1rem center; }
 
-/* WhatsApp floating button */
-.wa-float { position:fixed; bottom:2rem; right:2rem; z-index:90; width:56px; height:56px; border-radius:50%; background:#25d366; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 20px rgba(37,211,102,.45); transition:var(--t); animation:waPulse 2.5s ease infinite; }
-.wa-float:hover { transform:scale(1.1); background:#1da851; }
-.wa-float svg { width:28px; height:28px; fill:#fff; }
-@keyframes waPulse { 0%,100%{box-shadow:0 4px 20px rgba(37,211,102,.45)} 50%{box-shadow:0 4px 30px rgba(37,211,102,.7)} }
+/* Floating contact widget (free, native — Call / WhatsApp / SMS / Inquire) */
+.fab-contact { position:fixed; bottom:1.75rem; right:1.75rem; z-index:200; display:flex; flex-direction:column; align-items:flex-end; gap:.85rem; }
+.fab-menu { display:flex; flex-direction:column; gap:.85rem; opacity:0; transform:translateY(14px) scale(.96); transform-origin:bottom right; pointer-events:none; transition:opacity .28s ease, transform .28s ease; }
+.fab-contact.open .fab-menu { opacity:1; transform:none; pointer-events:auto; }
+.fab-item { display:flex; align-items:center; gap:.75rem; text-decoration:none; justify-content:flex-end; }
+.fab-label { background:#fff; color:var(--navy); font-family:'Poppins',sans-serif; font-size:.84rem; font-weight:600; padding:.5rem .9rem; border-radius:9px; box-shadow:0 4px 16px rgba(0,0,0,.14); white-space:nowrap; }
+.fab-ic { width:46px; height:46px; border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 16px rgba(0,0,0,.22); flex-shrink:0; transition:transform .2s ease; }
+.fab-item:hover .fab-ic { transform:scale(1.1); }
+.fab-ic svg { width:22px; height:22px; fill:#fff; }
+.fab-ic.call { background:var(--blue); }
+.fab-ic.wa   { background:#25d366; }
+.fab-ic.sms  { background:var(--navy); }
+.fab-ic.inq  { background:var(--green); }
+.fab-toggle { width:60px; height:60px; border-radius:50%; background:var(--gold); border:none; cursor:pointer; box-shadow:0 6px 22px rgba(212,160,23,.5); display:flex; align-items:center; justify-content:center; transition:transform .25s ease, background .25s ease; align-self:flex-end; animation:waPulse 2.6s ease infinite; }
+.fab-toggle:hover { background:var(--gold-dark); transform:scale(1.06); }
+.fab-toggle svg { width:27px; height:27px; fill:#fff; transition:transform .3s ease; }
+.fab-icon-x { display:none; }
+.fab-contact.open .fab-icon-chat { display:none; }
+.fab-contact.open .fab-icon-x { display:block; }
+.fab-contact.open .fab-toggle { animation:none; }
+@keyframes waPulse { 0%,100%{box-shadow:0 6px 22px rgba(212,160,23,.45)} 50%{box-shadow:0 6px 30px rgba(212,160,23,.75)} }
 
 /* ══════════════════════════════════════════════════════
    CLIENT MARQUEE
@@ -402,6 +418,6 @@ footer { background:var(--charcoal); color:rgba(255,255,255,.7); padding:4rem 0 
   .footer-col h5 { margin-top:1.25rem; }
 }
 @media(prefers-reduced-motion:reduce) {
-  .reveal, .wa-float { animation:none; transition:none; }
+  .reveal, .fab-toggle { animation:none; transition:none; }
   * { transition:none!important; }
 }
