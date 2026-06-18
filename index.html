@@ -879,7 +879,7 @@ document.getElementById('nextSlide').addEventListener('click', () => { clearInte
 document.getElementById('prevSlide').addEventListener('click', () => { clearInterval(slideInterval); goToSlide(currentSlide - 1); startSlideshow(); });
 
 // Hero label transition
-heroLabel.style.transition = 'opacity .3s ease, transform .3s ease';
+if(heroLabel){ heroLabel.style.transition = 'opacity .3s ease, transform .3s ease'; }
 
 startSlideshow();
 

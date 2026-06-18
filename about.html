@@ -8,63 +8,53 @@
 <link rel="icon" type="image/png" href="images/Logo.png">
 <link rel="stylesheet" href="style.css">
 <style>
-/* ── ABOUT PAGE SPECIFIC ── */
-.story-grid { display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center; }
-.story-img-stack { position:relative; }
-.story-img-main { width:100%; height:460px; object-fit:cover; border-radius:var(--radius-xl); }
-.story-img-sub { position:absolute; bottom:-2rem; right:-2rem; width:220px; height:160px; object-fit:cover; border-radius:var(--radius-lg); border:5px solid #fff; box-shadow:var(--shadow-xl); }
-.story-est-badge { position:absolute; top:1.5rem; left:-1.5rem; background:var(--green); color:#fff; border-radius:var(--radius-lg); padding:1.2rem 1.5rem; text-align:center; box-shadow:var(--shadow-xl); z-index:2; }
-.story-est-badge strong { display:block; font-family:'Inter',sans-serif; font-size:2.2rem; font-weight:900; color:var(--gold); }
-.story-est-badge span { font-size:.72rem; opacity:.85; letter-spacing:.06em; }
+/* ── ABOUT PAGE (clean, breathing) ── */
+.about-feature { display:grid; grid-template-columns:1fr 1fr; gap:4.5rem; align-items:center; }
+.about-feature-img { position:relative; }
+.about-feature-img img { width:100%; height:540px; object-fit:cover; border-radius:var(--radius-xl); box-shadow:var(--shadow-lg); }
+.about-feature-badge { position:absolute; bottom:1.5rem; left:1.5rem; background:var(--blue); color:#fff; padding:1rem 1.4rem; border-radius:var(--radius-lg); box-shadow:var(--shadow-xl); }
+.about-feature-badge strong { display:block; font-size:1.9rem; font-weight:800; line-height:1; }
+.about-feature-badge span { font-size:.72rem; letter-spacing:.06em; opacity:.92; }
+.about-feature-text p { color:var(--mid); margin-bottom:1.1rem; font-size:1.02rem; }
+.check-list { display:flex; flex-direction:column; gap:1.4rem; margin-top:2rem; }
+.check-item { display:flex; gap:1rem; }
+.check-item .ck { width:28px; height:28px; border-radius:50%; background:var(--blue-light); display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:.1rem; }
+.check-item .ck svg { width:15px; height:15px; stroke:var(--blue); fill:none; stroke-width:3; }
+.check-item h4 { font-size:1.05rem; margin-bottom:.2rem; }
+.check-item p { font-size:.88rem; color:var(--mid); margin:0; }
 
-.story-text { }
-.story-text p { margin-bottom:1.1rem; }
-.story-text p:last-of-type { margin-bottom:0; }
+/* Sector list */
+.sector-grid { display:grid; grid-template-columns:320px 1fr; gap:4.5rem; align-items:start; }
+.sector-list { display:grid; grid-template-columns:1fr 1fr; gap:2.2rem 3rem; }
+.sector-item .num { font-family:'Playfair Display',serif; font-size:1.15rem; font-weight:700; color:var(--blue); }
+.sector-item h4 { font-size:1.05rem; margin:.15rem 0 .35rem; }
+.sector-item p { font-size:.86rem; color:var(--mid); margin:0; }
 
-/* Why cards */
-.why-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1.25rem; }
-.why-card { background:#fff; border:1px solid var(--border); border-radius:var(--radius-lg); padding:1.5rem; display:flex; gap:1rem; transition:var(--t-slow); }
-.why-card:hover { border-color:var(--blue); box-shadow:var(--shadow); transform:translateY(-3px); }
-.why-card-icon { width:46px; height:46px; background:var(--green-light); border-radius:var(--radius); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
-.why-card-icon svg { width:24px; height:24px; fill:var(--blue); }
-.why-card h4 { font-size:.95rem; margin-bottom:.3rem; }
-.why-card p { font-size:.82rem; max-width:none; }
+/* Latest projects */
+.latest-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; }
+.latest-card { position:relative; border-radius:var(--radius-lg); overflow:hidden; height:320px; }
+.latest-card img { width:100%; height:100%; object-fit:cover; transition:transform .6s ease; }
+.latest-card:hover img { transform:scale(1.06); }
+.latest-card::after { content:''; position:absolute; inset:0; background:linear-gradient(to top,rgba(14,23,38,.88),transparent 58%); }
+.latest-cap { position:absolute; bottom:0; left:0; right:0; padding:1.6rem; z-index:2; }
+.latest-cap .cat { font-size:.68rem; letter-spacing:.12em; text-transform:uppercase; color:var(--blue-mid); font-weight:700; }
+.latest-cap h4 { color:#fff; font-size:1.05rem; margin-top:.25rem; }
 
-/* Team section */
-.team-img-wrap { position:relative; border-radius:var(--radius-xl); overflow:hidden; }
-.team-img-wrap img { width:100%; height:420px; object-fit:cover; object-position:top center; }
-.team-overlay { position:absolute; inset:0; background:linear-gradient(to top,rgba(18,77,52,.85) 0%,transparent 55%); }
-.team-caption { position:absolute; bottom:0; left:0; right:0; padding:2rem; }
-.team-caption h3 { color:#fff; font-size:1.3rem; margin-bottom:.4rem; }
-.team-caption p { color:rgba(255,255,255,.75); font-size:.88rem; max-width:none; }
-
-/* Pillars row */
-.pillars-3 { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; }
-.pillar-big { background:#fff; border:1px solid var(--border); border-radius:var(--radius-lg); padding:2rem 1.5rem; text-align:center; transition:var(--t-slow); }
-.pillar-big:hover { border-color:var(--blue); box-shadow:var(--shadow-lg); transform:translateY(-4px); }
-.pillar-big-icon { width:64px; height:64px; border-radius:var(--radius-lg); background:var(--blue); display:flex; align-items:center; justify-content:center; margin:0 auto 1.25rem; }
-.pillar-big-icon svg { width:32px; height:32px; fill:#fff; }
-.pillar-big h3 { font-size:1.1rem; color:var(--blue); margin-bottom:.5rem; }
-.pillar-big p { font-size:.85rem; max-width:none; }
-
-/* Timeline */
-.timeline { position:relative; padding-left:2.5rem; }
-.timeline::before { content:''; position:absolute; left:.75rem; top:0; bottom:0; width:2px; background:linear-gradient(to bottom,var(--green),var(--gold)); border-radius:2px; }
-.tl-item { position:relative; margin-bottom:2.5rem; }
-.tl-dot { position:absolute; left:-2.5rem; top:.25rem; width:1.5rem; height:1.5rem; border-radius:50%; background:var(--blue); border:3px solid #fff; box-shadow:0 0 0 3px var(--green-light); display:flex; align-items:center; justify-content:center; }
-.tl-dot svg { width:8px; height:8px; fill:#fff; }
-.tl-year { font-family:'Inter',sans-serif; font-size:.75rem; font-weight:700; color:var(--gold); letter-spacing:.06em; margin-bottom:.3rem; text-transform:uppercase; }
-.tl-item h4 { font-size:1rem; margin-bottom:.3rem; }
-.tl-item p { font-size:.84rem; max-width:none; }
+/* CTA banner */
+.cta-banner { position:relative; border-radius:var(--radius-xl); overflow:hidden; padding:5.5rem 3.5rem; }
+.cta-banner-bg { position:absolute; inset:0; background-size:cover; background-position:center; }
+.cta-banner::after { content:''; position:absolute; inset:0; background:linear-gradient(110deg,rgba(14,23,38,.94),rgba(14,23,38,.5)); }
+.cta-banner-inner { position:relative; z-index:2; max-width:540px; }
+.cta-banner h2 { color:#fff; font-size:clamp(1.9rem,3.6vw,2.9rem); margin-bottom:1rem; }
+.cta-banner p { color:rgba(255,255,255,.82); margin-bottom:2rem; font-size:1.05rem; }
 
 @media(max-width:900px){
-  .story-grid { grid-template-columns:1fr; gap:3rem; }
-  .story-img-sub { display:none; }
-  .story-est-badge { left:1rem; }
-  .why-grid { grid-template-columns:1fr; }
-  .pillars-3 { grid-template-columns:1fr; }
+  .about-feature, .sector-grid { grid-template-columns:1fr; gap:2.5rem; }
+  .latest-grid { grid-template-columns:1fr; }
+  .about-feature-img img { height:380px; }
+  .cta-banner { padding:3.5rem 2rem; }
 }
-@media(max-width:600px){ .story-img-main { height:300px; } .team-img-wrap img { height:300px; } }
+@media(max-width:560px){ .sector-list { grid-template-columns:1fr; } }
 </style>
   <!-- Open Graph / Social Share -->
   <meta property="og:type" content="website">
@@ -117,15 +107,44 @@
   <div class="page-hero-bg" style="background-image:url('images/page-hero-about.jpg')"></div>
   <div class="page-hero-overlay"></div>
   <div class="container page-hero-content">
-    <div class="tag">Our Story</div>
-    <h1>16+ Years Building Ghana's Future</h1>
-    <p>Proudly Ghanaian-owned. Trusted by homes, churches, corporations and government institutions across Accra and beyond.</p>
+    <div class="tag">About Us</div>
+    <h1>About Company</h1>
+    <p>Ghanaian-owned engineering, building across Accra since 2009.</p>
     <div class="breadcrumb"><a href="index.html">Home</a><span class="breadcrumb-sep">›</span><span class="current">About Us</span></div>
   </div>
 </div>
 
-<!-- STATS BAR -->
-<div style="background:var(--bg);padding:2.5rem 1.5rem 0;">
+<!-- COMMITTED TO QUALITY -->
+<section class="section">
+  <div class="container">
+    <div class="about-feature">
+      <div class="about-feature-img reveal left">
+        <img src="images/about-quality.jpg" alt="Completed NOBSED residential building in Accra" loading="lazy">
+        <div class="about-feature-badge"><strong>2009</strong><span>EST. IN ACCRA</span></div>
+      </div>
+      <div class="about-feature-text reveal right">
+        <div class="tag">About Us</div>
+        <h2>Committed to Superior <em>Quality &amp; Results</em></h2>
+        <div class="divider"></div>
+        <p>NOBSED Engineering is a Ghanaian-owned construction and engineering firm, building across Accra and beyond since 2009.</p>
+        <p>From homes to commercial and civil works, we deliver to one standard — done right, on time, built to last.</p>
+        <div class="check-list">
+          <div class="check-item">
+            <span class="ck"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <div><h4>Quality</h4><p>Approved materials and rigorous inspection at every stage.</p></div>
+          </div>
+          <div class="check-item">
+            <span class="ck"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <div><h4>Reliability</h4><p>Realistic schedules and milestones we actually keep.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS STRIP -->
+<div style="padding:0 1.5rem 5rem;">
   <div style="max-width:1200px;margin:0 auto;">
     <div class="stats-bar reveal">
       <div class="stat-item"><div class="stat-num"><span class="counter" data-target="16">0</span><span class="stat-plus">+</span></div><div class="stat-label">Years of Experience</div></div>
@@ -136,184 +155,69 @@
   </div>
 </div>
 
-<!-- OUR STORY -->
-<section class="section" style="padding-top:1rem">
-  <div class="container">
-    <div class="story-grid">
-      <div class="story-img-stack reveal left">
-        <img src="images/projects/Picture56.jpg" alt="NOBSED Engineering completed multi-storey project" class="story-img-main" loading="lazy">
-        <div class="story-est-badge"><strong>2009</strong><span>Est. in Ghana</span></div>
-        <img src="images/projects/Picture45.jpg" alt="NOBSED Engineering team at work" class="story-img-sub" loading="lazy">
-      </div>
-      <div class="story-text reveal right">
-        <div class="tag">Who We Are</div>
-        <h2>Proudly Ghanaian — Built on Trust</h2>
-        <div class="divider"></div>
-        <p>NOBSED Engineering Limited is a Ghanaian-owned and operated construction and engineering company, established in <strong>2009</strong> and headquartered in Agbogba, Accra. Over the past 16+ years, we have grown from a local plumbing outfit into one of Accra's most respected multi-disciplinary engineering firms.</p>
-        <p>We are dealers and experts in <strong>Plumbing, Civil Engineering, Building Construction, Mechanical Engineering, Tiling, and Sales of Blocks &amp; Cement</strong>. Our reputation is built on consistent delivery — projects completed on time, within budget, and to the highest quality standards.</p>
-        <p>From single residential homes to large-scale commercial developments, church construction, industrial facilities and government infrastructure, NOBSED Engineering brings the same commitment to every project: <em>quality that lasts, service that matters.</em></p>
-        <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.75rem">
-          <a href="portfolio.html" class="btn btn-primary">View Our Projects <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></a>
-          <a href="contact.html" class="btn btn-outline">Contact Us</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- THREE PILLARS -->
+<!-- SECTORS WE WORK IN -->
 <section class="section section-alt">
   <div class="container">
-    <div class="sh center reveal">
-      <div class="tag">Our Values</div>
-      <h2>The Three Pillars We Stand On</h2>
-      <div class="divider" style="margin:0 auto 1rem"></div>
-      <p>Every decision we make, every material we use, and every project we deliver is guided by three non-negotiable principles.</p>
-    </div>
-    <div class="pillars-3">
-      <div class="pillar-big reveal">
-        <div class="pillar-big-icon"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4M21 12a9 9 0 11-18 0 9 9 0 0118 0z" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></div>
-        <h3>Quality</h3>
-        <p>We use only approved materials, follow engineering best practices, and conduct rigorous inspections at every stage. Our work is built to endure — not just to satisfy a checklist.</p>
+    <div class="sector-grid">
+      <div class="reveal left">
+        <div class="tag">What We Do</div>
+        <h2>Sectors We <em>Work In</em></h2>
+        <div class="divider"></div>
+        <p style="color:var(--mid);margin-bottom:1.75rem">Six divisions under one roof — so every stage of your build stays with one trusted team.</p>
+        <a href="services.html" class="btn btn-teal">Discover More
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></a>
       </div>
-      <div class="pillar-big reveal d1">
-        <div class="pillar-big-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></div>
-        <h3>Safety</h3>
-        <p>Our sites enforce strict health and safety protocols. Every team member is equipped with proper PPE, and our supervisors ensure compliance with Ghana's construction safety regulations daily.</p>
-      </div>
-      <div class="pillar-big reveal d2">
-        <div class="pillar-big-icon"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM22 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></div>
-        <h3>Professionalism</h3>
-        <p>From the first site visit to the final handover, we communicate clearly, document thoroughly and hold ourselves to the highest standards of conduct — respecting both our clients and their investments.</p>
+      <div class="sector-list reveal right">
+        <div class="sector-item"><div class="num">01</div><h4>Residential</h4><p>Homes and estate developments.</p></div>
+        <div class="sector-item"><div class="num">02</div><h4>Commercial</h4><p>Offices, retail and mixed-use builds.</p></div>
+        <div class="sector-item"><div class="num">03</div><h4>Civil Works</h4><p>Roads, drainage and structural works.</p></div>
+        <div class="sector-item"><div class="num">04</div><h4>Plumbing</h4><p>Water supply, drainage and fixtures.</p></div>
+        <div class="sector-item"><div class="num">05</div><h4>Mechanical</h4><p>Mechanical installations and systems.</p></div>
+        <div class="sector-item"><div class="num">06</div><h4>Finishing</h4><p>Tiling, blocks and cement supply.</p></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- WHY CHOOSE US -->
+<!-- LATEST PROJECTS -->
 <section class="section">
   <div class="container">
-    <div class="story-grid" style="align-items:start">
-      <div class="reveal left">
-        <div class="tag">Why NOBSED</div>
-        <h2>Four Reasons Clients Keep Coming Back</h2>
-        <div class="divider"></div>
-        <p style="margin-bottom:2rem">Our long-term relationships with clients like Trasacco Properties, ICGC and Shell Ghana are a testament to what we deliver — not just once, but consistently.</p>
-        <div class="why-grid">
-          <div class="why-card">
-            <div class="why-card-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" fill="none" stroke="#1A6B47" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            <div><h4>End-to-End Delivery</h4><p style="font-size:.82rem;max-width:none">We manage every phase — design, procurement, construction, finishing and handover.</p></div>
-          </div>
-          <div class="why-card">
-            <div class="why-card-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke="#1A6B47" stroke-width="2"/><path d="M12 6v6l4 2" stroke="#1A6B47" stroke-width="2" stroke-linecap="round"/></svg></div>
-            <div><h4>On-Time Delivery</h4><p style="font-size:.82rem;max-width:none">Realistic schedules, regular milestone updates, zero excuses for avoidable delays.</p></div>
-          </div>
-          <div class="why-card">
-            <div class="why-card-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" fill="none" stroke="#1A6B47" stroke-width="2" stroke-linecap="round"/></svg></div>
-            <div><h4>Transparent Pricing</h4><p style="font-size:.82rem;max-width:none">No hidden costs. Our quotations are detailed and our billing is honest.</p></div>
-          </div>
-          <div class="why-card">
-            <div class="why-card-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8z" fill="none" stroke="#1A6B47" stroke-width="2" stroke-linecap="round"/></svg></div>
-            <div><h4>Local Expertise</h4><p style="font-size:.82rem;max-width:none">Ghanaian engineers who know local soils, regulations, suppliers and conditions.</p></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Timeline -->
-      <div class="reveal right" style="padding-top:.5rem">
-        <div class="tag">Our Journey</div>
-        <h3 style="margin-bottom:1.5rem;font-size:1.3rem">Company Timeline</h3>
-        <div class="timeline">
-          <div class="tl-item">
-            <div class="tl-dot"><svg viewBox="0 0 8 8"><circle cx="4" cy="4" r="3" fill="#fff"/></svg></div>
-            <div class="tl-year">2009</div>
-            <h4>Company Founded</h4>
-            <p style="font-size:.83rem;max-width:none">NOBSED Engineering Limited established in Agbogba, Accra — starting with residential plumbing and drainage services.</p>
-          </div>
-          <div class="tl-item">
-            <div class="tl-dot"><svg viewBox="0 0 8 8"><circle cx="4" cy="4" r="3" fill="#fff"/></svg></div>
-            <div class="tl-year">2011–2013</div>
-            <h4>First Major Projects</h4>
-            <p style="font-size:.83rem;max-width:none">Expanded into building construction and civil works. Delivered first residential estate projects in Greater Accra.</p>
-          </div>
-          <div class="tl-item">
-            <div class="tl-dot"><svg viewBox="0 0 8 8"><circle cx="4" cy="4" r="3" fill="#fff"/></svg></div>
-            <div class="tl-year">2015</div>
-            <h4>Corporate Client Partnerships</h4>
-            <p style="font-size:.83rem;max-width:none">Secured partnerships with Trasacco Properties and other major developers. Grew team to include licensed civil engineers.</p>
-          </div>
-          <div class="tl-item">
-            <div class="tl-dot"><svg viewBox="0 0 8 8"><circle cx="4" cy="4" r="3" fill="#fff"/></svg></div>
-            <div class="tl-year">2017–2019</div>
-            <h4>Institutional Works</h4>
-            <p style="font-size:.83rem;max-width:none">Completed construction and plumbing works for ICGC Jesus Temple and major commercial buildings across Accra.</p>
-          </div>
-          <div class="tl-item">
-            <div class="tl-dot"><svg viewBox="0 0 8 8"><circle cx="4" cy="4" r="3" fill="#fff"/></svg></div>
-            <div class="tl-year">2021–2025</div>
-            <h4>Growth &amp; Expansion</h4>
-            <p style="font-size:.83rem;max-width:none">100+ completed projects. Expanded service divisions to include mechanical engineering, tiling, and cement supply. Now one of Accra's most trusted engineering firms.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- OUR TEAM -->
-<section class="section section-alt">
-  <div class="container">
     <div class="sh center reveal">
-      <div class="tag">Our Team</div>
-      <h2>The People Behind the Work</h2>
-      <div class="divider" style="margin:0 auto 1rem"></div>
-      <p>A dedicated team of Ghanaian engineers, tradespeople, and site supervisors — trained, certified, and passionate about building excellence.</p>
+      <div class="tag" style="margin:0 auto">Latest Projects</div>
+      <h2>Built From the <em>Ground Up</em></h2>
+      <div class="divider" style="margin:0 auto"></div>
     </div>
-    <div style="display:grid;grid-template-columns:1.2fr 1fr;gap:2.5rem;align-items:center" class="reveal">
-      <div class="team-img-wrap">
-        <img src="images/projects/Picture11.jpg" alt="NOBSED Engineering team members in hi-vis vests on site" loading="lazy">
-        <div class="team-overlay"></div>
-        <div class="team-caption">
-          <h3>Our Field Team</h3>
-          <p>Experienced engineers and skilled tradespeople, always on-site and accountable.</p>
-        </div>
-      </div>
-      <div>
-        <div class="tag" style="margin-bottom:1.25rem">Team Strengths</div>
-        <div style="display:flex;flex-direction:column;gap:1rem">
-          <div style="display:flex;align-items:flex-start;gap:1rem;background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:1.1rem;transition:var(--t)" onmouseenter="this.style.borderColor='var(--green)'" onmouseleave="this.style.borderColor='var(--border)'">
-            <div style="width:10px;height:10px;background:var(--green);border-radius:50%;flex-shrink:0;margin-top:.35rem"></div>
-            <div><strong style="font-family:'Inter',sans-serif;font-size:.9rem;display:block;margin-bottom:.2rem">Licensed Civil &amp; Mechanical Engineers</strong><span style="font-size:.82rem;color:var(--mid)">All lead engineers hold professional certifications from recognised Ghanaian institutions.</span></div>
-          </div>
-          <div style="display:flex;align-items:flex-start;gap:1rem;background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:1.1rem;transition:var(--t)" onmouseenter="this.style.borderColor='var(--green)'" onmouseleave="this.style.borderColor='var(--border)'">
-            <div style="width:10px;height:10px;background:var(--gold);border-radius:50%;flex-shrink:0;margin-top:.35rem"></div>
-            <div><strong style="font-family:'Inter',sans-serif;font-size:.9rem;display:block;margin-bottom:.2rem">Skilled Tradespeople &amp; Artisans</strong><span style="font-size:.82rem;color:var(--mid)">Our plumbers, tilers, masons and carpenters bring decades of combined hands-on experience.</span></div>
-          </div>
-          <div style="display:flex;align-items:flex-start;gap:1rem;background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:1.1rem;transition:var(--t)" onmouseenter="this.style.borderColor='var(--green)'" onmouseleave="this.style.borderColor='var(--border)'">
-            <div style="width:10px;height:10px;background:var(--green);border-radius:50%;flex-shrink:0;margin-top:.35rem"></div>
-            <div><strong style="font-family:'Inter',sans-serif;font-size:.9rem;display:block;margin-bottom:.2rem">Safety-First Culture</strong><span style="font-size:.82rem;color:var(--mid)">Every team member receives regular safety briefings and is equipped with approved PPE on every site.</span></div>
-          </div>
-          <div style="display:flex;align-items:flex-start;gap:1rem;background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:1.1rem;transition:var(--t)" onmouseenter="this.style.borderColor='var(--green)'" onmouseleave="this.style.borderColor='var(--border)'">
-            <div style="width:10px;height:10px;background:var(--gold);border-radius:50%;flex-shrink:0;margin-top:.35rem"></div>
-            <div><strong style="font-family:'Inter',sans-serif;font-size:.9rem;display:block;margin-bottom:.2rem">Locally Rooted, Nationally Trusted</strong><span style="font-size:.82rem;color:var(--mid)">Based in Agbogba, Accra — we know the local conditions, suppliers and regulations better than anyone.</span></div>
-          </div>
-        </div>
-        <a href="contact.html" class="btn btn-primary" style="margin-top:1.75rem">Work With Our Team <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></a>
-      </div>
+    <div class="latest-grid">
+      <a href="portfolio.html" class="latest-card reveal">
+        <img src="images/proj-villa.jpg" alt="Completed residential development" loading="lazy">
+        <div class="latest-cap"><div class="cat">Residential</div><h4>Estate Villas, Accra</h4></div>
+      </a>
+      <a href="portfolio.html" class="latest-card reveal d1">
+        <img src="images/proj-multistorey.jpg" alt="Multi-storey building under construction" loading="lazy">
+        <div class="latest-cap"><div class="cat">Construction</div><h4>Multi-Storey Build</h4></div>
+      </a>
+      <a href="portfolio.html" class="latest-card reveal d2">
+        <img src="images/proj-warehouse.jpg" alt="Industrial warehouse structure" loading="lazy">
+        <div class="latest-cap"><div class="cat">Commercial</div><h4>Warehouse Facility</h4></div>
+      </a>
+    </div>
+    <div style="text-align:center;margin-top:2.5rem" class="reveal">
+      <a href="portfolio.html" class="btn btn-outline">View All Projects</a>
     </div>
   </div>
 </section>
 
-<!-- CTA BAND -->
-<section style="background:linear-gradient(135deg,var(--green-dark),var(--green));padding:4rem 0">
-  <div class="container" style="text-align:center">
-    <div class="reveal">
-      <div class="tag" style="background:rgba(212,160,23,.2);color:var(--gold);border:1px solid rgba(212,160,23,.3)">Ready to Build?</div>
-      <h2 style="color:#fff;margin:.75rem 0">Let's Create Something Lasting Together</h2>
-      <p style="color:rgba(255,255,255,.75);margin:0 auto 2rem;max-width:55ch">Whether it's your dream home, a commercial development, or a civil engineering project — NOBSED Engineering is ready to deliver.</p>
-      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
-        <a href="contact.html" class="btn btn-gold">Get a Free Quote <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></a>
-        <a href="portfolio.html" class="btn btn-white-outline">View Our Work</a>
+<!-- CTA BANNER -->
+<section class="section" style="padding-top:0">
+  <div class="container">
+    <div class="cta-banner reveal">
+      <div class="cta-banner-bg" style="background-image:url('images/about-supervisor.jpg')"></div>
+      <div class="cta-banner-inner">
+        <div class="tag" style="background:rgba(22,163,198,.2);color:var(--blue-mid);border:none">Ready to Build?</div>
+        <h2>Let's Start Your <em>Project</em></h2>
+        <p>Tell us what you're building. We'll handle it from foundation to finish.</p>
+        <a href="contact.html" class="btn btn-teal">Get Started
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></a>
       </div>
     </div>
   </div>
