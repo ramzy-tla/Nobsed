@@ -151,15 +151,22 @@ h1 em, h2 em, h3 em { font-style:italic; color:var(--blue); }
 .hamburger span { display:block; width:24px; height:2px; background:var(--navy); border-radius:2px; transition:var(--t); }
 
 /* Mobile nav */
-.mobile-nav { display:none; position:fixed; top:0; left:0; right:0; bottom:0; background:var(--charcoal); z-index:99; flex-direction:column; align-items:center; justify-content:center; gap:2rem; opacity:0; transition:opacity .3s ease; }
+.mobile-nav { display:none; position:fixed; inset:0; z-index:300; flex-direction:column; padding:1.6rem 1.75rem 2.25rem; opacity:0; transition:opacity .3s ease; background:radial-gradient(125% 80% at 100% 0%, var(--navy-mid), var(--navy) 62%); }
+.mobile-nav::before { content:''; position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px); background-size:44px 44px; pointer-events:none; }
 .mobile-nav.open { display:flex; opacity:1; }
-.mobile-nav a { font-family:'Inter',sans-serif; font-size:1.4rem; font-weight:600; color:rgba(255,255,255,.85); transition:var(--t); }
-.mobile-nav a:hover { color:var(--gold); }
-.mobile-nav-close { position:absolute; top:1.5rem; right:1.5rem; color:#fff; font-size:2rem; cursor:pointer; opacity:.7; }
-.mobile-nav-close:hover { opacity:1; }
-.mobile-nav-logo { position:absolute; top:1.5rem; left:1.5rem; display:flex; align-items:center; gap:.75rem; }
-.mobile-nav-logo img { height:46px; width:auto; object-fit:contain; }
-.mobile-nav-logo span { font-family:'Inter',sans-serif; font-size:.85rem; font-weight:700; color:#fff; }
+.mobile-nav > * { position:relative; z-index:1; }
+.mobile-nav-logo { position:static; display:flex; align-items:center; gap:.7rem; margin-bottom:2.25rem; }
+.mobile-nav-logo img { height:40px; width:auto; object-fit:contain; }
+.mobile-nav-logo span { font-family:'Playfair Display',serif; font-size:1rem; font-weight:700; color:#fff; }
+.mobile-nav-close { position:absolute; top:1.5rem; right:1.5rem; width:44px; height:44px; border-radius:50%; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.16); display:flex; align-items:center; justify-content:center; color:#fff; font-size:1.6rem; line-height:1; cursor:pointer; transition:var(--t); }
+.mobile-nav-close:hover { background:var(--blue); border-color:var(--blue); }
+.mobile-nav a:not(.btn) { display:flex; align-items:center; justify-content:space-between; font-family:'Playfair Display',serif; font-size:1.5rem; font-weight:600; color:#fff; padding:1.05rem .15rem; border-bottom:1px solid rgba(255,255,255,.1); transition:var(--t); }
+.mobile-nav a:not(.btn)::after { content:'→'; font-family:'Inter',sans-serif; font-size:1.05rem; color:var(--blue); opacity:0; transform:translateX(-8px); transition:var(--t); }
+.mobile-nav a:not(.btn):hover, .mobile-nav a.active { color:var(--blue-mid); padding-left:.55rem; }
+.mobile-nav a:not(.btn):hover::after, .mobile-nav a.active::after { opacity:1; transform:none; }
+.mobile-nav .btn { margin-top:auto !important; justify-content:center; width:100%; padding:1rem; font-size:.95rem; }
+.mobile-nav .btn-gold { background:var(--blue); color:#fff; }
+.mobile-nav .btn-gold:hover { background:var(--blue-dark); }
 
 /* ══════════════════════════════════════════════════════
    PAGE HERO BANNER (inner pages)

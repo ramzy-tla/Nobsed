@@ -21,8 +21,8 @@
 
 .hero-content { position:relative; z-index:10; height:100%; display:flex; align-items:center; padding-bottom:3.5rem; }
 .hero-inner { padding-top:9rem; max-width:750px; }
-@media(max-width:768px){ .hero-content { align-items:flex-start; padding-bottom:5rem; } .hero-inner { padding-top:8.5rem; } }
-@media(max-width:480px){ .hero-content { padding-bottom:4rem; } .hero-inner { padding-top:7.5rem; } }
+@media(max-width:768px){ #hero { height:80vh; min-height:500px; } .hero-content { align-items:flex-start; padding-bottom:4rem; } .hero-inner { padding-top:7rem; } }
+@media(max-width:480px){ #hero { height:78vh; min-height:460px; } .hero-content { padding-bottom:3rem; } .hero-inner { padding-top:6.5rem; } }
 
 .hero-eyebrow { display:inline-flex; align-items:center; gap:.6rem; color:var(--blue); font-family:'Inter',sans-serif; font-size:.74rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; margin-bottom:1.25rem; border-left:3px solid var(--blue); padding:.1rem 0 .1rem .75rem; }
 .hero-eyebrow svg { display:none; }
@@ -282,7 +282,6 @@
   <!-- Content -->
   <div class="hero-content container">
     <div class="hero-inner">
-      <div class="hero-eyebrow">Est. 2009</div>
       <h1 class="hero-title">
         <span>Building <em>Ghana&#39;s</em></span>
         <span>Future.</span>
