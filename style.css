@@ -87,6 +87,7 @@ p  { color: var(--mid); line-height: 1.75; }
 .tag { display:inline-block; background:transparent; color:var(--blue); font-family:'Inter',sans-serif; font-size:.72rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; padding:.15rem 0 .15rem .85rem; border-left:3px solid var(--blue); border-radius:0; margin-bottom:.75rem; }
 .tag-gold { color:var(--gold-dark); border-left-color:var(--gold); }
 .divider { width:48px; height:3px; background:var(--blue); border-radius:2px; margin:.6rem 0 1.5rem; }
+h1 em, h2 em, h3 em { font-style:italic; color:var(--blue); }
 
 /* ── BUTTONS ── */
 .btn { display:inline-flex; align-items:center; gap:.5rem; font-family:'Inter',sans-serif; font-weight:600; font-size:.82rem; letter-spacing:.07em; text-transform:uppercase; padding:.9rem 2rem; border-radius:4px; transition:var(--t); cursor:pointer; }
@@ -168,10 +169,10 @@ p  { color: var(--mid); line-height: 1.75; }
 .page-hero-content .tag {
   background: none;
   border: none;
-  border-left: 3px solid var(--gold);
+  border-left: 3px solid var(--blue);
   padding: .15rem 0 .15rem .75rem;
   border-radius: 0;
-  color: rgba(255,255,255,.85);
+  color: var(--blue-mid);
   font-size: .72rem;
   letter-spacing: .14em;
 }
