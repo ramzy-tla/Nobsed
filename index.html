@@ -48,7 +48,7 @@
 
 /* Slide arrows */
 .slide-arrow { position:absolute; top:50%; z-index:10; width:48px; height:48px; border-radius:50%; background:rgba(255,255,255,.15); border:1px solid rgba(255,255,255,.25); display:flex; align-items:center; justify-content:center; cursor:pointer; transition:var(--t); transform:translateY(-50%); }
-.slide-arrow:hover { background:var(--green); border-color:var(--green); }
+.slide-arrow:hover { background:var(--green); border-color:var(--blue); }
 .slide-arrow svg { width:20px; height:20px; fill:#fff; }
 .arrow-prev { left:2rem; }
 .arrow-next { right:2rem; }
@@ -73,10 +73,10 @@
 /* ── PILLARS ── */
 .pillars-row { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin:2rem 0 1.75rem; }
 .pillar-card { background:var(--white); border:1px solid var(--border); border-radius:var(--radius); padding:1.25rem; transition:var(--t); }
-.pillar-card:hover { border-color:var(--green); box-shadow:var(--shadow); }
+.pillar-card:hover { border-color:var(--blue); box-shadow:var(--shadow); }
 .pillar-icon { width:42px; height:42px; background:var(--green); border-radius:var(--radius); display:flex; align-items:center; justify-content:center; margin-bottom:.85rem; }
 .pillar-icon svg { width:22px; height:22px; fill:#fff; }
-.pillar-card h4 { font-size:.92rem; color:var(--green); margin-bottom:.3rem; }
+.pillar-card h4 { font-size:.92rem; color:var(--blue); margin-bottom:.3rem; }
 .pillar-card p { font-size:.8rem; max-width:none; }
 
 /* ── SERVICES OVERVIEW ── */
@@ -84,12 +84,12 @@
 .svc-card { background:#fff; border:1px solid var(--border); border-left:4px solid var(--green); border-radius:0 var(--radius) var(--radius) 0; padding:1.5rem; transition:var(--t); cursor:pointer; }
 .svc-card:hover { box-shadow:var(--shadow); transform:translateX(4px); border-left-color:var(--gold); }
 .svc-icon { width:46px; height:46px; background:var(--green-light); border-radius:var(--radius); display:flex; align-items:center; justify-content:center; margin-bottom:1rem; }
-.svc-icon svg { width:24px; height:24px; fill:var(--green); }
+.svc-icon svg { width:24px; height:24px; fill:var(--blue); }
 .svc-card h3 { font-size:.98rem; margin-bottom:.4rem; }
 .svc-card p { font-size:.82rem; max-width:none; margin-bottom:1rem; }
-.svc-link { display:inline-flex; align-items:center; gap:.3rem; font-family:'Inter',sans-serif; font-size:.78rem; font-weight:700; color:var(--green); transition:var(--t); }
+.svc-link { display:inline-flex; align-items:center; gap:.3rem; font-family:'Inter',sans-serif; font-size:.78rem; font-weight:700; color:var(--blue); transition:var(--t); }
 .svc-link:hover { gap:.55rem; color:var(--green-dark); }
-.svc-link svg { width:14px; height:14px; fill:var(--green); }
+.svc-link svg { width:14px; height:14px; fill:var(--blue); }
 
 .svc-cat-header { display:flex; align-items:center; gap:1rem; margin-bottom:1.5rem; }
 .svc-cat-header h3 { font-size:1.25rem; color:var(--charcoal); }
@@ -119,18 +119,18 @@
 /* ── CLIENTS ── */
 .clients-logos { display:flex; flex-wrap:wrap; gap:1.25rem; justify-content:center; margin-bottom:3.5rem; }
 .client-card { background:#fff; border:1px solid var(--border); border-radius:var(--radius); padding:1rem 1.75rem; display:flex; align-items:center; justify-content:center; min-width:130px; transition:var(--t); }
-.client-card:hover { border-color:var(--green); box-shadow:var(--shadow); transform:translateY(-2px); }
+.client-card:hover { border-color:var(--blue); box-shadow:var(--shadow); transform:translateY(-2px); }
 .client-logo-text { font-family:'Inter',sans-serif; font-size:.82rem; font-weight:700; color:var(--mid); text-align:center; line-height:1.3; }
 
 /* Testimonials */
 .testimonials-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; }
 .testi-card { background:#fff; border:1px solid var(--border); border-radius:var(--radius-lg); padding:2rem; transition:var(--t-slow); }
-.testi-card:hover { box-shadow:var(--shadow-lg); border-color:var(--green); }
+.testi-card:hover { box-shadow:var(--shadow-lg); border-color:var(--blue); }
 .testi-img { width:100%; height:180px; object-fit:cover; border-radius:var(--radius); margin-bottom:1.25rem; }
 .testi-stars { display:flex; gap:3px; margin-bottom:.85rem; }
 .testi-stars svg { width:16px; height:16px; fill:var(--gold); }
 .testi-quote { font-size:.9rem; font-style:italic; color:var(--mid); line-height:1.75; margin-bottom:1.5rem; position:relative; padding-left:1.25rem; }
-.testi-quote::before { content:'"'; position:absolute; left:0; top:-.25rem; font-size:2.5rem; font-family:Georgia,serif; color:var(--green); line-height:1; }
+.testi-quote::before { content:'"'; position:absolute; left:0; top:-.25rem; font-size:2.5rem; font-family:Georgia,serif; color:var(--blue); line-height:1; }
 .testi-author { display:flex; align-items:center; gap:.85rem; }
 .testi-avatar { width:44px; height:44px; border-radius:50%; background:var(--green); display:flex; align-items:center; justify-content:center; font-family:'Inter',sans-serif; font-size:1rem; font-weight:700; color:#fff; flex-shrink:0; }
 .testi-name { font-family:'Inter',sans-serif; font-size:.9rem; font-weight:600; color:var(--charcoal); }
@@ -396,7 +396,7 @@
     <div class="svc-cat-header reveal">
       <h3>Plumbing &amp; Water Systems</h3>
       <div class="svc-cat-line"></div>
-      <a href="services.html" style="font-family:'Inter',sans-serif;font-size:.82rem;font-weight:600;color:var(--green);white-space:nowrap">All Services →</a>
+      <a href="services.html" style="font-family:'Inter',sans-serif;font-size:.82rem;font-weight:600;color:var(--blue);white-space:nowrap">All Services →</a>
     </div>
     <div class="services-grid" style="margin-bottom:2.5rem">
       <div class="svc-card reveal">
@@ -429,7 +429,7 @@
     <div class="svc-cat-header reveal">
       <h3>Construction &amp; Civil Engineering</h3>
       <div class="svc-cat-line"></div>
-      <a href="services.html" style="font-family:'Inter',sans-serif;font-size:.82rem;font-weight:600;color:var(--green);white-space:nowrap">All Services →</a>
+      <a href="services.html" style="font-family:'Inter',sans-serif;font-size:.82rem;font-weight:600;color:var(--blue);white-space:nowrap">All Services →</a>
     </div>
     <div class="services-grid">
       <div class="svc-card reveal">
@@ -490,7 +490,7 @@
         </div>
       </div>
       <div class="proj-card reveal d1">
-        <img src="images/projects/Picture60.jpg" alt="Multi-storey commercial building" loading="lazy">
+        <img src="images/featured-residential.jpg" alt="Multi-storey commercial building" loading="lazy">
         <div class="proj-overlay"></div>
         <div class="proj-info">
           <div class="proj-cat">Commercial Building</div>
@@ -499,7 +499,7 @@
         </div>
       </div>
       <div class="proj-card reveal d2">
-        <img src="images/projects/Picture70.jpg" alt="Modern residential homes" loading="lazy">
+        <img src="images/projects/n46.jpg" alt="Modern residential homes" loading="lazy">
         <div class="proj-overlay"></div>
         <div class="proj-info">
           <div class="proj-cat">Residential Development</div>
@@ -508,7 +508,7 @@
         </div>
       </div>
       <div class="proj-card reveal d1" style="margin-top:0">
-        <img src="images/projects/Picture55.jpg" alt="Shell petrol station and commercial building" loading="lazy">
+        <img src="images/projects/n44.jpg" alt="Shell petrol station and commercial building" loading="lazy">
         <div class="proj-overlay"></div>
         <div class="proj-info">
           <div class="proj-cat">Commercial &amp; Retail</div>
@@ -675,7 +675,7 @@
     <div class="testimonials-grid">
       <!-- ICGC testimonial -->
       <div class="testi-card reveal">
-        <img src="images/projects/Picture50.jpg" alt="ICGC Jesus Temple project" class="testi-img" loading="lazy">
+        <img src="images/projects/n47.jpg" alt="ICGC Jesus Temple project" class="testi-img" loading="lazy">
         <div class="testi-stars">
           <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
@@ -694,7 +694,7 @@
       </div>
       <!-- Trasacco testimonial -->
       <div class="testi-card reveal d1">
-        <img src="images/projects/Picture56.jpg" alt="Commercial building project completed by NOBSED" class="testi-img" loading="lazy">
+        <img src="images/projects/n45.jpg" alt="Commercial building project completed by NOBSED" class="testi-img" loading="lazy">
         <div class="testi-stars">
           <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>

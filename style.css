@@ -84,9 +84,9 @@ p  { color: var(--mid); line-height: 1.75; }
 .section-dark { background: var(--charcoal); }
 
 /* ── TAG / BADGE ── */
-.tag { display:inline-block; background:transparent; color:var(--navy); font-family:'Inter',sans-serif; font-size:.72rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; padding:.15rem 0 .15rem .85rem; border-left:3px solid var(--gold); border-radius:0; margin-bottom:.75rem; }
+.tag { display:inline-block; background:transparent; color:var(--blue); font-family:'Inter',sans-serif; font-size:.72rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; padding:.15rem 0 .15rem .85rem; border-left:3px solid var(--blue); border-radius:0; margin-bottom:.75rem; }
 .tag-gold { color:var(--gold-dark); border-left-color:var(--gold); }
-.divider { width:48px; height:3px; background:var(--gold); border-radius:2px; margin:.6rem 0 1.5rem; }
+.divider { width:48px; height:3px; background:var(--blue); border-radius:2px; margin:.6rem 0 1.5rem; }
 
 /* ── BUTTONS ── */
 .btn { display:inline-flex; align-items:center; gap:.5rem; font-family:'Inter',sans-serif; font-weight:600; font-size:.82rem; letter-spacing:.07em; text-transform:uppercase; padding:.9rem 2rem; border-radius:4px; transition:var(--t); cursor:pointer; }
@@ -217,7 +217,7 @@ footer { background:var(--charcoal); color:rgba(255,255,255,.7); padding:4rem 0 
 .footer-bottom-links { display:flex; gap:1.5rem; }
 .footer-bottom-links a { font-size:.78rem; color:rgba(255,255,255,.35); transition:var(--t); }
 .footer-bottom-links a:hover { color:rgba(255,255,255,.75); }
-.footer-accent-bar { width:100%; height:4px; background:linear-gradient(to right, var(--navy), var(--blue), var(--green), var(--gold), var(--green)); margin-bottom:3.5rem; }
+.footer-accent-bar { width:100%; height:4px; background:linear-gradient(to right, var(--navy), var(--blue)); margin-bottom:3.5rem; }
 
 /* ══════════════════════════════════════════════════════
    SHARED COMPONENTS
@@ -269,7 +269,7 @@ footer { background:var(--charcoal); color:rgba(255,255,255,.7); padding:4rem 0 
 .fab-ic.call { background:var(--blue); }
 .fab-ic.wa   { background:#25d366; }
 .fab-ic.sms  { background:var(--navy); }
-.fab-ic.inq  { background:var(--green); }
+.fab-ic.inq  { background:var(--gold); }
 .fab-toggle { width:60px; height:60px; border-radius:50%; background:var(--gold); border:none; cursor:pointer; box-shadow:0 6px 22px rgba(212,160,23,.5); display:flex; align-items:center; justify-content:center; transition:transform .25s ease, background .25s ease; align-self:flex-end; animation:waPulse 2.6s ease infinite; }
 .fab-toggle:hover { background:var(--gold-dark); transform:scale(1.06); }
 .fab-toggle svg { width:27px; height:27px; fill:#fff; transition:transform .3s ease; }
