@@ -10,7 +10,7 @@
 <style>
 /* ── Filter tabs ── */
 .filters { display:flex; flex-wrap:wrap; gap:.65rem; margin-bottom:2.5rem; }
-.filter-btn { font-family:'Poppins',sans-serif; font-size:.83rem; font-weight:600; padding:.55rem 1.4rem; border-radius:100px; border:2px solid var(--border); color:var(--mid); cursor:pointer; transition:var(--t); background:#fff; }
+.filter-btn { font-family:'Sora',sans-serif; font-size:.83rem; font-weight:600; padding:.55rem 1.4rem; border-radius:100px; border:2px solid var(--border); color:var(--mid); cursor:pointer; transition:var(--t); background:#fff; }
 .filter-btn.active, .filter-btn:hover { border-color:var(--green); background:var(--green); color:#fff; }
 
 /* ── Masonry-style grid ── */
@@ -20,13 +20,13 @@
 .pf-item:hover img { transform:scale(1.04); }
 .pf-item-overlay { position:absolute; inset:0; background:linear-gradient(to top,rgba(0,0,0,.88) 0%,rgba(0,0,0,.35) 55%,transparent 100%); opacity:0; transition:var(--t-slow); display:flex; flex-direction:column; justify-content:flex-end; padding:1.5rem; }
 .pf-item:hover .pf-item-overlay { opacity:1; }
-.pf-item-cat { font-family:'Poppins',sans-serif; font-size:.7rem; font-weight:700; color:var(--gold); letter-spacing:.08em; text-transform:uppercase; margin-bottom:.35rem; }
-.pf-item-title { font-family:'Poppins',sans-serif; font-size:.95rem; font-weight:600; color:#fff; line-height:1.3; }
-.pf-item-status { display:inline-flex; align-items:center; gap:.3rem; font-size:.72rem; font-family:'Poppins',sans-serif; font-weight:600; margin-top:.4rem; }
+.pf-item-cat { font-family:'Sora',sans-serif; font-size:.7rem; font-weight:700; color:var(--gold); letter-spacing:.08em; text-transform:uppercase; margin-bottom:.35rem; }
+.pf-item-title { font-family:'Sora',sans-serif; font-size:.95rem; font-weight:600; color:#fff; line-height:1.3; }
+.pf-item-status { display:inline-flex; align-items:center; gap:.3rem; font-size:.72rem; font-family:'Sora',sans-serif; font-weight:600; margin-top:.4rem; }
 .done { color:#4ade80; }
 .ongoing { color:var(--gold); }
 .status-dot { width:6px; height:6px; border-radius:50%; background:currentColor; }
-.pf-item-label { position:absolute; top:1rem; left:1rem; background:var(--gold); color:#fff; font-family:'Poppins',sans-serif; font-size:.68rem; font-weight:700; letter-spacing:.06em; padding:.3rem .75rem; border-radius:100px; }
+.pf-item-label { position:absolute; top:1rem; left:1rem; background:var(--gold); color:#fff; font-family:'Sora',sans-serif; font-size:.68rem; font-weight:700; letter-spacing:.06em; padding:.3rem .75rem; border-radius:100px; }
 
 /* Hidden items */
 .pf-item.hidden { display:none; }
