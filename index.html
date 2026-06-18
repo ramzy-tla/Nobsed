@@ -96,24 +96,23 @@
 .sp-card:hover .sp-more { gap:.7rem; }
 .sp-more svg { width:14px; height:14px; stroke:var(--blue); fill:none; stroke-width:2; }
 
-/* Need any services strip + machine */
-.svc-need { position:relative; margin-top:4rem; display:grid; grid-template-columns:1fr 1.05fr; align-items:end; gap:2rem; }
-.excavator { width:100%; max-width:470px; height:auto; display:block; }
-.svc-need-strip { background:var(--navy); border-radius:var(--radius-xl); padding:2rem 2.25rem; display:flex; align-items:center; justify-content:space-between; gap:1.5rem; flex-wrap:wrap; position:relative; overflow:hidden; }
-.svc-need-strip::after { content:''; position:absolute; right:-40px; top:-40px; width:170px; height:170px; border-radius:50%; background:var(--blue); opacity:.16; }
-.svc-need-strip .lead strong { display:block; font-family:'Playfair Display',serif; font-size:1.45rem; color:#fff; }
-.svc-need-strip .lead span { font-size:.85rem; color:rgba(255,255,255,.6); }
-.svc-need-phone { display:flex; align-items:center; gap:.9rem; position:relative; z-index:2; }
-.svc-need-phone .ph-ic { width:48px; height:48px; border-radius:50%; background:var(--blue); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
-.svc-need-phone .ph-ic svg { width:22px; height:22px; fill:#fff; }
-.svc-need-phone small { display:block; font-size:.72rem; color:rgba(255,255,255,.55); }
-.svc-need-phone b { font-family:'Inter',sans-serif; font-size:1.25rem; font-weight:800; color:#fff; }
+/* Closing band: differentiators + machine in the corner */
+.svc-need { position:relative; margin-top:4rem; min-height:330px; }
+.svc-edge-text { position:relative; z-index:2; max-width:540px; }
+.svc-edge-text h3 { font-family:'Playfair Display',serif; font-size:clamp(1.5rem,3vw,2.05rem); color:var(--navy); margin:.5rem 0 .8rem; }
+.svc-edge-text p { color:var(--mid); max-width:44ch; margin-bottom:1.5rem; }
+.svc-points { display:flex; flex-wrap:wrap; gap:.8rem 1.6rem; }
+.svc-points li { display:flex; align-items:center; gap:.55rem; font-family:'Inter',sans-serif; font-size:.92rem; font-weight:600; color:var(--navy); }
+.svc-points li svg { width:20px; height:20px; flex-shrink:0; }
+.excavator { position:absolute; right:-14px; bottom:-6px; width:48%; max-width:540px; min-width:320px; height:auto; transform:scaleX(-1); z-index:1; pointer-events:none; }
 
 @media(max-width:860px){
   .svc-stagger { grid-template-columns:1fr 1fr; }
   .svc-stagger .sp-card:nth-child(3n+2){ margin-top:0; }
-  .svc-need { grid-template-columns:1fr; }
-  .excavator { margin:0 auto; }
+  .svc-need { min-height:0; display:flex; flex-direction:column; align-items:center; text-align:center; }
+  .svc-edge-text { max-width:none; }
+  .svc-points { justify-content:center; }
+  .excavator { position:static; width:82%; max-width:380px; min-width:0; margin-top:1.5rem; }
 }
 @media(max-width:560px){ .svc-stagger { grid-template-columns:1fr; } }
 
@@ -453,20 +452,19 @@
       </a>
     </div>
 
-    <!-- Need any services? + brand machine -->
+    <!-- Differentiators + brand machine in the corner -->
     <div class="svc-need reveal">
-      <img class="excavator" src="images/excavator.png" alt="Teal and black hydraulic excavator" loading="lazy">
-
-      <div class="svc-need-strip">
-        <div class="lead">
-          <strong>Need any services?</strong>
-          <span>Tell us about your project — we're ready to build.</span>
-        </div>
-        <a href="tel:+233242752207" class="svc-need-phone">
-          <span class="ph-ic"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1H8c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></span>
-          <div><small>Call us anytime</small><b>+233 24 275 2207</b></div>
-        </a>
+      <div class="svc-edge-text">
+        <div class="tag">The NOBSED Difference</div>
+        <h3>One Team. <em>The Whole Build.</em></h3>
+        <p>Plant, licensed engineers and project management under one roof — so your project stays on spec, on time and on budget.</p>
+        <ul class="svc-points">
+          <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="var(--blue-light)"/><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="var(--blue)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Own plant &amp; machinery</li>
+          <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="var(--blue-light)"/><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="var(--blue)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Licensed engineers</li>
+          <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="var(--blue-light)"/><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="var(--blue)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>On-time delivery</li>
+        </ul>
       </div>
+      <img class="excavator" src="images/excavator.png" alt="Teal and black hydraulic excavator" loading="lazy">
     </div>
   </div>
 </section>
