@@ -72,25 +72,52 @@
 .pillar-card h4 { font-size:.92rem; color:var(--blue); margin-bottom:.3rem; }
 .pillar-card p { font-size:.8rem; max-width:none; }
 
-/* ── SERVICES OVERVIEW (editorial list) ── */
-.svc-cat { margin-bottom:3.25rem; }
-.svc-cat:last-of-type { margin-bottom:0; }
-.svc-cat-head { display:flex; align-items:baseline; gap:1.5rem; margin-bottom:.25rem; }
-.svc-cat-head h3 { font-family:'Playfair Display',serif; font-weight:700; font-size:1.45rem; color:var(--navy); white-space:nowrap; }
-.svc-cat-head .line { flex:1; height:1px; background:var(--border); }
-.svc-cat-head a { font-family:'Inter',sans-serif; font-size:.8rem; font-weight:600; color:var(--blue); white-space:nowrap; transition:var(--t); }
-.svc-cat-head a:hover { opacity:.7; }
-.svc-rows { display:grid; grid-template-columns:1fr 1fr; column-gap:4rem; }
-.svc-row { display:flex; gap:1.25rem; align-items:flex-start; padding:1.45rem .25rem 1.45rem 0; border-bottom:1px solid var(--border); transition:var(--t); }
-.svc-row:hover { padding-left:.65rem; padding-right:0; }
-.svc-row .idx { font-family:'Playfair Display',serif; font-size:1.05rem; font-weight:700; color:var(--blue); line-height:1.5; flex-shrink:0; width:1.6rem; }
-.svc-row .body h4 { font-family:'Playfair Display',serif; font-weight:600; font-size:1.1rem; color:var(--navy); margin-bottom:.25rem; transition:var(--t); }
-.svc-row:hover .body h4 { color:var(--blue); }
-.svc-row .body p { font-size:.85rem; color:var(--mid); margin:0; max-width:none; }
-.svc-row .arr { margin-left:auto; align-self:center; opacity:0; transform:translateX(-8px); transition:var(--t); flex-shrink:0; }
-.svc-row:hover .arr { opacity:1; transform:none; }
-.svc-row .arr svg { width:18px; height:18px; stroke:var(--blue); fill:none; stroke-width:2; }
-@media(max-width:760px){ .svc-rows { grid-template-columns:1fr; column-gap:0; } }
+/* ── SERVICES "WE PROVIDE" (staggered cards + machine) ── */
+.svc-provide { position:relative; overflow:hidden; }
+.svc-provide .container { position:relative; z-index:2; }
+.svc-bg-grid { position:absolute; inset:0; z-index:0;
+  background-image:linear-gradient(var(--navy) 1px,transparent 1px),linear-gradient(90deg,var(--navy) 1px,transparent 1px);
+  background-size:48px 48px; opacity:.035; }
+.svc-provide-head { display:flex; align-items:flex-end; justify-content:space-between; gap:2rem; margin-bottom:3rem; flex-wrap:wrap; }
+.svc-provide-head h2 { font-size:clamp(1.9rem,4vw,2.8rem); margin-top:.5rem; }
+
+.svc-stagger { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; }
+.sp-card { position:relative; background:#fff; border:1px solid var(--border); border-radius:var(--radius-lg); padding:1.9rem 1.6rem; transition:var(--t-slow); overflow:hidden; display:block; }
+.sp-card::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:var(--blue); transform:scaleX(0); transform-origin:left; transition:var(--t-slow); }
+.sp-card:hover { transform:translateY(-8px); box-shadow:var(--shadow-lg); border-color:transparent; }
+.sp-card:hover::before { transform:scaleX(1); }
+.svc-stagger .sp-card:nth-child(3n+2){ margin-top:2.5rem; }
+.sp-ic { width:54px; height:54px; border-radius:14px; background:var(--blue-light); display:flex; align-items:center; justify-content:center; margin-bottom:1.25rem; transition:var(--t-slow); }
+.sp-ic svg { width:26px; height:26px; stroke:var(--blue); fill:none; stroke-width:2; transition:var(--t-slow); }
+.sp-card:hover .sp-ic { background:var(--blue); }
+.sp-card:hover .sp-ic svg { stroke:#fff; }
+.sp-cat { font-size:.66rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); }
+.sp-card h4 { font-family:'Playfair Display',serif; font-weight:600; font-size:1.18rem; color:var(--navy); margin:.15rem 0 .5rem; }
+.sp-card p { font-size:.85rem; color:var(--mid); margin:0 0 1.1rem; max-width:none; }
+.sp-more { display:inline-flex; align-items:center; gap:.4rem; font-family:'Inter',sans-serif; font-size:.78rem; font-weight:700; color:var(--blue); transition:var(--t); }
+.sp-card:hover .sp-more { gap:.7rem; }
+.sp-more svg { width:14px; height:14px; stroke:var(--blue); fill:none; stroke-width:2; }
+
+/* Need any services strip + machine */
+.svc-need { position:relative; margin-top:4rem; display:grid; grid-template-columns:1fr 1.05fr; align-items:end; gap:2rem; }
+.excavator { width:100%; max-width:470px; height:auto; display:block; }
+.svc-need-strip { background:var(--navy); border-radius:var(--radius-xl); padding:2rem 2.25rem; display:flex; align-items:center; justify-content:space-between; gap:1.5rem; flex-wrap:wrap; position:relative; overflow:hidden; }
+.svc-need-strip::after { content:''; position:absolute; right:-40px; top:-40px; width:170px; height:170px; border-radius:50%; background:var(--blue); opacity:.16; }
+.svc-need-strip .lead strong { display:block; font-family:'Playfair Display',serif; font-size:1.45rem; color:#fff; }
+.svc-need-strip .lead span { font-size:.85rem; color:rgba(255,255,255,.6); }
+.svc-need-phone { display:flex; align-items:center; gap:.9rem; position:relative; z-index:2; }
+.svc-need-phone .ph-ic { width:48px; height:48px; border-radius:50%; background:var(--blue); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.svc-need-phone .ph-ic svg { width:22px; height:22px; fill:#fff; }
+.svc-need-phone small { display:block; font-size:.72rem; color:rgba(255,255,255,.55); }
+.svc-need-phone b { font-family:'Inter',sans-serif; font-size:1.25rem; font-weight:800; color:#fff; }
+
+@media(max-width:860px){
+  .svc-stagger { grid-template-columns:1fr 1fr; }
+  .svc-stagger .sp-card:nth-child(3n+2){ margin-top:0; }
+  .svc-need { grid-template-columns:1fr; }
+  .excavator { margin:0 auto; }
+}
+@media(max-width:560px){ .svc-stagger { grid-template-columns:1fr; } }
 
 /* ── FEATURED PROJECTS ── */
 .projects-grid { display:grid; grid-template-columns:1.5fr 1fr 1fr; gap:1.5rem; }
@@ -371,81 +398,105 @@
 </section>
 
 <!-- ════════════ SERVICES OVERVIEW ════════════ -->
-<section class="section section-alt">
+<section class="section section-alt svc-provide">
+  <div class="svc-bg-grid"></div>
   <div class="container">
-    <div class="sh center reveal">
-      <div class="tag">What We Do</div>
-      <h2>Our Core Service Offerings</h2>
-      <div class="divider center"></div>
-      <p>Two specialist divisions covering every construction and engineering need — from water supply systems to full-scale building works.</p>
-    </div>
-
-    <!-- Plumbing -->
-    <div class="svc-cat reveal">
-      <div class="svc-cat-head">
-        <h3>Plumbing &amp; Water Systems</h3>
-        <span class="line"></span>
-        <a href="services.html">All Services →</a>
+    <div class="svc-provide-head reveal">
+      <div>
+        <div class="tag">What We Do</div>
+        <h2>Services <em>We Provide</em></h2>
       </div>
-      <div class="svc-rows">
-        <a class="svc-row" href="services.html">
-          <span class="idx">01</span>
-          <span class="body"><h4>Water Supply &amp; Distribution</h4><p>Networks, tanks and distribution systems.</p></span>
-          <span class="arr"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        </a>
-        <a class="svc-row" href="services.html">
-          <span class="idx">02</span>
-          <span class="body"><h4>Drainage &amp; Sewage</h4><p>Drainage, sewage and waste-water systems.</p></span>
-          <span class="arr"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        </a>
-        <a class="svc-row" href="services.html">
-          <span class="idx">03</span>
-          <span class="body"><h4>Pump &amp; Borehole Systems</h4><p>Submersible pumps, boosters and boreholes.</p></span>
-          <span class="arr"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        </a>
-        <a class="svc-row" href="services.html">
-          <span class="idx">04</span>
-          <span class="body"><h4>Bathroom &amp; Kitchen Fitting</h4><p>Bathrooms, WCs and kitchens with premium ware.</p></span>
-          <span class="arr"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        </a>
-      </div>
-    </div>
-
-    <!-- Construction -->
-    <div class="svc-cat reveal">
-      <div class="svc-cat-head">
-        <h3>Construction &amp; Civil Engineering</h3>
-        <span class="line"></span>
-        <a href="services.html">All Services →</a>
-      </div>
-      <div class="svc-rows">
-        <a class="svc-row" href="services.html">
-          <span class="idx">05</span>
-          <span class="body"><h4>Building Construction</h4><p>Residential, commercial and industrial builds.</p></span>
-          <span class="arr"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        </a>
-        <a class="svc-row" href="services.html">
-          <span class="idx">06</span>
-          <span class="body"><h4>Civil Engineering Works</h4><p>Roads, drains, culverts and earthworks.</p></span>
-          <span class="arr"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        </a>
-        <a class="svc-row" href="services.html">
-          <span class="idx">07</span>
-          <span class="body"><h4>Tiling &amp; Finishing</h4><p>Tiling, screeding, plastering and finishes.</p></span>
-          <span class="arr"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        </a>
-        <a class="svc-row" href="services.html">
-          <span class="idx">08</span>
-          <span class="body"><h4>Blocks &amp; Cement Supply</h4><p>Quality blocks and cement, bulk delivery.</p></span>
-          <span class="arr"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        </a>
-      </div>
-    </div>
-
-    <div style="text-align:center;margin-top:2.5rem" class="reveal">
-      <a href="services.html" class="btn btn-primary">View All 12 Services
+      <a href="services.html" class="btn btn-teal">View All Services
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
       </a>
+    </div>
+
+    <div class="svc-stagger">
+      <a class="sp-card reveal" href="services.html">
+        <div class="sp-ic"><svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V5a2 2 0 012-2h10a2 2 0 012 2v16M9 8h1m4 0h1M9 12h1m4 0h1" stroke-linecap="round"/></svg></div>
+        <div class="sp-cat">Construction</div>
+        <h4>Building Construction</h4>
+        <p>Residential, commercial and industrial builds from foundation to roof.</p>
+        <span class="sp-more">Read More <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+      <a class="sp-card reveal" href="services.html">
+        <div class="sp-ic"><svg viewBox="0 0 24 24"><path d="M2 20h20M4 20V10l8-8 8 8v10" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="sp-cat">Civil Engineering</div>
+        <h4>Civil Engineering Works</h4>
+        <p>Roads, drains, culverts, retaining walls and earthworks.</p>
+        <span class="sp-more">Read More <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+      <a class="sp-card reveal" href="services.html">
+        <div class="sp-ic"><svg viewBox="0 0 24 24"><path d="M12 2s7 7.5 7 12a7 7 0 11-14 0c0-4.5 7-12 7-12z" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="sp-cat">Plumbing</div>
+        <h4>Water Supply &amp; Distribution</h4>
+        <p>Water networks, tanks and distribution systems.</p>
+        <span class="sp-more">Read More <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+      <a class="sp-card reveal" href="services.html">
+        <div class="sp-ic"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round"/></svg></div>
+        <div class="sp-cat">Plumbing</div>
+        <h4>Drainage &amp; Sewage</h4>
+        <p>Drainage, sewage and waste-water systems to standard.</p>
+        <span class="sp-more">Read More <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+      <a class="sp-card reveal" href="services.html">
+        <div class="sp-ic"><svg viewBox="0 0 24 24"><path d="M3 3h18v18H3zM3 9h18M3 15h18M9 3v18M15 3v18" stroke-linejoin="round"/></svg></div>
+        <div class="sp-cat">Finishing</div>
+        <h4>Tiling &amp; Finishing</h4>
+        <p>Floor and wall tiling, screeding and plastering.</p>
+        <span class="sp-more">Read More <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+      <a class="sp-card reveal" href="services.html">
+        <div class="sp-ic"><svg viewBox="0 0 24 24"><path d="M3 8h8v5H3zM13 8h8v5h-8zM8 14h8v5H8z" stroke-linejoin="round"/></svg></div>
+        <div class="sp-cat">Supply</div>
+        <h4>Blocks &amp; Cement Supply</h4>
+        <p>Quality sandcrete blocks and cement, bulk delivery.</p>
+        <span class="sp-more">Read More <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+    </div>
+
+    <!-- Need any services? + brand machine -->
+    <div class="svc-need reveal">
+      <svg class="excavator" viewBox="0 0 520 330" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <ellipse cx="210" cy="312" rx="200" ry="13" fill="#0e1726" opacity=".08"/>
+        <!-- tracks -->
+        <rect x="24" y="256" width="330" height="56" rx="28" fill="#0e1726"/>
+        <rect x="46" y="270" width="286" height="28" rx="14" fill="#16a3c6" opacity=".3"/>
+        <circle cx="66" cy="284" r="21" fill="#0e1726" stroke="#16a3c6" stroke-width="5"/>
+        <circle cx="312" cy="284" r="21" fill="#0e1726" stroke="#16a3c6" stroke-width="5"/>
+        <circle cx="132" cy="293" r="9" fill="#16a3c6"/><circle cx="189" cy="293" r="9" fill="#16a3c6"/><circle cx="246" cy="293" r="9" fill="#16a3c6"/>
+        <!-- body base / counterweight -->
+        <path d="M58 256 L58 200 Q58 188 72 188 L262 188 L262 256 Z" fill="#0e1726"/>
+        <!-- upper house (teal) -->
+        <path d="M80 188 L80 146 Q80 134 94 134 L214 134 L252 188 Z" fill="#16a3c6"/>
+        <!-- cab window -->
+        <path d="M158 182 L158 146 L210 146 L236 182 Z" fill="#0e1726" opacity=".5"/>
+        <!-- exhaust -->
+        <rect x="100" y="116" width="11" height="20" rx="3" fill="#0e1726"/>
+        <!-- boom -->
+        <path d="M250 172 L316 96 L342 116 L280 196 Z" fill="#16a3c6" stroke="#0e1726" stroke-width="4"/>
+        <!-- arm / dipper -->
+        <path d="M324 102 L388 178 L366 196 L300 124 Z" fill="#1187a6" stroke="#0e1726" stroke-width="4"/>
+        <!-- hydraulic cylinder -->
+        <line x1="252" y1="150" x2="312" y2="118" stroke="#0e1726" stroke-width="6" stroke-linecap="round"/>
+        <!-- pivots -->
+        <circle cx="252" cy="174" r="9" fill="#0e1726"/><circle cx="322" cy="100" r="8" fill="#0e1726"/><circle cx="378" cy="186" r="7" fill="#0e1726"/>
+        <!-- bucket (gold accent) -->
+        <path d="M372 168 Q422 174 424 218 L386 240 Q344 224 348 182 Z" fill="#c8941f"/>
+        <path d="M386 240 l7 13 m13 -9 l6 12 m12 -10 l5 10" stroke="#c8941f" stroke-width="6" stroke-linecap="round"/>
+      </svg>
+
+      <div class="svc-need-strip">
+        <div class="lead">
+          <strong>Need any services?</strong>
+          <span>Tell us about your project — we're ready to build.</span>
+        </div>
+        <a href="tel:+233242752207" class="svc-need-phone">
+          <span class="ph-ic"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1H8c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></span>
+          <div><small>Call us anytime</small><b>+233 24 275 2207</b></div>
+        </a>
+      </div>
     </div>
   </div>
 </section>
