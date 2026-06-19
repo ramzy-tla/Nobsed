@@ -1,6 +1,6 @@
 /* ══════════════════════════════════════════════════════
    NOBSED ENGINEERING LIMITED — Shared Stylesheet
-   Brand: Navy #002B6D · Blue #1B9ACE · Green #1A6B47 · Gold #D4A017
+   Brand: Navy #0e1726 · Teal #16a3c6 · Slate accents (green & gold retired)
 ═══════════════════════════════════════════════════════ */
 
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,500;1,600&family=Inter:wght@300;400;500;600;700&display=swap');
@@ -25,9 +25,9 @@
   --green-pale:   #f5f7f9;
 
   /* ── Gold accent (signature) ── */
-  --gold:         #c8941f;
-  --gold-dark:    #a57814;
-  --gold-light:   #f6ecce;
+  --gold:         #16a3c6;
+  --gold-dark:    #1187a6;
+  --gold-light:   #e2f5fa;
 
   /* ── Neutrals ── */
   --charcoal:     #14181f;
@@ -94,7 +94,7 @@ h1 em, h2 em, h3 em { font-style:italic; color:var(--blue); }
 .btn-primary { background:var(--navy); color:#fff; }
 .btn-primary:hover { background:var(--navy-dark); transform:translateY(-2px); box-shadow:0 8px 24px rgba(0,43,109,.35); }
 .btn-gold { background:var(--gold); color:#fff; }
-.btn-gold:hover { background:var(--gold-dark); transform:translateY(-2px); box-shadow:0 8px 24px rgba(212,160,23,.4); }
+.btn-gold:hover { background:var(--gold-dark); transform:translateY(-2px); box-shadow:0 8px 24px rgba(22,163,198,.4); }
 .btn-outline { background:transparent; color:var(--navy); border:2px solid var(--navy); }
 .btn-outline:hover { background:var(--navy); color:#fff; }
 .btn-white { background:#fff; color:var(--navy); }
@@ -263,7 +263,7 @@ footer { background:var(--charcoal); color:rgba(255,255,255,.7); padding:4rem 0 
   transition:var(--t); outline:none;
 }
 .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
-  border-color:var(--green); box-shadow:0 0 0 3px rgba(26,107,71,.1);
+  border-color:var(--green); box-shadow:0 0 0 3px rgba(22,163,198,.1);
 }
 .form-group textarea { resize:vertical; min-height:130px; }
 .form-group select { appearance:none; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%234a5568' d='M6 8L1 3h10z'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 1rem center; }
@@ -281,14 +281,14 @@ footer { background:var(--charcoal); color:rgba(255,255,255,.7); padding:4rem 0 
 .fab-ic.wa   { background:#25d366; }
 .fab-ic.sms  { background:var(--navy); }
 .fab-ic.inq  { background:var(--gold); }
-.fab-toggle { width:60px; height:60px; border-radius:50%; background:var(--gold); border:none; cursor:pointer; box-shadow:0 6px 22px rgba(212,160,23,.5); display:flex; align-items:center; justify-content:center; transition:transform .25s ease, background .25s ease; align-self:flex-end; animation:waPulse 2.6s ease infinite; }
+.fab-toggle { width:60px; height:60px; border-radius:50%; background:var(--gold); border:none; cursor:pointer; box-shadow:0 6px 22px rgba(22,163,198,.5); display:flex; align-items:center; justify-content:center; transition:transform .25s ease, background .25s ease; align-self:flex-end; animation:waPulse 2.6s ease infinite; }
 .fab-toggle:hover { background:var(--gold-dark); transform:scale(1.06); }
 .fab-toggle svg { width:27px; height:27px; fill:#fff; transition:transform .3s ease; }
 .fab-icon-x { display:none; }
 .fab-contact.open .fab-icon-chat { display:none; }
 .fab-contact.open .fab-icon-x { display:block; }
 .fab-contact.open .fab-toggle { animation:none; }
-@keyframes waPulse { 0%,100%{box-shadow:0 6px 22px rgba(212,160,23,.45)} 50%{box-shadow:0 6px 30px rgba(212,160,23,.75)} }
+@keyframes waPulse { 0%,100%{box-shadow:0 6px 22px rgba(22,163,198,.45)} 50%{box-shadow:0 6px 30px rgba(22,163,198,.75)} }
 
 /* ══════════════════════════════════════════════════════
    CLIENT MARQUEE
