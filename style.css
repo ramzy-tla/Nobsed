@@ -280,9 +280,9 @@ footer { background:var(--charcoal); color:rgba(255,255,255,.7); padding:4rem 0 
 .fab-ic.call { background:var(--blue); }
 .fab-ic.wa   { background:#25d366; }
 .fab-ic.sms  { background:var(--navy); }
-.fab-ic.inq  { background:var(--gold); }
-.fab-toggle { width:60px; height:60px; border-radius:50%; background:var(--gold); border:none; cursor:pointer; box-shadow:0 6px 22px rgba(22,163,198,.5); display:flex; align-items:center; justify-content:center; transition:transform .25s ease, background .25s ease; align-self:flex-end; animation:waPulse 2.6s ease infinite; }
-.fab-toggle:hover { background:var(--gold-dark); transform:scale(1.06); }
+.fab-ic.inq  { background:var(--blue-mid); }
+.fab-toggle { width:60px; height:60px; border-radius:50%; background:var(--blue); border:none; cursor:pointer; box-shadow:0 6px 22px rgba(22,163,198,.5); display:flex; align-items:center; justify-content:center; transition:transform .25s ease, background .25s ease; align-self:flex-end; animation:waPulse 2.6s ease infinite; }
+.fab-toggle:hover { background:var(--blue-dark); transform:scale(1.06); }
 .fab-toggle svg { width:27px; height:27px; fill:#fff; transition:transform .3s ease; }
 .fab-icon-x { display:none; }
 .fab-contact.open .fab-icon-chat { display:none; }
