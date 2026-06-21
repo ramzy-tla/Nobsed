@@ -115,11 +115,6 @@
 }
 @media(max-width:560px){ .svc-stagger { grid-template-columns:1fr; } }
 
-/* ── SITE FLYTHROUGH VIDEO ── */
-.video-wrap { position:relative; border-radius:var(--radius-xl); overflow:hidden; box-shadow:var(--shadow-lg); background:var(--navy); }
-.video-wrap video { width:100%; display:block; aspect-ratio:16/9; object-fit:cover; }
-.video-credit { position:absolute; bottom:1rem; right:1rem; background:rgba(14,23,38,.55); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); color:#fff; font-family:'Inter',sans-serif; font-size:.72rem; font-weight:600; letter-spacing:.08em; padding:.45rem .85rem; border-radius:100px; border:1px solid rgba(255,255,255,.18); }
-
 /* ── FEATURED PROJECTS ── */
 .projects-grid { display:grid; grid-template-columns:1.5fr 1fr 1fr; gap:1.5rem; }
 .proj-featured { grid-row:1/3; }
@@ -525,24 +520,6 @@
           <div class="proj-status ongoing"><div class="proj-status-dot"></div>Ongoing</div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- ════════════ SITE FLYTHROUGH VIDEO ════════════ -->
-<section class="section section-alt">
-  <div class="container">
-    <div class="sh center reveal">
-      <div class="tag" style="margin:0 auto">On Site</div>
-      <h2>Project <em>Flythrough</em></h2>
-      <div class="divider" style="margin:0 auto"></div>
-      <p>An aerial look at one of our active multi-storey builds in Accra.</p>
-    </div>
-    <div class="video-wrap reveal">
-      <video autoplay muted loop playsinline preload="metadata" poster="images/flythrough-poster.jpg">
-        <source src="nobsed-site-flythrough.mp4" type="video/mp4">
-      </video>
-      <span class="video-credit">Shot by Forge</span>
     </div>
   </div>
 </section>
