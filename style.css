@@ -84,9 +84,15 @@ p  { color: var(--mid); line-height: 1.75; }
 .section-dark { background: var(--charcoal); }
 
 /* ── TAG / BADGE ── */
-.tag { display:inline-block; background:transparent; color:var(--blue); font-family:'Inter',sans-serif; font-size:.72rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; padding:.15rem 0 .15rem .85rem; border-left:3px solid var(--blue); border-radius:0; margin-bottom:.75rem; }
-.tag-gold { color:var(--gold-dark); border-left-color:var(--gold); }
-.divider { width:48px; height:3px; background:var(--blue); border-radius:2px; margin:.6rem 0 1.5rem; }
+/* Eyebrow with a surveyor's crosshair marker */
+.tag { display:inline-block; background:transparent; color:var(--blue); font-family:'Inter',sans-serif; font-size:.72rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; padding:0; margin-bottom:.85rem; }
+.tag::before { content:''; display:inline-block; vertical-align:middle; width:13px; height:13px; margin:-3px .6rem 0 0; background:linear-gradient(var(--blue),var(--blue)) no-repeat center/100% 2px, linear-gradient(var(--blue),var(--blue)) no-repeat center/2px 100%; }
+.tag-gold { color:var(--blue); }
+/* Blueprint dimension-line divider (end ticks) */
+.divider { position:relative; width:60px; height:2px; background:var(--blue); margin:1rem 0 1.5rem; }
+.divider::before, .divider::after { content:''; position:absolute; top:-5px; width:2px; height:12px; background:var(--blue); }
+.divider::before { left:0; }
+.divider::after { right:0; }
 h1 em, h2 em, h3 em { font-style:italic; color:var(--blue); }
 
 /* ── BUTTONS ── */
