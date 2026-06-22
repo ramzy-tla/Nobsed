@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ramzy-tla.github.io/Nobsed/sitemap.xml
