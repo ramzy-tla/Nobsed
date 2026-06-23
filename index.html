@@ -5,12 +5,10 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>NOBSED Engineering Limited — Building Excellence Since 2009</title>
 <meta name="description" content="Ghana's trusted partner in Plumbing, Civil Engineering, Building Construction and Mechanical works. Based in Accra since 2009.">
-<link rel="icon" type="image/png" href="images/enhanced/Logo.png">
+<link rel="icon" type="image/png" href="images/Logo.png">
 <link rel="stylesheet" href="style.css">
-
+<link rel="canonical" href="https://ramzy-tla.github.io/Nobsed/index.html">
 <style>
-body { background: linear-gradient(135deg, var(--green-dark) 0%, var(--green) 60%, #fffff0 100%); }
-
 /* ══ HOME-SPECIFIC STYLES ══════════════════════════════ */
 
 /* ── HERO SLIDESHOW ── */
@@ -20,18 +18,16 @@ body { background: linear-gradient(135deg, var(--green-dark) 0%, var(--green) 60
 .slide-bg { position:absolute; inset:0; background-size:cover; background-position:center; animation:kenBurns 8s ease-in-out infinite alternate; }
 .slide:nth-child(even) .slide-bg { animation-direction:alternate-reverse; }
 @keyframes kenBurns { from{transform:scale(1)} to{transform:scale(1.06) translate(1%,1%)} }
-.slide-overlay { position:absolute; inset:0; background:linear-gradient(135deg,rgba(0,43,109,.88) 0%,rgba(27,154,206,.42) 48%,rgba(18,77,52,.82) 100%); }
+.slide-overlay { position:absolute; inset:0; background:linear-gradient(to bottom, rgba(0,8,28,.52) 0%, rgba(0,8,28,.82) 100%); }
 
-.hero-content { position:relative; z-index:10; height:100%; display:flex; align-items:center; }
-.hero-inner { padding-top:8rem; max-width:750px; }
-@media(max-width:768px){ .hero-content { align-items:flex-start; } .hero-inner { padding-top:6rem; } }
-@media(max-width:480px){ .hero-inner { padding-top:5.5rem; } }
+.hero-content { position:relative; z-index:10; height:100%; display:flex; align-items:center; padding-bottom:3.5rem; }
+.hero-inner { padding-top:9rem; max-width:750px; }
+@media(max-width:768px){ #hero { height:80vh; min-height:500px; } .hero-content { align-items:flex-start; padding-bottom:4rem; } .hero-inner { padding-top:7rem; } }
+@media(max-width:480px){ #hero { height:78vh; min-height:460px; } .hero-content { padding-bottom:3rem; } .hero-inner { padding-top:6.5rem; } }
 
-.hero-eyebrow { display:inline-flex; align-items:center; gap:.6rem; color:rgba(255,255,255,.75); font-family:'Poppins',sans-serif; font-size:.72rem; font-weight:500; letter-spacing:.16em; text-transform:uppercase; margin-bottom:1.25rem; border-left:3px solid var(--gold); padding:.1rem 0 .1rem .75rem; }
-.hero-eyebrow svg { display:none; }
 
 .hero-title { color:#fff; font-size:clamp(2.4rem,6vw,4rem); font-weight:900; line-height:1.1; margin-bottom:1.5rem; text-shadow:0 2px 20px rgba(0,0,0,.3); }
-.hero-title em { color:var(--gold); font-style:normal; }
+.hero-title em { color:var(--blue); font-style:italic; }
 .hero-title span { display:block; }
 
 .hero-sub { color:rgba(255,255,255,.82); font-size:1.05rem; line-height:1.8; margin-bottom:2.5rem; max-width:55ch; }
@@ -40,23 +36,17 @@ body { background: linear-gradient(135deg, var(--green-dark) 0%, var(--green) 60
 @media(max-width:768px){ .hero-title { font-size:clamp(1.9rem,8vw,2.8rem); margin-bottom:1.25rem; } .hero-sub { font-size:.95rem; margin-bottom:2rem; } }
 
 .hero-stats { display:flex; flex-wrap:wrap; gap:2.5rem; padding-top:2rem; border-top:1px solid rgba(255,255,255,.15); }
-.hs-num { font-family:'Poppins',sans-serif; font-size:2rem; font-weight:800; color:var(--gold); line-height:1; }
+.hs-num { font-family:'Inter',sans-serif; font-size:2rem; font-weight:800; color:var(--gold); line-height:1; }
 .hs-label { font-size:.75rem; color:rgba(255,255,255,.65); letter-spacing:.06em; margin-top:.25rem; text-transform:uppercase; }
 
-/* Slide indicators */
-.slide-dots { position:absolute; bottom:2rem; left:50%; transform:translateX(-50%); z-index:10; display:flex; gap:.6rem; }
+/* Slide indicators (centered) */
+.slide-dots { position:absolute; bottom:3rem; left:50%; transform:translateX(-50%); z-index:10; display:flex; gap:.6rem; }
+@media(max-width:768px){ .slide-dots { bottom:2.5rem; } }
 .slide-dot { width:8px; height:8px; border-radius:50%; background:rgba(255,255,255,.4); cursor:pointer; transition:var(--t); border:none; }
-.slide-dot.active { background:var(--gold); width:24px; border-radius:4px; }
-
-/* Slide arrows */
-.slide-arrow { position:absolute; top:50%; z-index:10; width:48px; height:48px; border-radius:50%; background:rgba(255,255,255,.15); border:1px solid rgba(255,255,255,.25); display:flex; align-items:center; justify-content:center; cursor:pointer; transition:var(--t); transform:translateY(-50%); }
-.slide-arrow:hover { background:var(--green); border-color:var(--green); }
-.slide-arrow svg { width:20px; height:20px; fill:#fff; }
-.arrow-prev { left:2rem; }
-.arrow-next { right:2rem; }
+.slide-dot.active { background:var(--blue); width:24px; border-radius:4px; }
 
 /* Scroll indicator */
-.hero-scroll { position:absolute; bottom:2.5rem; right:2.5rem; z-index:10; display:flex; flex-direction:column; align-items:center; gap:.5rem; color:rgba(255,255,255,.5); font-family:'Poppins',sans-serif; font-size:.68rem; letter-spacing:.12em; text-transform:uppercase; }
+.hero-scroll { position:absolute; bottom:2.5rem; right:2.5rem; z-index:10; display:flex; flex-direction:column; align-items:center; gap:.5rem; color:rgba(255,255,255,.5); font-family:'Inter',sans-serif; font-size:.68rem; letter-spacing:.12em; text-transform:uppercase; }
 .hero-scroll-line { width:2px; height:40px; background:linear-gradient(to bottom,rgba(255,255,255,.5),transparent); animation:scrollLine 1.8s ease infinite; }
 @keyframes scrollLine { 0%,100%{opacity:.4;transform:scaleY(.8)} 50%{opacity:1;transform:scaleY(1)} }
 
@@ -65,37 +55,66 @@ body { background: linear-gradient(135deg, var(--green-dark) 0%, var(--green) 60
 .about-img-wrap { position:relative; }
 .about-img-main { width:100%; height:440px; object-fit:cover; border-radius:var(--radius-xl); }
 .about-badge { position:absolute; bottom:-1.5rem; right:-1.5rem; background:var(--green); color:#fff; border-radius:var(--radius-lg); padding:1.25rem 1.5rem; text-align:center; box-shadow:var(--shadow-xl); }
-.about-badge strong { display:block; font-family:'Poppins',sans-serif; font-size:2.25rem; font-weight:900; color:var(--gold); }
+.about-badge strong { display:block; font-family:'Inter',sans-serif; font-size:2.25rem; font-weight:900; color:var(--gold); }
 .about-badge span { font-size:.72rem; opacity:.85; letter-spacing:.06em; }
 .about-team-row { display:flex; align-items:center; gap:1rem; margin-top:2rem; padding:1rem 1.25rem; background:var(--green-light); border-radius:var(--radius); border-left:4px solid var(--green); }
 .about-team-img { width:52px; height:52px; border-radius:50%; object-fit:cover; object-position:top; border:2px solid var(--white); }
-.about-team-text strong { display:block; font-family:'Poppins',sans-serif; font-size:.88rem; font-weight:700; color:var(--charcoal); }
+.about-team-text strong { display:block; font-family:'Inter',sans-serif; font-size:.88rem; font-weight:700; color:var(--charcoal); }
 .about-team-text span { font-size:.78rem; color:var(--muted); }
 
 /* ── PILLARS ── */
 .pillars-row { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin:2rem 0 1.75rem; }
 .pillar-card { background:var(--white); border:1px solid var(--border); border-radius:var(--radius); padding:1.25rem; transition:var(--t); }
-.pillar-card:hover { border-color:var(--green); box-shadow:var(--shadow); }
+.pillar-card:hover { border-color:var(--blue); box-shadow:var(--shadow); }
 .pillar-icon { width:42px; height:42px; background:var(--green); border-radius:var(--radius); display:flex; align-items:center; justify-content:center; margin-bottom:.85rem; }
 .pillar-icon svg { width:22px; height:22px; fill:#fff; }
-.pillar-card h4 { font-size:.92rem; color:var(--green); margin-bottom:.3rem; }
+.pillar-card h4 { font-size:.92rem; color:var(--blue); margin-bottom:.3rem; }
 .pillar-card p { font-size:.8rem; max-width:none; }
 
-/* ── SERVICES OVERVIEW ── */
-.services-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:1.25rem; }
-.svc-card { background:#fff; border:1px solid var(--border); border-left:4px solid var(--green); border-radius:0 var(--radius) var(--radius) 0; padding:1.5rem; transition:var(--t); cursor:pointer; }
-.svc-card:hover { box-shadow:var(--shadow); transform:translateX(4px); border-left-color:var(--gold); }
-.svc-icon { width:46px; height:46px; background:var(--green-light); border-radius:var(--radius); display:flex; align-items:center; justify-content:center; margin-bottom:1rem; }
-.svc-icon svg { width:24px; height:24px; fill:var(--green); }
-.svc-card h3 { font-size:.98rem; margin-bottom:.4rem; }
-.svc-card p { font-size:.82rem; max-width:none; margin-bottom:1rem; }
-.svc-link { display:inline-flex; align-items:center; gap:.3rem; font-family:'Poppins',sans-serif; font-size:.78rem; font-weight:700; color:var(--green); transition:var(--t); }
-.svc-link:hover { gap:.55rem; color:var(--green-dark); }
-.svc-link svg { width:14px; height:14px; fill:var(--green); }
+/* ── SERVICES "WE PROVIDE" (staggered cards + machine) ── */
+.svc-provide { position:relative; overflow:hidden; }
+.svc-provide .container { position:relative; z-index:2; }
+.svc-bg-grid { position:absolute; inset:0; z-index:0;
+  background-image:linear-gradient(var(--navy) 1px,transparent 1px),linear-gradient(90deg,var(--navy) 1px,transparent 1px);
+  background-size:48px 48px; opacity:.035; }
+.svc-provide-head { display:flex; align-items:flex-end; justify-content:space-between; gap:2rem; margin-bottom:3rem; flex-wrap:wrap; }
+.svc-provide-head h2 { font-size:clamp(1.9rem,4vw,2.8rem); margin-top:.5rem; }
 
-.svc-cat-header { display:flex; align-items:center; gap:1rem; margin-bottom:1.5rem; }
-.svc-cat-header h3 { font-size:1.25rem; color:var(--charcoal); }
-.svc-cat-line { flex:1; height:2px; background:linear-gradient(to right,var(--green),transparent); border-radius:2px; }
+.svc-stagger { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; }
+.sp-card { position:relative; background:#fff; border:1px solid var(--border); border-radius:var(--radius-lg); padding:1.9rem 1.6rem; transition:var(--t-slow); overflow:hidden; display:block; }
+.sp-card::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:var(--blue); transform:scaleX(0); transform-origin:left; transition:var(--t-slow); }
+.sp-card:hover { transform:translateY(-8px); box-shadow:var(--shadow-lg); border-color:transparent; }
+.sp-card:hover::before { transform:scaleX(1); }
+.svc-stagger .sp-card:nth-child(3n+2){ margin-top:2.5rem; }
+.sp-ic { width:54px; height:54px; border-radius:14px; background:var(--blue-light); display:flex; align-items:center; justify-content:center; margin-bottom:1.25rem; transition:var(--t-slow); }
+.sp-ic svg { width:26px; height:26px; stroke:var(--blue); fill:none; stroke-width:2; transition:var(--t-slow); }
+.sp-card:hover .sp-ic { background:var(--blue); }
+.sp-card:hover .sp-ic svg { stroke:#fff; }
+.sp-cat { font-size:.66rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); }
+.sp-card h4 { font-family:'Playfair Display',serif; font-weight:600; font-size:1.18rem; color:var(--navy); margin:.15rem 0 .5rem; }
+.sp-card p { font-size:.85rem; color:var(--mid); margin:0 0 1.1rem; max-width:none; }
+.sp-more { display:inline-flex; align-items:center; gap:.4rem; font-family:'Inter',sans-serif; font-size:.78rem; font-weight:700; color:var(--blue); transition:var(--t); }
+.sp-card:hover .sp-more { gap:.7rem; }
+.sp-more svg { width:14px; height:14px; stroke:var(--blue); fill:none; stroke-width:2; }
+
+/* Closing band: differentiators + crew photo */
+.svc-need { margin-top:4rem; display:grid; grid-template-columns:1fr 1fr; gap:3.5rem; align-items:center; }
+.svc-edge-text h3 { font-family:'Playfair Display',serif; font-size:clamp(1.5rem,3vw,2.05rem); color:var(--navy); margin:.5rem 0 .8rem; }
+.svc-edge-text p { color:var(--mid); max-width:46ch; margin-bottom:1.5rem; }
+.svc-points { display:flex; flex-wrap:wrap; gap:.8rem 1.6rem; }
+.svc-points li { display:flex; align-items:center; gap:.55rem; font-family:'Inter',sans-serif; font-size:.92rem; font-weight:600; color:var(--navy); }
+.svc-points li svg { width:20px; height:20px; flex-shrink:0; }
+.svc-edge-img { position:relative; border-radius:var(--radius-xl); overflow:hidden; box-shadow:var(--shadow-lg); }
+.svc-edge-img img { width:100%; height:360px; object-fit:cover; display:block; }
+.svc-edge-img::after { content:''; position:absolute; inset:0; background:linear-gradient(120deg,rgba(14,23,38,.25),transparent 55%); }
+
+@media(max-width:860px){
+  .svc-stagger { grid-template-columns:1fr 1fr; }
+  .svc-stagger .sp-card:nth-child(3n+2){ margin-top:0; }
+  .svc-need { grid-template-columns:1fr; gap:2rem; }
+  .svc-edge-img img { height:280px; }
+}
+@media(max-width:560px){ .svc-stagger { grid-template-columns:1fr; } }
 
 /* ── FEATURED PROJECTS ── */
 .projects-grid { display:grid; grid-template-columns:1.5fr 1fr 1fr; gap:1.5rem; }
@@ -105,43 +124,43 @@ body { background: linear-gradient(135deg, var(--green-dark) 0%, var(--green) 60
 .proj-featured img { height:500px; }
 .proj-card:not(.proj-featured) img { height:235px; }
 .proj-card:hover img { transform:scale(1.05); }
-.proj-overlay { position:absolute; inset:0; background:linear-gradient(to top,rgba(18,77,52,.9) 0%,transparent 55%); opacity:0; transition:var(--t-slow); }
+.proj-overlay { position:absolute; inset:0; background:linear-gradient(to top,rgba(0,0,0,.88) 0%,transparent 55%); opacity:0; transition:var(--t-slow); }
 .proj-card:hover .proj-overlay { opacity:1; }
 .proj-info { position:absolute; bottom:0; left:0; right:0; padding:1.5rem; transform:translateY(8px); transition:var(--t-slow); }
 .proj-card:hover .proj-info { transform:none; }
-.proj-cat { font-family:'Poppins',sans-serif; font-size:.7rem; font-weight:700; color:var(--gold); letter-spacing:.08em; text-transform:uppercase; margin-bottom:.35rem; }
-.proj-info h4 { font-size:1rem; color:#fff; font-family:'Poppins',sans-serif; margin-bottom:.35rem; }
-.proj-status { display:inline-flex; align-items:center; gap:.35rem; font-size:.72rem; font-family:'Poppins',sans-serif; font-weight:600; }
-.proj-status.done { color:#4ade80; }
-.proj-status.ongoing { color:var(--gold); }
+.proj-cat { font-family:'Inter',sans-serif; font-size:.7rem; font-weight:700; color:var(--gold); letter-spacing:.08em; text-transform:uppercase; margin-bottom:.35rem; }
+.proj-info h4 { font-size:1rem; color:#fff; font-family:'Inter',sans-serif; margin-bottom:.35rem; }
+.proj-status { display:inline-flex; align-items:center; gap:.35rem; font-size:.72rem; font-family:'Inter',sans-serif; font-weight:600; }
+.proj-status.done { color:#16a3c6; }
+.proj-status.ongoing { color:var(--blue-mid); }
 .proj-status-dot { width:6px; height:6px; border-radius:50%; background:currentColor; }
 
-.proj-label { position:absolute; top:1rem; left:1rem; background:var(--gold); color:#fff; font-family:'Poppins',sans-serif; font-size:.7rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; padding:.3rem .8rem; border-radius:100px; }
+.proj-label { position:absolute; top:1rem; left:1rem; background:var(--gold); color:#fff; font-family:'Inter',sans-serif; font-size:.7rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; padding:.3rem .8rem; border-radius:100px; }
 
 /* ── CLIENTS ── */
 .clients-logos { display:flex; flex-wrap:wrap; gap:1.25rem; justify-content:center; margin-bottom:3.5rem; }
 .client-card { background:#fff; border:1px solid var(--border); border-radius:var(--radius); padding:1rem 1.75rem; display:flex; align-items:center; justify-content:center; min-width:130px; transition:var(--t); }
-.client-card:hover { border-color:var(--green); box-shadow:var(--shadow); transform:translateY(-2px); }
-.client-logo-text { font-family:'Poppins',sans-serif; font-size:.82rem; font-weight:700; color:var(--mid); text-align:center; line-height:1.3; }
+.client-card:hover { border-color:var(--blue); box-shadow:var(--shadow); transform:translateY(-2px); }
+.client-logo-text { font-family:'Inter',sans-serif; font-size:.82rem; font-weight:700; color:var(--mid); text-align:center; line-height:1.3; }
 
 /* Testimonials */
 .testimonials-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; }
 .testi-card { background:#fff; border:1px solid var(--border); border-radius:var(--radius-lg); padding:2rem; transition:var(--t-slow); }
-.testi-card:hover { box-shadow:var(--shadow-lg); border-color:var(--green); }
+.testi-card:hover { box-shadow:var(--shadow-lg); border-color:var(--blue); }
 .testi-img { width:100%; height:180px; object-fit:cover; border-radius:var(--radius); margin-bottom:1.25rem; }
 .testi-stars { display:flex; gap:3px; margin-bottom:.85rem; }
 .testi-stars svg { width:16px; height:16px; fill:var(--gold); }
 .testi-quote { font-size:.9rem; font-style:italic; color:var(--mid); line-height:1.75; margin-bottom:1.5rem; position:relative; padding-left:1.25rem; }
-.testi-quote::before { content:'"'; position:absolute; left:0; top:-.25rem; font-size:2.5rem; font-family:Georgia,serif; color:var(--green); line-height:1; }
+.testi-quote::before { content:'"'; position:absolute; left:0; top:-.25rem; font-size:2.5rem; font-family:Georgia,serif; color:var(--blue); line-height:1; }
 .testi-author { display:flex; align-items:center; gap:.85rem; }
-.testi-avatar { width:44px; height:44px; border-radius:50%; background:var(--green); display:flex; align-items:center; justify-content:center; font-family:'Poppins',sans-serif; font-size:1rem; font-weight:700; color:#fff; flex-shrink:0; }
-.testi-name { font-family:'Poppins',sans-serif; font-size:.9rem; font-weight:600; color:var(--charcoal); }
+.testi-avatar { width:44px; height:44px; border-radius:50%; background:var(--green); display:flex; align-items:center; justify-content:center; font-family:'Inter',sans-serif; font-size:1rem; font-weight:700; color:#fff; flex-shrink:0; }
+.testi-name { font-family:'Inter',sans-serif; font-size:.9rem; font-weight:600; color:var(--charcoal); }
 .testi-role { font-size:.78rem; color:var(--muted); }
 
 /* ── PROMISE / CTA BAND ── */
-.promise-band { background:linear-gradient(135deg, var(--green-dark) 0%, var(--green) 60%, #1d7d55 100%); padding:5rem 0; }
+.promise-band { background:linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 58%, #15768f 100%); padding:5rem 0; }
 .promise-grid { display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center; }
-.promise-text .tag { background:rgba(212,160,23,.18); color:var(--gold); border:1px solid rgba(212,160,23,.3); }
+.promise-text .tag { background:rgba(22,163,198,.18); color:var(--gold); border:1px solid rgba(22,163,198,.3); }
 .promise-text h2 { color:#fff; margin-bottom:1.25rem; }
 .promise-blockquote { font-size:1.1rem; color:rgba(255,255,255,.88); font-style:italic; border-left:3px solid var(--gold); padding-left:1.25rem; line-height:1.8; margin-bottom:2rem; max-width:none; }
 .trust-items { display:flex; flex-direction:column; gap:.85rem; }
@@ -154,7 +173,7 @@ body { background: linear-gradient(135deg, var(--green-dark) 0%, var(--green) 60
 .promise-metrics { display:grid; grid-template-columns:1fr 1fr; gap:1.25rem; }
 .pm-card { background:rgba(255,255,255,.1); -webkit-backdrop-filter:blur(8px); backdrop-filter:blur(8px); border:1px solid rgba(255,255,255,.15); border-radius:var(--radius-lg); padding:1.75rem; text-align:center; transition:var(--t); }
 .pm-card:hover { background:rgba(255,255,255,.18); transform:translateY(-2px); }
-.pm-num { font-family:'Poppins',sans-serif; font-size:2.5rem; font-weight:900; color:var(--gold); line-height:1; }
+.pm-num { font-family:'Inter',sans-serif; font-size:2.5rem; font-weight:900; color:var(--gold); line-height:1; }
 .pm-label { font-size:.82rem; color:rgba(255,255,255,.68); margin-top:.4rem; }
 
 /* ── RESPONSIVE ── */
@@ -173,17 +192,16 @@ body { background: linear-gradient(135deg, var(--green-dark) 0%, var(--green) 60
   .projects-grid { grid-template-columns:1fr; }
   .promise-metrics { grid-template-columns:1fr 1fr; }
   .about-img-main { height:300px; }
-  .slide-arrow { display:none; }
   .hero-scroll { display:none; }
 }
 </style>
   <!-- Open Graph / Social Share -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="NOBSED Engineering Ltd">
-  <meta property="og:url" content="https://nobsed-forgetechnologies.netlify.app/index.html">
+  <meta property="og:url" content="https://ramzy-tla.github.io/Nobsed/index.html">
   <meta property="og:title" content="NOBSED Engineering Ltd — Building Excellence Since 2009">
   <meta property="og:description" content="Ghana's trusted partner in Plumbing, Civil Engineering, Building Construction and Mechanical works. Based in Accra since 2009.">
-  <meta property="og:image" content="https://nobsed-forgetechnologies.netlify.app/images/og-preview.jpg">
+  <meta property="og:image" content="https://ramzy-tla.github.io/Nobsed/images/og-preview.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:locale" content="en_GH">
@@ -191,7 +209,47 @@ body { background: linear-gradient(135deg, var(--green-dark) 0%, var(--green) 60
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="NOBSED Engineering Ltd — Building Excellence Since 2009">
   <meta name="twitter:description" content="Ghana's trusted partner in Plumbing, Civil Engineering, Building Construction and Mechanical works. Based in Accra since 2009.">
-  <meta name="twitter:image" content="https://nobsed-forgetechnologies.netlify.app/images/og-preview.jpg">
+  <meta name="twitter:image" content="https://ramzy-tla.github.io/Nobsed/images/og-preview.jpg">
+  <!-- Structured data: Local Business / General Contractor -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "GeneralContractor",
+    "name": "NOBSED Engineering Limited",
+    "alternateName": "NOBSED Engineering Ltd",
+    "description": "Ghanaian-owned construction and engineering firm in Accra since 2009 — plumbing, civil engineering, building construction, tiling and blocks & cement supply.",
+    "url": "https://ramzy-tla.github.io/Nobsed/",
+    "logo": "https://ramzy-tla.github.io/Nobsed/images/Logo.png",
+    "image": "https://ramzy-tla.github.io/Nobsed/images/og-preview.jpg",
+    "telephone": "+233242752207",
+    "email": "nobsedengineering@gmail.com",
+    "foundingDate": "2009",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Agbogba Ablorh Agyei",
+      "addressLocality": "Accra",
+      "addressRegion": "Greater Accra",
+      "addressCountry": "GH"
+    },
+    "geo": { "@type": "GeoCoordinates", "latitude": 5.6837, "longitude": -0.1870 },
+    "areaServed": { "@type": "Place", "name": "Accra and Greater Ghana" },
+    "openingHoursSpecification": [{
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+      "opens": "08:00", "closes": "17:00"
+    }],
+    "sameAs": ["https://wa.me/233242752207"],
+    "makesOffer": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Plumbing & Water Systems" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Drainage & Sewage Systems" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Building Construction" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Civil Engineering Works" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Tiling & Finishing" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Blocks & Cement Supply" } }
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -199,7 +257,7 @@ body { background: linear-gradient(135deg, var(--green-dark) 0%, var(--green) 60
 <nav id="navbar">
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">
-      <img src="images/enhanced/Logo.png" alt="NOBSED Engineering Logo" class="nav-logo-img">
+      <img src="images/Logo.png" alt="NOBSED Engineering Logo" class="nav-logo-img">
       <div class="nav-logo-text">
         <span class="nav-logo-name">NOBSED ENGINEERING LTD.</span>
         <span class="nav-logo-sub">Dealers &amp; Experts in Engineering</span>
@@ -212,7 +270,7 @@ body { background: linear-gradient(135deg, var(--green-dark) 0%, var(--green) 60
       <a href="portfolio.html" class="nav-link">Projects</a>
       <a href="contact.html" class="nav-link">Contact</a>
     </div>
-    <a href="contact.html" class="nav-cta">Get a Quote</a>
+    <a href="contact.html" class="nav-cta">Get a Quote<span class="cta-ico"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
     <div class="hamburger" id="hamburger">
       <span></span><span></span><span></span>
     </div>
@@ -222,7 +280,7 @@ body { background: linear-gradient(135deg, var(--green-dark) 0%, var(--green) 60
 <!-- Mobile nav -->
 <div class="mobile-nav" id="mobileNav">
   <div class="mobile-nav-logo">
-    <img src="images/enhanced/Logo.png" alt="NEL Logo">
+    <img src="images/Logo.png" alt="NEL Logo">
     <span>NOBSED Engineering</span>
   </div>
   <span class="mobile-nav-close" id="mobileClose">&times;</span>
@@ -238,23 +296,23 @@ body { background: linear-gradient(135deg, var(--green-dark) 0%, var(--green) 60
 <section id="hero">
   <!-- Slides -->
   <div class="slide active" data-label="Residential Estate Development" data-cat="Construction">
-    <div class="slide-bg" style="background-image:url('images/enhanced/Picture10.jpg')"></div>
+    <div class="slide-bg" style="background-image:url('images/hero-1.jpg')"></div>
     <div class="slide-overlay"></div>
   </div>
   <div class="slide" data-label="Multi-Storey Commercial Building" data-cat="Civil Engineering">
-    <div class="slide-bg" style="background-image:url('images/enhanced/Picture60.jpg')"></div>
+    <div class="slide-bg" style="background-image:url('images/hero-2.jpg')"></div>
     <div class="slide-overlay"></div>
   </div>
   <div class="slide" data-label="Modern Residential Complex" data-cat="Construction">
-    <div class="slide-bg" style="background-image:url('images/enhanced/Picture70.jpg')"></div>
+    <div class="slide-bg" style="background-image:url('images/hero-3.jpg')"></div>
     <div class="slide-overlay"></div>
   </div>
   <div class="slide" data-label="Commercial &amp; Retail Development" data-cat="Building Construction">
-    <div class="slide-bg" style="background-image:url('images/enhanced/Picture56.jpg')"></div>
+    <div class="slide-bg" style="background-image:url('images/hero-4.jpg')"></div>
     <div class="slide-overlay"></div>
   </div>
   <div class="slide" data-label="High-Rise Office Block" data-cat="Civil Engineering">
-    <div class="slide-bg" style="background-image:url('images/enhanced/Picture57.jpg')"></div>
+    <div class="slide-bg" style="background-image:url('images/hero-2.jpg')"></div>
     <div class="slide-overlay"></div>
   </div>
 
@@ -262,31 +320,23 @@ body { background: linear-gradient(135deg, var(--green-dark) 0%, var(--green) 60
   <div class="hero-content container">
     <div class="hero-inner">
       <h1 class="hero-title">
-        <span>Building</span>
-        <em id="heroSlideLabel">Residential Excellence</em>
-        <span>Since 2009</span>
+        <span>Building <em>Ghana&#39;s</em></span>
+        <span>Future.</span>
       </h1>
-      <p class="hero-sub">Ghana's most trusted partner in Plumbing, Civil Engineering, Building Construction, Mechanical Engineering, Tiling &amp; Cement Supply — structures built to last generations.</p>
+      <p class="hero-sub">Ghana&#39;s trusted partner in plumbing, civil engineering, construction and mechanical works &mdash; structures built to last generations.</p>
       <div class="hero-btns">
-        <a href="contact.html" class="btn btn-gold">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M8 12h8M8 8h5M5 3h14a2 2 0 012 2v11a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2z" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
-          Get a Free Consultation
+        <a href="contact.html" class="btn btn-teal">Request a Quote
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
         </a>
-        <a href="portfolio.html" class="btn btn-white-outline">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h16M4 18h7" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
-          View Completed Projects
-        </a>
+        <a href="portfolio.html" class="btn btn-white-outline">Our Portfolio</a>
       </div>
     </div>
   </div>
 
-  <!-- Arrows -->
-  <button class="slide-arrow arrow-prev" id="prevSlide" aria-label="Previous slide">
-    <svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
-  </button>
-  <button class="slide-arrow arrow-next" id="nextSlide" aria-label="Next slide">
-    <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
-  </button>
+  <div class="slide" data-label="Large Scale Civil Works" data-cat="Civil Engineering">
+    <div class="slide-bg" style="background-image:url('images/hero-5.jpg')"></div>
+    <div class="slide-overlay"></div>
+  </div>
 
   <!-- Dots -->
   <div class="slide-dots" id="slideDots"></div>
@@ -300,7 +350,7 @@ body { background: linear-gradient(135deg, var(--green-dark) 0%, var(--green) 60
 
 <!-- ════════════ STATS BAR ════════════ -->
 <div class="stats-bar-wrap" style="background:var(--bg); padding:0 1.5rem;">
-  <div style="max-width:1200px;margin:0 auto;transform:translateY(-2rem);">
+  <div style="max-width:1200px;margin:0 auto;transform:translateY(-1rem);">
     <div class="stats-bar reveal">
       <div class="stat-item">
         <div class="stat-num"><span class="counter" data-target="16">0</span><span class="stat-plus">+</span></div>
@@ -327,7 +377,7 @@ body { background: linear-gradient(135deg, var(--green-dark) 0%, var(--green) 60
   <div class="container">
     <div class="about-strip">
       <div class="about-img-wrap reveal left">
-        <img src="images/enhanced/Picture10.jpg" alt="Completed residential estate by NOBSED Engineering" class="about-img-main" loading="lazy">
+        <img src="images/projects/Picture10.jpg" alt="Completed residential estate by NOBSED Engineering" class="about-img-main" loading="lazy">
         <div class="about-badge">
           <strong>2009</strong>
           <span>Est. in Ghana</span>
@@ -372,7 +422,7 @@ body { background: linear-gradient(135deg, var(--green-dark) 0%, var(--green) 60
         </div>
 
         <div class="about-team-row">
-          <img src="images/enhanced/Picture11.jpg" alt="NOBSED Engineering team" class="about-team-img">
+          <img src="images/projects/Picture11.jpg" alt="NOBSED Engineering team" class="about-team-img">
           <div class="about-team-text">
             <strong>Our Skilled Team</strong>
             <span>Ghanaian engineers &amp; tradespeople — trained, certified, and experienced</span>
@@ -384,85 +434,79 @@ body { background: linear-gradient(135deg, var(--green-dark) 0%, var(--green) 60
 </section>
 
 <!-- ════════════ SERVICES OVERVIEW ════════════ -->
-<section class="section section-alt">
+<section class="section section-alt svc-provide">
+  <div class="svc-bg-grid"></div>
   <div class="container">
-    <div class="sh center reveal">
-      <div class="tag">What We Do</div>
-      <h2>Our Core Service Offerings</h2>
-      <div class="divider" style="margin:0 auto 1rem"></div>
-      <p>Two specialist divisions covering every construction and engineering need — from water supply systems to full-scale building works.</p>
-    </div>
-
-    <!-- Plumbing -->
-    <div class="svc-cat-header reveal">
-      <h3>Plumbing &amp; Water Systems</h3>
-      <div class="svc-cat-line"></div>
-      <a href="services.html" style="font-family:'Poppins',sans-serif;font-size:.82rem;font-weight:600;color:var(--green);white-space:nowrap">All Services →</a>
-    </div>
-    <div class="services-grid" style="margin-bottom:2.5rem">
-      <div class="svc-card reveal">
-        <div class="svc-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="#1A6B47" stroke-width="2" fill="none"/><path d="M12 8v8M8 12h8" stroke="#1A6B47" stroke-width="2" stroke-linecap="round"/></svg></div>
-        <h3>Water Supply &amp; Distribution</h3>
-        <p>Complete design &amp; installation of water supply networks, tanks and distribution systems.</p>
-        <a href="services.html" class="svc-link">Request Service <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" fill="none" stroke="#1A6B47" stroke-width="2" stroke-linecap="round"/></svg></a>
+    <div class="svc-provide-head reveal">
+      <div>
+        <div class="tag">What We Do</div>
+        <h2>Services <em>We Provide</em></h2>
       </div>
-      <div class="svc-card reveal d1">
-        <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18" stroke="#1A6B47" stroke-width="2" stroke-linecap="round" fill="none"/></svg></div>
-        <h3>Drainage &amp; Sewage Systems</h3>
-        <p>Professional installation of drainage, sewage and waste-water systems to regulatory standards.</p>
-        <a href="services.html" class="svc-link">Request Service <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" fill="none" stroke="#1A6B47" stroke-width="2" stroke-linecap="round"/></svg></a>
-      </div>
-      <div class="svc-card reveal d2">
-        <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-6a4 4 0 100-8 4 4 0 000 8z" stroke="#1A6B47" stroke-width="2" fill="none"/></svg></div>
-        <h3>Pump &amp; Borehole Systems</h3>
-        <p>Installation and maintenance of submersible pumps, booster pumps and borehole systems.</p>
-        <a href="services.html" class="svc-link">Request Service <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" fill="none" stroke="#1A6B47" stroke-width="2" stroke-linecap="round"/></svg></a>
-      </div>
-      <div class="svc-card reveal d3">
-        <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z" stroke="#1A6B47" stroke-width="2" fill="none" stroke-linecap="round"/></svg></div>
-        <h3>Bathroom &amp; Kitchen Fitting</h3>
-        <p>Full installation of bathrooms, WCs and kitchen sinks with premium sanitary ware and fittings.</p>
-        <a href="services.html" class="svc-link">Request Service <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" fill="none" stroke="#1A6B47" stroke-width="2" stroke-linecap="round"/></svg></a>
-      </div>
-    </div>
-
-    <!-- Construction -->
-    <div class="svc-cat-header reveal">
-      <h3>Construction &amp; Civil Engineering</h3>
-      <div class="svc-cat-line"></div>
-      <a href="services.html" style="font-family:'Poppins',sans-serif;font-size:.82rem;font-weight:600;color:var(--green);white-space:nowrap">All Services →</a>
-    </div>
-    <div class="services-grid">
-      <div class="svc-card reveal">
-        <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M3 21h18M9 8h1m5 0h1M9 12h1m5 0h1M5 21V5a2 2 0 012-2h10a2 2 0 012 2v16" stroke="#1A6B47" stroke-width="2" fill="none" stroke-linecap="round"/></svg></div>
-        <h3>Building Construction</h3>
-        <p>Full-scale residential, commercial and industrial building construction from foundation to roofing.</p>
-        <a href="services.html" class="svc-link">Request Service <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" fill="none" stroke="#1A6B47" stroke-width="2" stroke-linecap="round"/></svg></a>
-      </div>
-      <div class="svc-card reveal d1">
-        <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M2 20h20M4 20V10l8-8 8 8v10M10 20v-5h4v5" stroke="#1A6B47" stroke-width="2" fill="none" stroke-linecap="round"/></svg></div>
-        <h3>Civil Engineering Works</h3>
-        <p>Roads, drains, culverts, retaining walls and earthworks executed to engineering specifications.</p>
-        <a href="services.html" class="svc-link">Request Service <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" fill="none" stroke="#1A6B47" stroke-width="2" stroke-linecap="round"/></svg></a>
-      </div>
-      <div class="svc-card reveal d2">
-        <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1zM4 22v-7" stroke="#1A6B47" stroke-width="2" fill="none" stroke-linecap="round"/></svg></div>
-        <h3>Tiling &amp; Finishing</h3>
-        <p>Professional floor and wall tiling, screeding, plastering and finishing for all property types.</p>
-        <a href="services.html" class="svc-link">Request Service <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" fill="none" stroke="#1A6B47" stroke-width="2" stroke-linecap="round"/></svg></a>
-      </div>
-      <div class="svc-card reveal d3">
-        <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M20 7H4a2 2 0 00-2 2v6a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2z" stroke="#1A6B47" stroke-width="2" fill="none"/></svg></div>
-        <h3>Blocks &amp; Cement Supply</h3>
-        <p>Supply of quality sandcrete blocks and cement for construction projects. Bulk delivery available.</p>
-        <a href="services.html" class="svc-link">Request Service <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" fill="none" stroke="#1A6B47" stroke-width="2" stroke-linecap="round"/></svg></a>
-      </div>
-    </div>
-
-    <div style="text-align:center;margin-top:2.5rem" class="reveal">
-      <a href="services.html" class="btn btn-primary">View All 12 Services
+      <a href="services.html" class="btn btn-teal">View All Services
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
       </a>
+    </div>
+
+    <div class="svc-stagger">
+      <a class="sp-card reveal" href="services.html">
+        <div class="sp-ic"><svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V5a2 2 0 012-2h10a2 2 0 012 2v16M9 8h1m4 0h1M9 12h1m4 0h1" stroke-linecap="round"/></svg></div>
+        <div class="sp-cat">Construction</div>
+        <h4>Building Construction</h4>
+        <p>Residential, commercial and industrial builds from foundation to roof.</p>
+        <span class="sp-more">Read More <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+      <a class="sp-card reveal" href="services.html">
+        <div class="sp-ic"><svg viewBox="0 0 24 24"><path d="M2 20h20M4 20V10l8-8 8 8v10" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="sp-cat">Civil Engineering</div>
+        <h4>Civil Engineering Works</h4>
+        <p>Roads, drains, culverts, retaining walls and earthworks.</p>
+        <span class="sp-more">Read More <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+      <a class="sp-card reveal" href="services.html">
+        <div class="sp-ic"><svg viewBox="0 0 24 24"><path d="M12 2s7 7.5 7 12a7 7 0 11-14 0c0-4.5 7-12 7-12z" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="sp-cat">Plumbing</div>
+        <h4>Water Supply &amp; Distribution</h4>
+        <p>Water networks, tanks and distribution systems.</p>
+        <span class="sp-more">Read More <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+      <a class="sp-card reveal" href="services.html">
+        <div class="sp-ic"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round"/></svg></div>
+        <div class="sp-cat">Plumbing</div>
+        <h4>Drainage &amp; Sewage</h4>
+        <p>Drainage, sewage and waste-water systems to standard.</p>
+        <span class="sp-more">Read More <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+      <a class="sp-card reveal" href="services.html">
+        <div class="sp-ic"><svg viewBox="0 0 24 24"><path d="M3 3h18v18H3zM3 9h18M3 15h18M9 3v18M15 3v18" stroke-linejoin="round"/></svg></div>
+        <div class="sp-cat">Finishing</div>
+        <h4>Tiling &amp; Finishing</h4>
+        <p>Floor and wall tiling, screeding and plastering.</p>
+        <span class="sp-more">Read More <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+      <a class="sp-card reveal" href="services.html">
+        <div class="sp-ic"><svg viewBox="0 0 24 24"><path d="M3 8h8v5H3zM13 8h8v5h-8zM8 14h8v5H8z" stroke-linejoin="round"/></svg></div>
+        <div class="sp-cat">Supply</div>
+        <h4>Blocks &amp; Cement Supply</h4>
+        <p>Quality sandcrete blocks and cement, bulk delivery.</p>
+        <span class="sp-more">Read More <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+    </div>
+
+    <!-- Differentiators + crew photo -->
+    <div class="svc-need reveal">
+      <div class="svc-edge-text">
+        <div class="tag">The NOBSED Difference</div>
+        <h3>One Team. <em>The Whole Build.</em></h3>
+        <p>Skilled crews, licensed engineers and tight project management — start to finish, under one roof — so your project stays on spec, on time and on budget.</p>
+        <ul class="svc-points">
+          <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="var(--blue-light)"/><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="var(--blue)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Licensed engineers</li>
+          <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="var(--blue-light)"/><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="var(--blue)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Quality materials &amp; finishes</li>
+          <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="var(--blue-light)"/><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="var(--blue)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>On-time, on-budget delivery</li>
+        </ul>
+      </div>
+      <div class="svc-edge-img">
+        <img src="images/team-onsite.jpg" alt="NOBSED Engineering crew on a residential construction site in Accra" loading="lazy">
+      </div>
     </div>
   </div>
 </section>
@@ -482,39 +526,39 @@ body { background: linear-gradient(135deg, var(--green-dark) 0%, var(--green) 60
     <div class="projects-grid">
       <div class="proj-card proj-featured reveal">
         <div class="proj-label">Featured</div>
-        <img src="images/enhanced/Picture52.png" alt="3-storey residential complex before and after" loading="lazy">
+        <img src="images/feat-apartment.jpg" alt="Multi-storey residential block under construction with full scaffolding" loading="lazy">
         <div class="proj-overlay"></div>
         <div class="proj-info">
-          <div class="proj-cat">Residential Construction</div>
-          <h4>3-Storey Residential Complex</h4>
-          <div class="proj-status done"><div class="proj-status-dot"></div>Completed</div>
+          <div class="proj-cat">Residential Development</div>
+          <h4>Multi-Storey Residential Block</h4>
+          <div class="proj-status ongoing"><div class="proj-status-dot"></div>Ongoing</div>
         </div>
       </div>
       <div class="proj-card reveal d1">
-        <img src="images/enhanced/Picture60.jpg" alt="Multi-storey commercial building" loading="lazy">
+        <img src="images/featured-residential.jpg" alt="Completed luxury family residence by NOBSED Engineering" loading="lazy">
         <div class="proj-overlay"></div>
         <div class="proj-info">
-          <div class="proj-cat">Commercial Building</div>
-          <h4>Multi-Storey Office &amp; Retail Block</h4>
+          <div class="proj-cat">Residential Construction</div>
+          <h4>Luxury Family Residence</h4>
           <div class="proj-status done"><div class="proj-status-dot"></div>Completed</div>
         </div>
       </div>
       <div class="proj-card reveal d2">
-        <img src="images/enhanced/Picture70.jpg" alt="Modern residential homes" loading="lazy">
+        <img src="images/projects/Picture9.jpg" alt="Completed modern multi-storey building" loading="lazy">
         <div class="proj-overlay"></div>
         <div class="proj-info">
-          <div class="proj-cat">Residential Development</div>
-          <h4>Modern Twin-Villa Estate</h4>
+          <div class="proj-cat">Commercial Building</div>
+          <h4>Modern Commercial Building</h4>
           <div class="proj-status done"><div class="proj-status-dot"></div>Completed</div>
         </div>
       </div>
       <div class="proj-card reveal d1" style="margin-top:0">
-        <img src="images/enhanced/Picture55.png" alt="Shell petrol station and commercial building" loading="lazy">
+        <img src="images/feat-civil.jpg" alt="Civil and structural foundation works on site" loading="lazy">
         <div class="proj-overlay"></div>
         <div class="proj-info">
-          <div class="proj-cat">Commercial &amp; Retail</div>
-          <h4>Commercial Service Station</h4>
-          <div class="proj-status done"><div class="proj-status-dot"></div>Completed</div>
+          <div class="proj-cat">Civil Engineering</div>
+          <h4>Civil &amp; Structural Works</h4>
+          <div class="proj-status ongoing"><div class="proj-status-dot"></div>Ongoing</div>
         </div>
       </div>
     </div>
@@ -571,7 +615,7 @@ body { background: linear-gradient(135deg, var(--green-dark) 0%, var(--green) 60
 
       <!-- 5. Sand Park Properties -->
       <div class="client-logo-card">
-        <div class="clc-icon" style="background:linear-gradient(135deg,#c47e1a,#d4a017)">
+        <div class="clc-icon" style="background:linear-gradient(135deg,#1187a6,#16a3c6)">
           <svg width="28" height="28" viewBox="0 0 40 40" fill="none">
             <rect x="6" y="22" width="28" height="12" rx="3" fill="rgba(255,255,255,.9)"/>
             <rect x="12" y="10" width="16" height="14" rx="2" fill="rgba(255,255,255,.75)"/>
@@ -596,7 +640,7 @@ body { background: linear-gradient(135deg, var(--green-dark) 0%, var(--green) 60
 
       <!-- 7. Ridge View Gardens -->
       <div class="client-logo-card">
-        <div class="clc-icon" style="background:linear-gradient(135deg,#1A6B47,#2a9d63)">
+        <div class="clc-icon" style="background:linear-gradient(135deg,#16a3c6,#1187a6)">
           <svg width="28" height="28" viewBox="0 0 40 40" fill="none">
             <path d="M20 4 C10 14 4 20 4 28 C4 34 11 38 20 38 C29 38 36 34 36 28 C36 20 30 14 20 4z" fill="rgba(255,255,255,.9)"/>
           </svg>
@@ -642,7 +686,7 @@ body { background: linear-gradient(135deg, var(--green-dark) 0%, var(--green) 60
         <span class="clc-badge clc-badge-blue">Agenda 111 · MoH Partner</span>
       </div>
       <div class="client-logo-card">
-        <div class="clc-icon" style="background:linear-gradient(135deg,#c47e1a,#d4a017)">
+        <div class="clc-icon" style="background:linear-gradient(135deg,#1187a6,#16a3c6)">
           <svg width="28" height="28" viewBox="0 0 40 40" fill="none"><rect x="6" y="22" width="28" height="12" rx="3" fill="rgba(255,255,255,.9)"/><rect x="12" y="10" width="16" height="14" rx="2" fill="rgba(255,255,255,.75)"/><rect x="16" y="4" width="8" height="8" rx="1" fill="rgba(255,255,255,.6)"/></svg>
         </div>
         <div class="clc-name">SAND PARK<br>PROPERTIES</div>
@@ -656,7 +700,7 @@ body { background: linear-gradient(135deg, var(--green-dark) 0%, var(--green) 60
         <div class="clc-sub">Residential<br>Development</div>
       </div>
       <div class="client-logo-card">
-        <div class="clc-icon" style="background:linear-gradient(135deg,#1A6B47,#2a9d63)">
+        <div class="clc-icon" style="background:linear-gradient(135deg,#16a3c6,#1187a6)">
           <svg width="28" height="28" viewBox="0 0 40 40" fill="none"><path d="M20 4 C10 14 4 20 4 28 C4 34 11 38 20 38 C29 38 36 34 36 28 C36 20 30 14 20 4z" fill="rgba(255,255,255,.9)"/></svg>
         </div>
         <div class="clc-name">RIDGE VIEW<br>GARDENS LTD</div>
@@ -676,7 +720,7 @@ body { background: linear-gradient(135deg, var(--green-dark) 0%, var(--green) 60
     <div class="testimonials-grid">
       <!-- ICGC testimonial -->
       <div class="testi-card reveal">
-        <img src="images/enhanced/Picture50.png" alt="ICGC Jesus Temple project" class="testi-img" loading="lazy">
+        <img src="images/projects/n47.jpg" alt="ICGC Jesus Temple project" class="testi-img" loading="lazy">
         <div class="testi-stars">
           <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
@@ -695,7 +739,7 @@ body { background: linear-gradient(135deg, var(--green-dark) 0%, var(--green) 60
       </div>
       <!-- Trasacco testimonial -->
       <div class="testi-card reveal d1">
-        <img src="images/enhanced/Picture56.jpg" alt="Commercial building project completed by NOBSED" class="testi-img" loading="lazy">
+        <img src="images/projects/n45.jpg" alt="Commercial building project completed by NOBSED" class="testi-img" loading="lazy">
         <div class="testi-stars">
           <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
@@ -762,7 +806,7 @@ body { background: linear-gradient(135deg, var(--green-dark) 0%, var(--green) 60
     <div class="footer-top">
       <div class="footer-brand">
         <a href="index.html" class="nav-logo" style="margin-bottom:1.25rem">
-          <img src="images/enhanced/Logo.png" alt="NEL Logo" class="nav-logo-img">
+          <img src="images/Logo.png" alt="NEL Logo" class="nav-logo-img">
           <div class="nav-logo-text">
             <span class="nav-logo-name">NOBSED ENGINEERING LTD.</span>
             <span class="nav-logo-sub">Dealers &amp; Experts in Engineering</span>
@@ -770,12 +814,10 @@ body { background: linear-gradient(135deg, var(--green-dark) 0%, var(--green) 60
         </a>
         <p>Ghana's trusted partner in construction, civil engineering, plumbing and mechanical works. Building excellence since 2009.</p>
         <div class="footer-social">
-          <a href="https://wa.me/233242752207" class="social-btn" aria-label="WhatsApp">
-            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          </a>
-          <a href="tel:0208827865" class="social-btn" aria-label="Phone">
-            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.09 9.82 19.79 19.79 0 01.01 1.19 2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14v2.92z" fill="none" stroke="rgba(255,255,255,.7)" stroke-width="2"/></svg>
-          </a>
+          <a href="https://wa.me/233242752207" class="social-btn" aria-label="WhatsApp" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884M20.52 3.449C18.24 1.245 15.24 0 12.045 0 5.463 0 .104 5.334.101 11.892c0 2.096.549 4.142 1.595 5.945L0 24l6.335-1.652a12.062 12.062 0 005.71 1.448h.005c6.585 0 11.946-5.336 11.949-11.896 0-3.176-1.24-6.165-3.495-8.411z"/></svg></a>
+
+
+
         </div>
       </div>
       <div class="footer-col">
@@ -796,21 +838,21 @@ body { background: linear-gradient(135deg, var(--green-dark) 0%, var(--green) 60
           <li><a href="services.html">Building Construction</a></li>
           <li><a href="services.html">Civil Engineering</a></li>
           <li><a href="services.html">Tiling &amp; Finishing</a></li>
-          <li><a href="services.html">Blocks &amp; Cement</a></li>
+          <li><a href="services.html">Blocks &amp; Cement Supply</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h5>Contact Us</h5>
         <div class="footer-contact-item">
-          <svg viewBox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke="#D4A017" stroke-width="2" fill="none"/><circle cx="12" cy="11" r="3" stroke="#D4A017" stroke-width="2" fill="none"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke="#16a3c6" stroke-width="2" fill="none"/><circle cx="12" cy="11" r="3" stroke="#16a3c6" stroke-width="2" fill="none"/></svg>
           <span>Agbogba Ablorh Agyei,<br>Accra, Ghana</span>
         </div>
         <div class="footer-contact-item">
-          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.09 9.82 19.79 19.79 0 01.01 1.19 2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14v2.92z" stroke="#D4A017" stroke-width="2" fill="none"/></svg>
-          <span><a href="tel:0208827865">0208827865</a> / <a href="tel:0276486515">0276486515</a></span>
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.09 9.82 19.79 19.79 0 01.01 1.19 2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14v2.92z" stroke="#16a3c6" stroke-width="2" fill="none"/></svg>
+          <span><a href="tel:+233242752207">+233 24 275 2207</a> / <a href="tel:+233558207211">+233 55 820 7211</a></span>
         </div>
         <div class="footer-contact-item">
-          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="#D4A017" stroke-width="2" fill="none"/><path d="M22 6l-10 7L2 6" stroke="#D4A017" stroke-width="2" fill="none"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="#16a3c6" stroke-width="2" fill="none"/><path d="M22 6l-10 7L2 6" stroke="#16a3c6" stroke-width="2" fill="none"/></svg>
           <a href="mailto:nobsedengineering@gmail.com">nobsedengineering@gmail.com</a>
         </div>
       </div>
@@ -825,9 +867,19 @@ body { background: linear-gradient(135deg, var(--green-dark) 0%, var(--green) 60
 </footer>
 
 <!-- WhatsApp Float -->
-<a href="https://wa.me/233552106695" target="_blank" rel="noopener" class="wa-float" aria-label="Chat on WhatsApp">
-  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-</a>
+<!-- Floating contact widget (free, native — Call / WhatsApp / SMS / Inquire) -->
+<div class="fab-contact" id="fabContact">
+  <div class="fab-menu">
+    <a href="tel:+233242752207" class="fab-item"><span class="fab-label">Call</span><span class="fab-ic call"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1H8c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></span></a>
+    <a href="https://wa.me/233242752207" target="_blank" rel="noopener" class="fab-item"><span class="fab-label">WhatsApp</span><span class="fab-ic wa"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884M20.52 3.449C18.24 1.245 15.24 0 12.045 0 5.463 0 .104 5.334.101 11.892c0 2.096.549 4.142 1.595 5.945L0 24l6.335-1.652a12.062 12.062 0 005.71 1.448h.005c6.585 0 11.946-5.336 11.949-11.896 0-3.176-1.24-6.165-3.495-8.411z"/></svg></span></a>
+    <a href="sms:+233242752207" class="fab-item"><span class="fab-label">SMS</span><span class="fab-ic sms"><svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-9 9H9V9h2v2zm4 0h-2V9h2v2zm-8 0H5V9h2v2z"/></svg></span></a>
+    <a href="contact.html" class="fab-item"><span class="fab-label">Inquire Now</span><span class="fab-ic inq"><svg viewBox="0 0 24 24"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></span></a>
+  </div>
+  <button class="fab-toggle" aria-label="Contact options" onclick="document.getElementById('fabContact').classList.toggle('open')">
+    <svg class="fab-icon-chat" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/></svg>
+    <svg class="fab-icon-x" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+  </button>
+</div>
 
 <script>
 /* ── Navbar ── */
@@ -861,24 +913,15 @@ function goToSlide(n) {
   currentSlide = (n + slides.length) % slides.length;
   slides[currentSlide].classList.add('active');
   dotsContainer.children[currentSlide].classList.add('active');
-  heroLabel.style.opacity = '0';
-  heroLabel.style.transform = 'translateY(10px)';
-  setTimeout(() => {
-    heroLabel.textContent = labels[currentSlide];
-    heroLabel.style.opacity = '1';
-    heroLabel.style.transform = 'none';
-  }, 200);
+  if(heroLabel){ heroLabel.style.opacity='0'; heroLabel.style.transform='translateY(10px)'; setTimeout(()=>{ heroLabel.textContent=labels[currentSlide]; heroLabel.style.opacity='1'; heroLabel.style.transform='none'; },200); }
 }
 
 function startSlideshow() {
   slideInterval = setInterval(() => goToSlide(currentSlide + 1), 5500);
 }
 
-document.getElementById('nextSlide').addEventListener('click', () => { clearInterval(slideInterval); goToSlide(currentSlide + 1); startSlideshow(); });
-document.getElementById('prevSlide').addEventListener('click', () => { clearInterval(slideInterval); goToSlide(currentSlide - 1); startSlideshow(); });
-
 // Hero label transition
-heroLabel.style.transition = 'opacity .3s ease, transform .3s ease';
+if(heroLabel){ heroLabel.style.transition = 'opacity .3s ease, transform .3s ease'; }
 
 startSlideshow();
 
@@ -908,135 +951,5 @@ const co = new IntersectionObserver(entries => {
 document.querySelectorAll('.stats-bar').forEach(el => co.observe(el));
 </script>
 
-<!-- ══ THEME SWITCHER (client preview only — remove before launch) ══ -->
-<div id="themeSwitcher" style="position:fixed;bottom:24px;left:24px;z-index:9999;font-family:'Poppins',sans-serif;font-size:12px;">
-  <div id="themePanel" style="display:none;background:#0f172a;border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:16px 18px;box-shadow:0 8px 40px rgba(0,0,0,.6);margin-bottom:10px;width:230px;">
-    <div style="color:rgba(255,255,255,.5);font-size:10px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px;">Colour Scheme Preview</div>
-    <div id="themeList" style="display:flex;flex-direction:column;gap:8px;"></div>
-    <div style="margin-top:14px;padding-top:12px;border-top:1px solid rgba(255,255,255,.08);color:rgba(255,255,255,.3);font-size:9.5px;line-height:1.5;">Preview only · scroll all sections<br>to see the full effect</div>
-  </div>
-  <button id="themeToggle" onclick="document.getElementById('themePanel').style.display=document.getElementById('themePanel').style.display==='none'?'block':'none'" style="background:#0f172a;color:#fff;border:1px solid rgba(255,255,255,.15);border-radius:100px;padding:9px 16px;cursor:pointer;font-family:'Poppins',sans-serif;font-size:11px;font-weight:600;letter-spacing:.04em;display:flex;align-items:center;gap:7px;box-shadow:0 4px 20px rgba(0,0,0,.5);">
-    <span style="width:10px;height:10px;border-radius:50%;background:conic-gradient(#002B6D 25%,#1B9ACE 25% 50%,#1A6B47 50% 75%,#D4A017 75%);display:inline-block"></span>
-    Themes
-  </button>
-</div>
-
-<script>
-(function(){
-  const THEMES = [
-    {
-      name:'Current',
-      swatch:['#002B6D','#1B9ACE','#1A6B47','#D4A017'],
-      vars:null  // no override — use defaults
-    },
-    {
-      name:'Midnight Steel',
-      swatch:['#0F172A','#0EA5E9','#059669','#F59E0B'],
-      vars:{
-        '--navy':'#0F172A','--navy-dark':'#060B14','--navy-mid':'#1E3A5F','--navy-light':'#e0f0ff','--navy-pale':'#f0f7ff',
-        '--blue':'#0EA5E9','--blue-dark':'#0284C7','--blue-mid':'#38BDF8','--blue-light':'#e0f4ff',
-        '--green':'#059669','--green-dark':'#047857','--green-light':'#d1fae5','--green-pale':'#f0fdf4',
-        '--gold':'#F59E0B','--gold-light':'#FCD34D'
-      }
-    },
-    {
-      name:'Charcoal & Amber',
-      swatch:['#1C1917','#D97706','#15803D','#0EA5E9'],
-      vars:{
-        '--navy':'#1C1917','--navy-dark':'#0C0A09','--navy-mid':'#292524','--navy-light':'#fef3c7','--navy-pale':'#fffbeb',
-        '--blue':'#0EA5E9','--blue-dark':'#0284C7','--blue-mid':'#38BDF8','--blue-light':'#e0f4ff',
-        '--green':'#15803D','--green-dark':'#166534','--green-light':'#dcfce7','--green-pale':'#f0fdf4',
-        '--gold':'#D97706','--gold-light':'#F59E0B'
-      }
-    },
-    {
-      name:'Deep Teal',
-      swatch:['#0F3460','#16213E','#0F9D9D','#E8B84B'],
-      vars:{
-        '--navy':'#0F3460','--navy-dark':'#0A2444','--navy-mid':'#16305A','--navy-light':'#e0f0f8','--navy-pale':'#f0f8fb',
-        '--blue':'#0F9D9D','--blue-dark':'#0C7C7C','--blue-mid':'#14B8B8','--blue-light':'#ccfafa',
-        '--green':'#0C5E5E','--green-dark':'#094848','--green-light':'#b3eded','--green-pale':'#e6fafa',
-        '--gold':'#E8B84B','--gold-light':'#F5D080'
-      }
-    },
-    {
-      name:'Royal & Copper',
-      swatch:['#1A0A3B','#6C3BE8','#C47C2B','#E8B84B'],
-      vars:{
-        '--navy':'#1A0A3B','--navy-dark':'#0D052A','--navy-mid':'#2D1470','--navy-light':'#ede9fe','--navy-pale':'#f5f3ff',
-        '--blue':'#6C3BE8','--blue-dark':'#5B2FCC','--blue-mid':'#7C52EC','--blue-light':'#ede9fe',
-        '--green':'#C47C2B','--green-dark':'#A36022','--green-light':'#fef3c7','--green-pale':'#fffbeb',
-        '--gold':'#E8B84B','--gold-light':'#F5D080'
-      }
-    },
-    {
-      name:'Slate & Emerald',
-      swatch:['#1E293B','#475569','#10B981','#FBBF24'],
-      vars:{
-        '--navy':'#1E293B','--navy-dark':'#0F172A','--navy-mid':'#334155','--navy-light':'#e2e8f0','--navy-pale':'#f8fafc',
-        '--blue':'#475569','--blue-dark':'#334155','--blue-mid':'#64748B','--blue-light':'#e2e8f0',
-        '--green':'#10B981','--green-dark':'#059669','--green-light':'#d1fae5','--green-pale':'#ecfdf5',
-        '--gold':'#FBBF24','--gold-light':'#FDE68A'
-      }
-    }
-  ];
-
-  const list = document.getElementById('themeList');
-  let activeStyle = null;
-  let activeBtn   = null;
-
-  THEMES.forEach((t,i)=>{
-    const row = document.createElement('button');
-    row.style.cssText='display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.05);border:1.5px solid rgba(255,255,255,.1);border-radius:8px;padding:8px 10px;cursor:pointer;width:100%;text-align:left;transition:all .2s';
-    row.onmouseenter=()=>{ if(row!==activeBtn) row.style.background='rgba(255,255,255,.1)'; };
-    row.onmouseleave=()=>{ if(row!==activeBtn) row.style.background='rgba(255,255,255,.05)'; };
-
-    // Swatch dots
-    const dots = document.createElement('div');
-    dots.style.cssText='display:flex;gap:3px;flex-shrink:0';
-    t.swatch.forEach(c=>{
-      const d=document.createElement('span');
-      d.style.cssText=`width:12px;height:12px;border-radius:50%;background:${c};display:inline-block;`;
-      dots.appendChild(d);
-    });
-
-    const label = document.createElement('span');
-    label.style.cssText='color:#fff;font-size:11px;font-weight:600;flex:1';
-    label.textContent = t.name;
-
-    const tick = document.createElement('span');
-    tick.textContent = i===0 ? '✓' : '';
-    tick.style.cssText='color:#4ade80;font-size:11px;';
-
-    row.appendChild(dots); row.appendChild(label); row.appendChild(tick);
-
-    row.onclick=()=>{
-      // Remove previous override
-      if(activeStyle){ activeStyle.remove(); activeStyle=null; }
-      if(activeBtn){ activeBtn.style.background='rgba(255,255,255,.05)'; activeBtn.style.borderColor='rgba(255,255,255,.1)'; activeBtn.querySelector('span:last-child').textContent=''; }
-
-      // Apply new theme
-      if(t.vars){
-        activeStyle=document.createElement('style');
-        activeStyle.textContent=':root{'+Object.entries(t.vars).map(([k,v])=>`${k}:${v}`).join(';')+'}';
-        document.head.appendChild(activeStyle);
-      }
-
-      // Mark active
-      row.style.background='rgba(255,255,255,.14)';
-      row.style.borderColor='rgba(255,255,255,.35)';
-      tick.textContent='✓';
-      activeBtn=row;
-
-      // Update toggle conic swatch
-      document.querySelector('#themeToggle span').style.background=`conic-gradient(${t.swatch[0]} 25%,${t.swatch[1]} 25% 50%,${t.swatch[2]} 50% 75%,${t.swatch[3]} 75%)`;
-    };
-
-    if(i===0){ activeBtn=row; row.style.background='rgba(255,255,255,.14)'; row.style.borderColor='rgba(255,255,255,.35)'; tick.textContent='✓'; }
-    list.appendChild(row);
-  });
-})();
-</script>
-<!-- ══ END THEME SWITCHER ══ -->
 </body>
 </html>
